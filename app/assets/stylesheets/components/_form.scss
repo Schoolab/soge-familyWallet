@@ -1,0 +1,43 @@
+.form_container {
+  margin: 20px 20px;
+
+  h2 {
+    font-weight: 600;
+    font-size: 34px;
+    margin-bottom: 20vh;
+  }
+}
+
+abbr {
+  display: none;
+}
+
+label {
+    display: none;
+    max-width: 100%;
+    font-weight: 100;
+}
+input {
+    border-radius: 21px;
+    }
+.form-inputs {
+    margin-bottom: 20vh;
+
+}
+.form-control {
+  padding: none !important;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid gray !important;
+  border-top: none;
+  background-color: white;
+  box-shadow: none !important;
+  opacity: 0.5;
+
+}
+.btn .btn-default {
+  display:none !important;
+}
+.edit-form {
+  display: inline;
+}

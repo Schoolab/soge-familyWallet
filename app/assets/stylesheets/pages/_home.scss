@@ -1,1 +1,15 @@
-// Specific CSS for your home-page
+.container-fluid {
+  margin: 0;
+  text-align: center;
+  #logo {
+  margin: 25vh 18vw;
+  }
+  a {
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    vertical-align:middle;
+
+  }
+}

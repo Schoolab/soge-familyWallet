@@ -1,14 +1,17 @@
-<h1>Welcome @user.email</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
+<div class="container-fluid">
+  <h1>
+    <%= image_tag 'Logo_V1.png', id:"logo_wf" %>
+  </h1>
 
-
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Le Wagon Shanghai</h2>
-    <p>Very cool city, the best</p>
-  </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
+  <%= link_to new_user_session_path, class: 'no-text-decoration' do %>
+    <div class="btn-wf">
+      <p>Connection</p>
+    </div>
+  <% end %>
+  <%= link_to new_user_registration_path, class: 'no-text-decoration' do %>
+    <div class="btn-wf">
+      <p>Créer <br> Mon Family Wallet</p>
+    </div>
+  <% end %>
 </div>

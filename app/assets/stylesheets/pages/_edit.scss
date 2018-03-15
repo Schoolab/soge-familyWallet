@@ -1,0 +1,105 @@
+.form_container-edit {
+  height: 90vh;
+  margin: 50px 20px 0px 20px;
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0px;
+
+  }
+  .form-group {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0px;
+  }
+
+}
+.form-inputs-edit {
+}
+
+#edit-header {
+  font-size: 30px;
+  font-weight: 500 !important;
+  margin-bottom: 8vh;
+  color: black !important;
+}
+#coordonees-edit {
+  margin-bottom: 16vh;
+}
+
+#user_first_name {
+  left: 0;
+  background-color: $light-gray;
+  border: 2px solid gray;
+  border-bottom: 2px solid $gray !important;
+  height: 50px;
+  position: inherit;
+  width: 260px;
+}
+::placeholder {
+  color: black !important;
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+#user_last_name {
+  left: 0;
+  background-color: $light-gray;
+  border: 2px solid gray;
+  border-bottom: 2px solid $gray !important;
+  height: 50px;
+  position: inherit;
+  width: 260px;
+}
+#user_mail {
+  left: 0;
+  background-color: $light-gray;
+  border: 2px solid gray;
+  border-bottom: 2px solid $gray !important;
+  height: 50px;
+  position: inherit;
+  width: 260px;
+}
+#user_phone_numbre {
+  left: 0;
+  background-color: $light-gray;
+  border: 2px solid gray;
+  border-bottom: 2px solid $gray !important;
+  height: 50px;
+  position: inherit;
+  width: 260px;
+}
+#user_birthday {
+  left: 0;
+  background-color: $light-gray;
+  border: 2px solid gray;
+  border-bottom: 2px solid $gray !important;
+  height: 50px;
+  position: inherit;
+  width: 260px;
+}
+
+input {
+  color: red;
+}
+
+.input-div {
+  display: flex;
+  position: relative;
+  opacity: 0.6;
+  color: black;
+
+}
+
+#validate {
+  font-weight: 600;
+  color: black;
+  margin: 9vh 11vw 0vh 11vw;
+}
+
+#icone-edit {
+  margin: 20px 10px;
+  right: 10px;
+  position: absolute;
+  opacity: 0.6;
+}
