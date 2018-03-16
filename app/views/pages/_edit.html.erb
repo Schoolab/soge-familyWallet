@@ -1,15 +1,14 @@
 <div class="form_container-edit">
   <h1 id="edit-header" >Validez vos Infos</h1>
-    <%= simple_form_for @user, url: edit_page_path do |f| %>
+    <%= simple_form_for @user, url: page_path do |f| %>
           <p style="font-weight: 600; color: black;">Votre identité</p>
           <div class="form-inputs-edit">
-
             <div class="input-div">
               <%= f.input :first_name, placeholder: "Doe", class: "input-edit" %>
               <%= image_tag "crayon.png", height: 30, id: "icone-edit" %>
             </div>
             <div class="input-div">
-              <%= f.input :first_name, placeholder: "John", class: "input-edit" %>
+              <%= f.input :last_name, placeholder: "John", class: "input-edit" %>
               <%= image_tag "crayon.png", height: 30, id: "icone-edit" %>
             </div>
             <div class="input-div">
@@ -17,9 +16,6 @@
               <%= image_tag "crayon.png", height: 30, id: "icone-edit" %>
             </div>
           </div>
-    <% end %>
-
-  <%= simple_form_for @user, url: edit_page_path do |f| %>
         <p style="font-weight: 600; color: black;">Vos coordonées</p>
         <div class="form-inputs-edit">
             <div class="input-div">
@@ -33,5 +29,4 @@
           </div>
        <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
   <% end %>
-
 </div>
