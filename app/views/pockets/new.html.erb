@@ -1,0 +1,37 @@
+<div class="form_container-new">
+  <h1 id="new-membrer-header" >X.   Créer ses premières poches</h1>
+
+
+  <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
+    <div class="form-inputs-new">
+      <div class="input-div-new">
+        <p style="font-weight: 600; color: black; margin-top: 35px;">Première poche</p>
+        <%= f.input :name, placeholder: "Titre de la poche", class: "input-new" %>
+      </div>
+      <div class="input-div-new">
+        <%= f.input :accessible, placeholder: 'Type', as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+    </div>
+    <div class="form-inputs-new">
+      <div class="input-div">
+        <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
+      </div>
+    </div>
+  <% end %>
+  <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
+    <div class="form-inputs-new">
+      <div class="input-div-new">
+        <p style="font-weight: 600; color: black; margin-top: 35px;">Première poche</p>
+        <%= f.input :name, placeholder: "Titre de la poche", class: "input-new" %>
+      </div>
+      <div class="input-div-new">
+        <%= f.input :accessible, placeholder: 'Type', as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+    </div>
+    <div class="form-inputs-new">
+      <div class="input-div">
+        <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :user_membres
   has_many :membres, through: :user_membres
 
+  has_many :user_pockets
+  has_many :pockets, through: :user_pockets
+
 end

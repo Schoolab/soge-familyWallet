@@ -4,6 +4,7 @@ class MembresController < ApplicationController
 
   def index
     @family = @user.membres
+    @pockets = @user.pockets
   end
 
   def show
