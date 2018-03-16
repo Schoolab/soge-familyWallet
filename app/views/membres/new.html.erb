@@ -1,0 +1,28 @@
+<div class="form_container-new">
+  <h1 id="new-membrer-header" >X.   Créer un compte virtuel</h1>
+  <div class="card">
+    <div class="card-user" id="photo">
+    <%= image_tag 'photo', height: 30 %>
+    </div>
+
+  </div>
+    <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
+          <div class="form-inputs-new">
+            <div class="input-div-new">
+              <%= f.input :fisrt_name, placeholder: "Nom", class: "input-new" %>
+            </div>
+            <div class="input-div-new">
+              <%= f.input :last_name, placeholder: "Prénom", class: "input-new" %>
+            </div>
+            <div class="input-div-new">
+              <%= f.input :birthday, placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
+            </div>
+          </div>
+              <%= f.input :sexe, placeholder: 'coucou', as: :boolean, checked_value: true, unchecked_value: false %>
+        <div class="form-inputs-new">
+            <div class="input-div">
+            </div>
+          </div>
+       <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
+  <% end %>
+</div>

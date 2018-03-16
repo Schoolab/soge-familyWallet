@@ -1,0 +1,25 @@
+
+<% if @user.membres.empty? %>
+  <p>Aucun Membre dans ma famille :-(</p>
+<% else %>
+  <div class="container-fluid">
+    <div class="row">
+        <% @family.each do |membre| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/random');">
+              <div class="card-category"><%= membre.birthday %></div>
+              <div class="card-description">
+                <h2><%= membre.fisrt_name %></h2>
+                <p><%= membre.last_name %></p>
+              </div>
+              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= link_to "Ajouter un Membre à ma famille", new_page_membre_path %>
+
