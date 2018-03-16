@@ -1,33 +1,67 @@
 <div class="form_container-new">
   <h1 id="new-membrer-header" >X.   Créer ses premières poches</h1>
-
-
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
     <div class="form-inputs-new">
       <div class="input-div-new">
-        <p style="font-weight: 600; color: black; margin-top: 35px;">Première poche</p>
-        <%= f.input :name, placeholder: "Titre de la poche", class: "input-new" %>
+        <%= f.input :name, label: "Première poche", placeholder: "Titre de la poche", class: "input-new" %>
       </div>
-      <div class="input-div-new">
-        <%= f.input :accessible, placeholder: 'Type', as: :boolean, checked_value: true, unchecked_value: false %>
-      </div>
+      <div class="container-checkbox">
+            <input class="hidden" type="checkbox" name="prive">
+            <div class="tresor_prive">
+              <label class="gnd_custom">Type</label>
+
+              <div id="tresor_prive">
+                <span class="radio">
+                  <label for="tresor_prive_false">
+                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false">
+                    <%= image_tag "debloque.png", height: 55, width: 130, crop: :fill %>
+                  </label>
+                </span>
+
+                <input type="hidden" name="tresor[prive]" value="">
+                <span class="radio">
+                  <label for="tresor_prive_true">
+                    <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "bloque.png", height: 55, width: 130, crop: :fill%>
+                  </label>
+                </span>
+              </div>
+            </div>
+          </div>
     </div>
     <div class="form-inputs-new">
-      <div class="input-div">
+      <!-- <div class="input-div">
         <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
-      </div>
+      </div> -->
     </div>
   <% end %>
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
     <div class="form-inputs-new">
       <div class="input-div-new">
-        <p style="font-weight: 600; color: black; margin-top: 35px;">Première poche</p>
-        <%= f.input :name, placeholder: "Titre de la poche", class: "input-new" %>
-      </div>
-      <div class="input-div-new">
-        <%= f.input :accessible, placeholder: 'Type', as: :boolean, checked_value: true, unchecked_value: false %>
+        <%= f.input :name, label: "Première poche", placeholder: "Titre de la poche", class: "input-new" %>
       </div>
     </div>
+    <div class="container-checkbox">
+            <input class="hidden" type="checkbox" name="prive">
+            <div class="tresor_prive">
+              <label class="gnd_custom">Type</label>
+
+              <div id="tresor_prive">
+                <span class="radio">
+                  <label for="tresor_prive_false">
+                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false">
+                    <%= image_tag "debloque.png", height: 55, width: 130, crop: :fill%>
+                  </label>
+                </span>
+
+                <input type="hidden" name="tresor[prive]" value="">
+                <span class="radio">
+                  <label for="tresor_prive_true">
+                    <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "bloque.png", height: 55, width: 130, crop: :fill %>
+                  </label>
+                </span>
+              </div>
+            </div>
+          </div>
     <div class="form-inputs-new">
       <div class="input-div">
         <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
