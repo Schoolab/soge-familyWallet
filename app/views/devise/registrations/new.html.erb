@@ -6,9 +6,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, placeholder: 'Votre code client', required: true, autofocus: true %>
-    <%= f.input :password, placeholder: 'Votre code secret', required: true %>
-    <%= f.input :password_confirmation, placeholder: 'Confirmez votre code secret', required: true %>
+    <%= f.input :email, label: "      ", placeholder: 'Votre code client', required: true, autofocus: true, id: 'input-not' %>
+    <%= f.input :password, placeholder: 'Votre code secret', label: "      ", required: true %>
+    <%= f.input :password_confirmation,label: "      ", placeholder: 'Confirmez votre code secret', required: true %>
   </div>
 
   <div class="form-actions">

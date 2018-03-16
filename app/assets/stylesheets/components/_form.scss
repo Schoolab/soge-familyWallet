@@ -8,7 +8,9 @@
   }
 }
 
-
+abbr {
+  display:none;
+}
 
 input {
     border-radius: 21px;
@@ -30,4 +32,8 @@ input {
 
 .edit-form {
   display: inline;
+}
+
+.require {
+  display: none;
 }
