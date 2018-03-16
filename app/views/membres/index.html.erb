@@ -1,6 +1,7 @@
 
 <% if @user.membres.empty? %>
   <p>Aucun Membre dans ma famille :-(</p>
+  <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-info' %>
 <% else %>
   <h2>Ma famille</h2>
   <div class="container-fluid">
@@ -25,6 +26,7 @@
 <% end %>
 <hr>
   <% if @user.pockets.empty? %>
+  </div><%= link_to "Ajouter une poche", new_page_pocket_path, class: 'btn-info' %>
     <p>Aucune poche dans ma famille :-(</p>
   <% else %>
   <h2>Mes Poches</h2>
