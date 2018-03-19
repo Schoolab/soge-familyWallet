@@ -1,5 +1,10 @@
-<div class="form_container-new">
-  <h1 id="new-membrer-header" >X.   Créer ses premières poches</h1>
+<div class="form_container-new"><div class="card">
+    <h1 id="new-membrer-header" >Créer<br> une poche</h1>
+    <%= image_tag 'icon_cross', height: 15, class: 'cross' %>
+    <div class="card-user" >
+    <%= image_tag 'photo', height: 50 , class: 'camera'%>
+    </div>
+  </div>
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
     <div class="form-inputs-new">
       <div class="input-div-new">
@@ -37,7 +42,7 @@
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
     <div class="form-inputs-new">
       <div class="input-div-new">
-        <%= f.input :name, label: "Première poche", placeholder: "Titre de la poche", class: "input-new" %>
+        <%= f.input :name, label: "Seconde poche", placeholder: "Titre de la poche", class: "input-new" %>
       </div>
     </div>
     <div class="container-checkbox">

@@ -1,27 +1,60 @@
 <div class="form_container-new">
-  <h1 id="new-membrer-header" >X   Créer un compte virtuel</h1>
-  <div class="card">
-    <div class="card-user" id="photo">
-    <%= image_tag 'photo', height: 30 %>
-    </div>
 
+
+  <div class="card">
+    <h1 id="new-membrer-header" >Identité <br> du compte virtuel</h1>
+    <%= image_tag 'icon_cross', height: 15, class: 'cross' %>
+    <div class="card-user" >
+    <%= image_tag 'photo', height: 50 , class: 'camera'%>
+    </div>
   </div>
-    <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
-          <div class="form-inputs-new">
-            <div class="input-div-new">
-              <%= f.input :fisrt_name, label: '.            ', placeholder: "Nom", class: "input-new" %>
-            </div>
-            <div class="input-div-new">
-              <%= f.input :last_name, label: ".         ", placeholder: "Prénom", class: "input-new" %>
-            </div>
-            <div class="input-div-new">
-              <%= f.input :birthday, label: ".          ", placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
+
+
+  <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
+    <div class="form-inputs-new">
+      <div class="input-div-new">
+        <%= f.input :fisrt_name, label: '.            ', placeholder: "Nom", class: "input-new" %>
+      </div>
+      <div class="input-div-new">
+        <%= f.input :last_name, label: ".         ", placeholder: "Prénom", class: "input-new" %>
+      </div>
+      <div class="input-div-new">
+        <%= f.input :birthday, label: ".          ", placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
+      </div>
+    </div>
+    <div class="form-inputs-new">
+      <div class="input-div">
+        <div class="container-checkbox">
+            <input class="hidden" type="checkbox" name="prive">
+            <div class="tresor_prive">
+              <label class="gnd_custom">Type</label>
+
+              <div id="tresor_prive">
+                <span class="radio">
+                  <label for="tresor_prive_false">
+                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false">
+                    <%= image_tag "fille.png", height: 55, width: 130, crop: :fill%>
+                  </label>
+                </span>
+
+                <input type="hidden" name="tresor[prive]" value="">
+                <span class="radio">
+                  <label for="tresor_prive_true">
+                    <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "gars.png", height: 55, width: 130, crop: :fill %>
+                  </label>
+                </span>
+              </div>
             </div>
           </div>
-        <div class="form-inputs-new">
-            <div class="input-div">
-            </div>
-          </div>
-       <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
+
+
+
+
+
+      </div>
+    </div>
+    <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
   <% end %>
+
+
 </div>

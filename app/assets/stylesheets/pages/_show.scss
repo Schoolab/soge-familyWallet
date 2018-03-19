@@ -1,16 +1,19 @@
 // Specific CSS for your home-page
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
+    margin: 5px;
+    height: 125px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-size: cover !important;
+    background-position: center;
+    color: white;
+    position: relative;
+    border-radius: 14px;
+    box-shadow: 1px 1px 1px slateblue;
 }
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 0px;
+  bottom: 0px;
   width: 40px;
   border-radius: 50%;
 }

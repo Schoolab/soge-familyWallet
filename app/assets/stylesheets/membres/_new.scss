@@ -1,6 +1,6 @@
 .form_container-new {
   height: 90vh;
-  margin: 50px 20px 0px 20px;
+  margin: 10px 20px 0px 20px;
   p {
     font-size: 16px;
     font-weight: 500;
@@ -18,14 +18,22 @@
 .form-inputs-new {
   opacity: 0.7;
 }
-#photo {
-  background-color: $light-gray;
-  border: 2px solid $gray;
-  width: 55px;
-  height: 55px;
-  padding: 10px;
 
+.form-header {
+  position: relative;
+  display: flex;
+}
+#new-membrer-header {
+    color: black;
+    font-size: 36px !important;
+    text-shadow: none;
+    font-weight: 500;
 
+}
+.cross {
+  position: absolute;
+  right: 0px;
+  top: 5px;
 }
 #membre_sexe{
   display: inline-block;
@@ -92,7 +100,10 @@ h1 {
   position: inherit;
   width: 260px;
 }
+.carousel-control {
+  background-image: none !important
 
+}
 input {
   color: red;
 }
