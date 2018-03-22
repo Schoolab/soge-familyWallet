@@ -22,7 +22,7 @@ class PocketsController < ApplicationController
     @userpocket.pocket = @pocket
     @userpocket.save
     if @pocket.save
-      redirect_to page_membres_path(current_user)
+      redirect_to new_page_paiement_path(current_user)
     else
       render :new
     end

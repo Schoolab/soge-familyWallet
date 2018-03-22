@@ -1,0 +1,106 @@
+
+<%= simple_form_for @paiement, url: page_paiements_path do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <!-- paiement roof -->
+    <div class="form-group float optional paiement_roof">
+      <label class="control-label float optional" for="paiement_roof" style="float: right; font-weight: 400; color:black;" >CE QU'IL PEUT DÉPENSER</label>
+      <input class="form-control numeric float optional" placeholder="plafond maximum €" type="number" step="any" name="paiement[roof]" id="paiement_roof">
+    </div>
+
+    <!-- paiement plafond -->
+    <div class="form-group select optional paiement_plafond">
+      <label class="control-label select optional" for="paiement_plafond"></label>
+      <select class="select optional" name="paiement[plafond]" id="paiement_plafond">
+        <option value=""></option>
+        <option value="Mois">Mois</option>
+        <option value="Semaine">Semaine</option>
+        <option value="Jours">Jours</option>
+      </select>
+    </div>
+    <!-- paiement mode -->
+    <div class="container">
+      <div class="row">
+        <div class="form-group check_boxes optional paiement_mode">
+
+          <label class="control-label check_boxes optional col-xs-12" style="float: right; font-weight: 400; color:black;" >COMMENT PEUT-IL PAYER?</label>
+
+          <input type="hidden" name="paiement[mode][]" value="">
+
+
+              <div class="col-xs-3" id="badge-mode">
+                <span class="checkbox">
+                  <label for="paiement_mode_applepay">
+                    <input class="check_boxes optional  hidden" type="checkbox" value="ApplePay" name="paiement[mode][]" id="paiement_mode_applepay">
+                    <%= image_tag 'applepay', height: 25 %> <h1></h1>
+                  </label>
+                </span>
+                <p>ApplePay</p>
+              </div>
+
+              <div class="col-xs-3" id="badge-mode">
+                <span class="checkbox">
+                  <label for="paiement_mode_paylib" >
+                    <input class="check_boxes optional  hidden" type="checkbox" value="PayLib" name="paiement[mode][]" id="paiement_mode_paylib"><%= image_tag 'paylib', height: 30 %> <h1></h1>
+                  </label>
+                </span>
+                <p>PayLib</p>
+              </div>
+
+              <div class="col-xs-3" id="badge-mode-3">
+                <span class="checkbox">
+                  <label for="paiement_mode_cb">
+                    <input class="check_boxes optional hidden" type="checkbox" value="CB" name="paiement[mode][]" id="paiement_mode_cb">
+                    <%= image_tag 'card', height: 30 %> <h1></h1>
+                  </label>
+                </span>
+                <p>Carte</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+        <!-- Transfert Adresse -->
+        <div class="adresse-container hidden">
+          <p style="margin-top: 80px;" >Entrez une adresse de livraison pour recevoir une carte, celle-ci sera à son nom.</p>
+
+          <div class="form-group string optional paiement_adress_1">
+            <label class="control-label string optional" for="paiement_adress_1"></label>
+            <input class="form-control string optional" placeholder="Adress line 1" type="text" name="paiement[adress_1]" id="paiement_adress_1">
+          </div>
+
+          <div class="form-group string optional paiement_adress_2">
+            <label class="control-label string optional" for="paiement_adress_2"></label>
+            <input class="form-control string optional" placeholder="Adress line 2" type="text" name="paiement[adress_2]" id="paiement_adress_2">
+          </div>
+
+          <div class="row">
+
+            <div class="col-xs-6">
+              <div class="form-group string optional paiement_cp">
+                <label class="control-label string optional" for="paiement_cp"></label>
+                <input class="form-control string optional" placeholder="Code postal" type="text" name="paiement[cp]" id="paiement_cp">
+              </div>
+            </div>
+
+
+
+            <div class="col-xs-6">
+              <div class="form-group string optional paiement_city">
+                <label class="control-label string optional" for="paiement_city"></label>
+                <input class="form-control string optional" placeholder="Ville" type="text" name="paiement[city]" id="paiement_city">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      <div class="row">
+        <div class="btn-container" id="btn-container-paiement">
+          <%= f.submit "VALIDER", class: 'btn-form' %>
+        </div>
+      </div>
+<% end %>

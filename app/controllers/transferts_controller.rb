@@ -16,6 +16,8 @@ class TransfertsController < ApplicationController
 
   def create
     @transfert = Transfert.new(transfert_params)
+    @transfert.user = current_user
+    @transfert.membre = Membre.last
     if @transfert.save
       redirect_to page_membres_path(current_user)
     else
@@ -38,6 +40,6 @@ class TransfertsController < ApplicationController
   end
 
   def transfert_params
-    params.require(:transfert).permit(:value, :membre, :user, :frequence, :name)
+    params.require(:transfert).permit(:pocket_id, :value, :membre, :user, :frequence, :name)
   end
 end

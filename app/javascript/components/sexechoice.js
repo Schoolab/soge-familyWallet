@@ -1,4 +1,4 @@
-function choiceSexe () {
+function sexChoice () {
 
 $(document).ready(function(){
   $(".btn-checkboxe").click(function(){
@@ -8,4 +8,4 @@ $(document).ready(function(){
 
 }
 
-export {choiceSexe}
+export {sexChoice}

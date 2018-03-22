@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :pages do
       resources :membres
+      resources :paiements
       resources :pockets
       resources :transferts
 

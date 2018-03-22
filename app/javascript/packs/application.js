@@ -1,12 +1,11 @@
 import "bootstrap";
 
-import {choiceSexe} from '../components/sexechoice'
+import {sexChoice} from '../components/sexechoice'
 if (document.getElementById('membre_sexe_true')){
-  choiceSexe();
+  sexChoice();
 };
 
-import {sliderRange} from '../components/range'
-if (document.getElementById('amount')){
-  console.log("toto")
-  sliderRange();
+import {cardChoice} from '../components/cardchoixe'
+if (document.getElementById('badge-mode-3')){
+  cardChoice();
 };

@@ -9,6 +9,7 @@
       <%= image_tag 'pagination', height: 10, class: 'pagination-pics' %>
     </div>
   </div>
+
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
     <div class="form-group string optional pocket_name">
       <label class="control-label string optional" for="pocket_name" style="float: right; font-weight: 400; color:black;">PRMIÈRE POCHE</label>
@@ -23,5 +24,4 @@
       </div>
     </div>
   <% end %>
-</div>
 </div>
