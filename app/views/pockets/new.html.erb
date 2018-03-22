@@ -1,71 +1,27 @@
 <div class="form_container-new">
-  <h1 id="new-membrer-header" >X.   Créer ses premières poches</h1>
+
+
+  <div class="card">
+    <%= image_tag 'arrow', height: 20, class: 'card-arrow' %>
+    <%= image_tag 'icon_cross', height: 15, class: 'cross' %>
+    <div class="annonce" id="new-membrer-header">
+      <h1>Ses Première <br>poches</h1>
+      <%= image_tag 'pagination', height: 10, class: 'pagination-pics' %>
+    </div>
+  </div>
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
-    <div class="form-inputs-new">
-      <div class="input-div-new">
-        <%= f.input :name, label: "Première poche", placeholder: "Titre de la poche", class: "input-new" %>
-      </div>
-      <div class="container-checkbox">
-            <input class="hidden" type="checkbox" name="prive">
-            <div class="tresor_prive">
-              <label class="gnd_custom">Type</label>
-
-              <div id="tresor_prive">
-                <span class="radio">
-                  <label for="tresor_prive_false">
-                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false">
-                    <%= image_tag "debloque.png", height: 55, width: 130, crop: :fill %>
-                  </label>
-                </span>
-
-                <input type="hidden" name="tresor[prive]" value="">
-                <span class="radio">
-                  <label for="tresor_prive_true">
-                    <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "bloque.png", height: 55, width: 130, crop: :fill%>
-                  </label>
-                </span>
-              </div>
-            </div>
-          </div>
+    <div class="form-group string optional pocket_name">
+      <label class="control-label string optional" for="pocket_name" style="float: right; font-weight: 400; color:black;">PRMIÈRE POCHE</label>
+      <input class="form-control string optional" placeholder="Titre de la poche" type="text" name="pocket[name]" id="pocket_name">
     </div>
-    <div class="form-inputs-new">
-      <!-- <div class="input-div">
-        <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
-      </div> -->
+    <div class="add-badge" >
+      <%= image_tag 'add', height: 20 %>
     </div>
-  <% end %>
-  <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
-    <div class="form-inputs-new">
-      <div class="input-div-new">
-        <%= f.input :name, label: "Première poche", placeholder: "Titre de la poche", class: "input-new" %>
-      </div>
-    </div>
-    <div class="container-checkbox">
-            <input class="hidden" type="checkbox" name="prive">
-            <div class="tresor_prive">
-              <label class="gnd_custom">Type</label>
-
-              <div id="tresor_prive">
-                <span class="radio">
-                  <label for="tresor_prive_false">
-                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false">
-                    <%= image_tag "debloque.png", height: 55, width: 130, crop: :fill%>
-                  </label>
-                </span>
-
-                <input type="hidden" name="tresor[prive]" value="">
-                <span class="radio">
-                  <label for="tresor_prive_true">
-                    <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "bloque.png", height: 55, width: 130, crop: :fill %>
-                  </label>
-                </span>
-              </div>
-            </div>
-          </div>
-    <div class="form-inputs-new">
-      <div class="input-div">
-        <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
+    <div class="row">
+      <div class="btn-container">
+        <%= f.submit "VALIDER", class: 'btn-form' %>
       </div>
     </div>
   <% end %>
+</div>
 </div>

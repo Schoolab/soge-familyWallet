@@ -1,16 +1,14 @@
 
 <div class="container-fluid">
-  <h1>
     <%= image_tag 'Logo_V1.png', id:"logo_wf" %>
-  </h1>
 
   <%= link_to new_user_session_path, class: 'no-text-decoration' do %>
-    <div class="btn-wf">
-      <p>Connection</p>
+    <div class="button-wf" id="connection">
+      <a>Connection</a>
     </div>
   <% end %>
   <%= link_to new_user_registration_path, class: 'no-text-decoration' do %>
-    <div class="btn-wf">
+    <div class="button-wf" id="connection">
       <p>Créer <br> Mon Family Wallet</p>
     </div>
   <% end %>

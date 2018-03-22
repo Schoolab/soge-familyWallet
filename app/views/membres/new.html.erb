@@ -1,27 +1,67 @@
 <div class="form_container-new">
-  <h1 id="new-membrer-header" >X   Créer un compte virtuel</h1>
   <div class="card">
-    <div class="card-user" id="photo">
-    <%= image_tag 'photo', height: 30 %>
+    <%= image_tag 'arrow', height: 20, class: 'card-arrow' %>
+    <%= image_tag 'icon_cross', height: 15, class: 'cross' %>
+    <div class="annonce" id="new-membrer-header" ><h1>Identité <br> du compte virtuel</h1>
+      <%= image_tag 'pagination', height: 10, class: 'pagination-pics' %>
+    </div>
+    <div class="card-user" >
+    <%= image_tag 'photo', height: 40 , class: 'camera'%>
+    </div>
+  </div>
+
+
+  <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
+    <div class="form-inputs-new">
+      <div class="input-div-new">
+        <%= f.input :fisrt_name, label: '.            ', placeholder: "Nom", class: "input-new" %>
+      </div>
+      <div class="input-div-new">
+        <%= f.input :last_name, label: ".         ", placeholder: "Prénom", class: "input-new" %>
+      </div>
+      <div class="input-div-new">
+        <%= f.input :birthday, label: ".          ", placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
+      </div>
     </div>
 
+    <div class="form-group check_boxes optional membre_sexe">
+      <input type="hidden" name="membre[sexe][]" value="">
+      <div class="row">
+        <div class="col-xs-4">
+          <span class="checkbox">
+            <label for="membre_sexe_true">
+              <input class="check_boxes hidden" type="checkbox" value="true" name="membre[sexe][]" id="membre_sexe_true">
+              <div class="btn-checkboxe" >
+                <p>Garçon</p>
+              </div>
+            </label>
+          </span>
+        </div>
+        <div class="col-xs-4">
+          <span class="checkbox">
+            <label for="membre_sexe_false">
+              <input class="check_boxes optional hidden" readonly="readonly" type="checkbox" value="false" name="membre[sexe][]" id="membre_sexe_false">
+              <div class="btn-checkboxe" >
+                <p>Fille</p>
+              </div>
+            </label>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="telecharger">
+      <p>Téléchargez sa carte d'identité</p>
+      <%= image_tag 'upload', height: 50, class: 'upload-picto' %>
+    </div>
+
+    <div class="row">
+      <div class="btn-container">
+        <%= f.submit "JE VALIDER", class: 'btn-form' %>
+      </div>
+    </div>
   </div>
-    <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
-          <div class="form-inputs-new">
-            <div class="input-div-new">
-              <%= f.input :fisrt_name, label: '.            ', placeholder: "Nom", class: "input-new" %>
-            </div>
-            <div class="input-div-new">
-              <%= f.input :last_name, label: ".         ", placeholder: "Prénom", class: "input-new" %>
-            </div>
-            <div class="input-div-new">
-              <%= f.input :birthday, label: ".          ", placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
-            </div>
-          </div>
-        <div class="form-inputs-new">
-            <div class="input-div">
-            </div>
-          </div>
-       <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
-  <% end %>
+<% end %>
 </div>
+</div>
+

@@ -7,17 +7,8 @@
     margin-bottom: 20vh;
   }
 }
-
-abbr {
-  display:none;
-}
-
-input {
-    border-radius: 21px;
-    }
 .form-inputs {
     margin-bottom: 20vh;
-
 }
 .form-control {
   margin-bottom: 5px;
@@ -26,7 +17,7 @@ input {
   border-top: none;
   background-color: white;
   box-shadow: none !important;
-  opacity: 0.5;
+  opacity: 0.2;
 
 }
 
@@ -37,3 +28,7 @@ input {
 .require {
   display: none;
 }
+abbr {
+  display:none;
+}
+

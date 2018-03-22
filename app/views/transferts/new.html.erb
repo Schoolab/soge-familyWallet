@@ -1,0 +1,46 @@
+<div class="container-new">
+  <div class="card" id="tranfert-card">
+      <%= image_tag 'arrow', height: 20, class: 'card-arrow' %>
+      <%= image_tag 'icon_cross', height: 15, class: 'cross' %>
+    <div class="annonce" id="new-membrer-header" ><h1>Programmer <br> un versement</h1>
+        <%= image_tag 'pagination', height: 10, class: 'pagination-pics' %>
+    </div>
+  </div>
+
+  <div class="form_container">
+
+<%= simple_form_for @transfert, url: page_transferts_path(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="form-group string required transfert_name">
+      <label class="control-label string required" for="transfert_name">
+        <abbr title="required"></abbr></label>
+        <input class="form-control string required" autofocus="autofocus" required="required" aria-required="true" placeholder="Nom du versement: ex argent de poche" type="text" name="transfert[name]" id="transfert_name">
+    </div>
+    <p>
+      <label for="amount">Minimum number of bedrooms:</label>
+      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </p>
+    <div id="slider-range-max"></div>
+    <div class="form-group select optional transfert_frequence">
+        <label class="control-label select optional" for="transfert_frequence" style="color:black; font-weight: 500;">Récurrence</label>
+          <select class="select optional" name="transfert[frequence]" id="transfert_frequence">
+            <option value=""></option>
+            <option value="Mois">Mois</option>
+            <option value="Semaine">Semaine</option>
+            <option value="Jours">Jours</option>
+          </select>
+    </div>
+    <%= f.association :pocket, collection: Pocket.all %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Valider", class: 'button-wf' %>
+  </div>
+<% end %>
+</div>
+
+
+
+</div>
