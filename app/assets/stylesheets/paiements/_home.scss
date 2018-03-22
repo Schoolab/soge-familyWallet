@@ -1,0 +1,45 @@
+.header-congrat {
+  display: flex;
+  position: relative;
+  height: 58vh;
+  text-align: center;
+}
+
+.congrat-pics {
+  position: absolute;
+  border-radius: 225px;
+  top: 38%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+}
+
+.text-congrat {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  h1 {
+    font-weight: 500;
+    font-size: 33px;
+    text-align: center;
+    color: black;
+  }
+
+}
+
+.congrat-phone {
+  margin: 30px;
+  label {
+    margin-bottom: 12px;
+    font-weight: initial;
+    color: black;
+    font-size: 16px;
+  }
+}
+
+.envoie {
+  color: white;
+  color: white;
+  padding: 81px;
+  font-size: 20px;
+}

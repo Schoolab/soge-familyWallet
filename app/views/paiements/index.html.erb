@@ -1,41 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container-congrat">
+  <div class="header-congrat">
+    <div class="congrat-pics">
+      <%= image_tag 'ado', class: 'congrat-pics' %>
+    </div>
+    <div class="text-congrat">
+      <h1>Bravo ! <br> Le compte de <%= Membre.last.fisrt_name %> à été crée !</h1>
+    </div>
+  </div>
 
-<h1>Paiements</h1>
+  <div class="congrat-phone">
 
-<table>
-  <thead>
-    <tr>
-      <th>Roof</th>
-      <th>Plafond</th>
-      <th>Mode</th>
-      <th>Adress 1</th>
-      <th>Adress 2</th>
-      <th>Cp</th>
-      <th>City</th>
-      <th>Country</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="form-group string optional membre_fisrt_name">
+      <label class="control-label string optional" for="membre_fisrt_name">Rentrez son numéro de téléphone <br> pour qu'il puisse se connecter à l'application</label>
+      <input class="form-control string optional" placeholder="+33 6 xx xx xx xx" type="text" name="membre[fisrt_name]" id="membre_fisrt_name">
+    </div>
 
-  <tbody>
-    <% @paiements.each do |paiement| %>
-      <tr>
-        <td><%= paiement.roof %></td>
-        <td><%= paiement.plafond %></td>
-        <td><%= paiement.mode %></td>
-        <td><%= paiement.adress_1 %></td>
-        <td><%= paiement.adress_2 %></td>
-        <td><%= paiement.cp %></td>
-        <td><%= paiement.city %></td>
-        <td><%= paiement.country %></td>
-        <td><%= link_to 'Show', paiement %></td>
-        <td><%= link_to 'Edit', edit_paiement_path(paiement) %></td>
-        <td><%= link_to 'Destroy', paiement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="btn-container">
+      <div class="btn-form">
+      <%= link_to 'ENVOYER', page_membres_path(current_user), class: 'envoie'%>
+      </div>
+    </div>
+  </div>
+  </div>
 
-<br>
 
-<%= link_to 'New Paiement', new_paiement_path %>
+</div>

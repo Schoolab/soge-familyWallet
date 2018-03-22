@@ -1,10 +1,8 @@
 class PaiementsController < ApplicationController
-  before_action :set_paiement, only: [:show, :edit, :update, :destroy]
 
   # GET /paiements
   # GET /paiements.json
   def index
-    @paiements = Paiement.all
   end
 
   # GET /paiements/1
@@ -63,9 +61,7 @@ class PaiementsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_paiement
-      @paiement = Paiement.find(params[:id])
-    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paiement_params

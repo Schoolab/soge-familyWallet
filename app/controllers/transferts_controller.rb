@@ -19,7 +19,7 @@ class TransfertsController < ApplicationController
     @transfert.user = current_user
     @transfert.membre = Membre.last
     if @transfert.save
-      redirect_to page_membres_path(current_user)
+      redirect_to page_paiements_path(current_user)
     else
       render :new
     end
