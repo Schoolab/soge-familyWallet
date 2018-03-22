@@ -15,10 +15,10 @@
   <div class="form-inputs">
     <div class="form-group string required transfert_name">
       <label class="control-label string required" for="transfert_name">
-        <abbr title="required"></abbr></label>
-        <input class="form-control string required" autofocus="autofocus" required="required" aria-required="true" placeholder="Nom du versement: ex argent de poche" type="text" name="transfert[name]" id="transfert_name">
+        <abbr title="required"></abbr>
+      </label>
+      <input class="form-control string required" autofocus="autofocus" required="required" aria-required="true" placeholder="Nom du versement: ex argent de poche" type="text" name="transfert[name]" id="transfert_name">
     </div>
-    <p>
       <label for="amount">Minimum number of bedrooms:</label>
       <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
     </p>
@@ -32,7 +32,7 @@
             <option value="Jours">Jours</option>
           </select>
     </div>
-    <%= f.association :pocket, collection: Pocket.all %>
+    <%= f.association :pocket, collection: Pocket.last(4) %>
   </div>
 
   <div class="form-actions">

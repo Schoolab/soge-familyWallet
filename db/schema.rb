@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322121909) do
+ActiveRecord::Schema.define(version: 20180322140419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,11 +40,33 @@ ActiveRecord::Schema.define(version: 20180322121909) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "membre_paiements", force: :cascade do |t|
+    t.bigint "membre_id"
+    t.bigint "paiement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["membre_id"], name: "index_membre_paiements_on_membre_id"
+    t.index ["paiement_id"], name: "index_membre_paiements_on_paiement_id"
+  end
+
   create_table "membres", force: :cascade do |t|
     t.string "fisrt_name"
     t.string "last_name"
     t.string "birthday"
     t.boolean "sexe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paiements", force: :cascade do |t|
+    t.float "roof"
+    t.string "plafond"
+    t.string "mode"
+    t.string "adress_1"
+    t.string "adress_2"
+    t.string "cp"
+    t.string "city"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -132,6 +154,8 @@ ActiveRecord::Schema.define(version: 20180322121909) do
 
   add_foreign_key "family_pockets", "families"
   add_foreign_key "family_pockets", "pockets"
+  add_foreign_key "membre_paiements", "membres"
+  add_foreign_key "membre_paiements", "paiements"
   add_foreign_key "transferts", "membres"
   add_foreign_key "transferts", "pockets"
   add_foreign_key "transferts", "users"

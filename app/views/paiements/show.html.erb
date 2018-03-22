@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Roof:</strong>
+  <%= @paiement.roof %>
+</p>
+
+<p>
+  <strong>Plafond:</strong>
+  <%= @paiement.plafond %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @paiement.mode %>
+</p>
+
+<p>
+  <strong>Adress 1:</strong>
+  <%= @paiement.adress_1 %>
+</p>
+
+<p>
+  <strong>Adress 2:</strong>
+  <%= @paiement.adress_2 %>
+</p>
+
+<p>
+  <strong>Cp:</strong>
+  <%= @paiement.cp %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @paiement.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @paiement.country %>
+</p>
+
+<%= link_to 'Edit', edit_paiement_path(@paiement) %> |
+<%= link_to 'Back', paiements_path %>
