@@ -1,5 +1,15 @@
+#new-membrer-header {
+  color: black;
+  text-shadow: none;
+  font-weight: 500;
+  h1 {
+  padding: 0px 35px;
+  font-size: 30px !important;
+  }
+
+}
 .form_container-new {
-  height: 90vh;
+  height: 65vh;
   margin: 10px 20px 0px 20px;
   p {
     font-size: 16px;
@@ -15,6 +25,15 @@
   }
 
 }
+
+.pagination-pics {
+   position: absolute;
+   left: 35px;
+   width: 20%;
+   height: 10%;
+   top: 67px;
+}
+
 .form-inputs-new {
   opacity: 0.7;
 }
@@ -22,13 +41,7 @@
 .form-header {
   position: relative;
   display: flex;
-}
-#new-membrer-header {
-    color: black;
-    font-size: 36px !important;
-    text-shadow: none;
-    font-weight: 500;
-
+  height: 20vh;
 }
 .cross {
   position: absolute;
@@ -38,9 +51,7 @@
 #membre_sexe{
   display: inline-block;
 }
-h1 {
-  font-size: 20px !important;
-}
+
 #new-header {
   font-weight: 100 !important;
   margin-bottom: 8vh;
@@ -100,15 +111,19 @@ h1 {
   position: inherit;
   width: 260px;
 }
-.carousel-control {
-  background-image: none !important
+
+.upload-picto {
+  position: absolute;
+  right: 0;
 
 }
-input {
-  color: red;
-}
-.label {
-  display: none;
+.telecharger {
+  display: flex;
+  position: relative;
+  p {
+    margin-top: 15px;
+    font-size: 16px;
+  }
 }
 
 .input-div {
@@ -121,7 +136,7 @@ input {
 
 #validate {
   font-weight: 600;
-  color: black;
+  color: white;
   margin: 9vh 11vw 0vh 11vw;
 }
 
@@ -130,4 +145,22 @@ input {
   right: 10px;
   position: absolute;
   opacity: 0.6;
+}
+.btn-checkboxe {
+    text-align: center;
+    border: 1px solid #F2F2F2;
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: 0px 1px 11px -5px $light-gray;
+  p {
+    padding: 7px 28px;
+    font-size: 16px;
+  }
+
+}
+
+
+.active {
+  box-shadow: 0px 1px 11px 1px $gray;
 }

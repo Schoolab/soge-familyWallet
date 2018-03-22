@@ -1,14 +1,13 @@
 // Specific CSS for your home-page
 .card {
     margin: 5px;
-    height: 125px;
+    height: 30vh;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     background-size: cover !important;
     background-position: center;
     color: white;
     position: relative;
     border-radius: 14px;
-    box-shadow: 1px 1px 1px slateblue;
 }
 .card-user {
   position: absolute;
@@ -45,6 +44,12 @@
   background: black;
   opacity: 0;
 }
+.card-arrow {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+}
+
 #header {
    background-color: green;
    height: 50px;
@@ -70,4 +75,9 @@
     text-align: center;
     line-height: 400px;
     border-radius: 14px;
+}
+#add-membre {
+  a {
+    color: white !important;
+  }
 }

@@ -1,11 +1,12 @@
 <div class="form_container-new">
-
-
   <div class="card">
-    <h1 id="new-membrer-header" >Identité <br> du compte virtuel</h1>
+    <%= image_tag 'arrow', height: 20, class: 'card-arrow' %>
     <%= image_tag 'icon_cross', height: 15, class: 'cross' %>
+    <div class="annonce" id="new-membrer-header" ><h1>Identité <br> du compte virtuel</h1>
+      <%= image_tag 'pagination', height: 10, class: 'pagination-pics' %>
+    </div>
     <div class="card-user" >
-    <%= image_tag 'photo', height: 50 , class: 'camera'%>
+    <%= image_tag 'photo', height: 40 , class: 'camera'%>
     </div>
   </div>
 
@@ -22,39 +23,45 @@
         <%= f.input :birthday, label: ".          ", placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
       </div>
     </div>
-    <div class="form-inputs-new">
-      <div class="input-div">
-        <div class="container-checkbox">
-            <input class="hidden" type="checkbox" name="prive">
-            <div class="tresor_prive">
-              <label class="gnd_custom">Type</label>
 
-              <div id="tresor_prive">
-                <span class="radio">
-                  <label for="tresor_prive_false">
-                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false">
-                    <%= image_tag "fille.png", height: 55, width: 130, crop: :fill%>
-                  </label>
-                </span>
-
-                <input type="hidden" name="tresor[prive]" value="">
-                <span class="radio">
-                  <label for="tresor_prive_true">
-                    <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "gars.png", height: 55, width: 130, crop: :fill %>
-                  </label>
-                </span>
+    <div class="form-group check_boxes optional membre_sexe">
+      <input type="hidden" name="membre[sexe][]" value="">
+      <div class="row">
+        <div class="col-xs-4">
+          <span class="checkbox">
+            <label for="membre_sexe_true">
+              <input class="check_boxes hidden" type="checkbox" value="true" name="membre[sexe][]" id="membre_sexe_true">
+              <div class="btn-checkboxe" >
+                <p>Garçon</p>
               </div>
-            </div>
-          </div>
-
-
-
-
-
+            </label>
+          </span>
+        </div>
+        <div class="col-xs-4">
+          <span class="checkbox">
+            <label for="membre_sexe_false">
+              <input class="check_boxes optional hidden" readonly="readonly" type="checkbox" value="false" name="membre[sexe][]" id="membre_sexe_false">
+              <div class="btn-checkboxe" >
+                <p>Fille</p>
+              </div>
+            </label>
+          </span>
+        </div>
       </div>
     </div>
-    <%= f.submit "JE VALIDER", class: 'btn-form', id: "validate" %>
-  <% end %>
 
+    <div class="telecharger">
+      <p>Téléchargez sa carte d'identité</p>
+      <%= image_tag 'upload', height: 50, class: 'upload-picto' %>
+    </div>
 
+    <div class="row">
+      <div class="btn-container">
+        <%= f.submit "JE VALIDER", class: 'btn-form' %>
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>
+</div>
+

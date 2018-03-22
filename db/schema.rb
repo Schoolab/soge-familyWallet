@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319164835) do
+ActiveRecord::Schema.define(version: 20180319170830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20180319164835) do
     t.string "frequence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["membre_id"], name: "index_transferts_on_membre_id"
     t.index ["user_id"], name: "index_transferts_on_user_id"
   end

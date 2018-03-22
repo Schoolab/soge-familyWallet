@@ -20,9 +20,13 @@
           </div>
         <% end %>
       </div>
+    <div class="row">
+      <div class="btn-container" id="add-membre">
+        <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-form' %>
+      </div>
+    </div>
     </div>
   </div>
-<%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-info' %>
 <% end %>
 <hr>
   <% if @user.pockets.empty? %>
