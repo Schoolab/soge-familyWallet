@@ -21,7 +21,6 @@ class TransfertsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit

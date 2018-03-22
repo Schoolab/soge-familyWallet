@@ -15,6 +15,7 @@ class PocketsController < ApplicationController
   end
 
   def create
+    # raise
     @pocket = Pocket.new(pocket_params)
     @userpocket = UserPocket.new
     @userpocket.user = @user
@@ -43,6 +44,6 @@ class PocketsController < ApplicationController
   end
 
   def pocket_params
-    params.require(:pocket).permit(:phone_numbre, :last_name, :fisrt_name, :birthday)
+    params.require(:pocket).permit(:name, :value)
   end
 end
