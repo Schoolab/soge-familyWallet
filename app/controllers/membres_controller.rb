@@ -22,7 +22,7 @@ class MembresController < ApplicationController
     @usermembre.membre = @membre
     @usermembre.save
     if @membre.save
-      redirect_to new_page_pocket_path
+      redirect_to new_page_paiement_path
     else
       render :new
     end
