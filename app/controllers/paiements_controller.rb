@@ -26,7 +26,7 @@ class PaiementsController < ApplicationController
 
     respond_to do |format|
       if @paiement.save
-        format.html { redirect_to new_page_transfert_path, notice: 'Paiement was successfully created.' }
+        format.html { redirect_to new_page_pocket_path, notice: 'Paiement was successfully created.' }
         format.json { render :show, status: :created, location: @paiement }
       else
         format.html { render :new }

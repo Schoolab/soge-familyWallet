@@ -1,6 +1,6 @@
 <div class="form_container-new">
 
-  <div class="card">
+  <div class="carde">
     <!-- teste git push -->
     <%= image_tag 'arrow.png', height: 20, class: 'card-arrow' %>
     <%= image_tag 'cross.png', height: 15, class: 'cross' %>
@@ -16,21 +16,21 @@
   <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
     <div class="form-inputs-new">
       <div class="input-div-new">
-
+        <!-- First Name -->
         <div class="form-group string optional membre_fisrt_name">
           <label class="control-label string optional" for="membre_fisrt_name"></label>
           <input class="form-control string optional" placeholder="Nom" type="text" name="membre[fisrt_name]" id="membre_fisrt_name">
         </div>
 
       </div>
-
+      <!-- Last Name  -->
       <div class="input-div-new">
         <div class="form-group string optional membre_last_name">
           <label class="control-label string optional" for="membre_last_name"></label>
           <input class="form-control string optional" placeholder="Prénom" type="text" name="membre[last_name]" id="membre_last_name">
         </div>
       </div>
-
+      <!-- Birthday -->
       <div class="input-div-new">
         <div class="form-group string optional membre_birthday">
           <label class="control-label string optional" for="membre_birthday"></label>
@@ -39,15 +39,15 @@
       </div>
 
     </div>
-
+    <!-- CheckBoxes -->
     <div class="form-group check_boxes optional membre_sexe">
       <input type="hidden" name="membre[sexe][]" value="">
-      <div class="row">
-        <div class="col-xs-4">
+      <div class="row" >
+        <div class="col-xs-4" style="margin-right: 30px;">
           <span class="checkbox">
             <label for="membre_sexe_true">
               <input class="check_boxes hidden" type="checkbox" value="true" name="membre[sexe][]" id="membre_sexe_true">
-              <div class="btn-checkboxe" >
+              <div class="btn-checkboxe">
                 <p>Garçon</p>
               </div>
             </label>
@@ -71,9 +71,10 @@
       <%= image_tag 'upload.png', height: 50, class: 'upload-picto' %>
     </div>
 
+    <br>
     <div class="row">
-      <div class="btn-container">
-        <%= f.submit "JE VALIDER", class: 'btn-form' %>
+      <div class="btn-container" id="btn-new-membre">
+        <%= f.submit "SUIVANT", class: 'btn-form' %>
       </div>
     </div>
   </div>

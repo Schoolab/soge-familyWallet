@@ -10,21 +10,22 @@
     </div>
 
     <!-- paiement plafond -->
-    <div class="form-group select optional paiement_plafond">
-      <label class="control-label select optional" for="paiement_plafond"></label>
-      <select class="select optional" name="paiement[plafond]" id="paiement_plafond">
-        <option value=""></option>
-        <option value="Mois">Mois</option>
-        <option value="Semaine">Semaine</option>
-        <option value="Jours">Jours</option>
+    <div class="form-group select optional paiement_roof">
+      <label class="control-label select optional" for="paiement_roof"></label>
+      <select class="browser-default" name="paiement[plafond]" id="paiement_plafond">
+        <option value="Semaine">Par semaine</option>
+        <option value="Mois">Par mois</option>
+        <option value="Jour">Par jour</option>
       </select>
+
+
     </div>
     <!-- paiement mode -->
-    <div class="container">
+    <div class="container-paiement">
       <div class="row">
         <div class="form-group check_boxes optional paiement_mode">
 
-          <label class="control-label check_boxes optional col-xs-12" style="float: right; font-weight: 400; color:black;" >COMMENT PEUT-IL PAYER?</label>
+          <label class="control-label check_boxes optional col-xs-12" style="padding-left: 32%; font-weight: 400; color:black;" >COMMENT PEUT-IL PAYER?</label>
 
           <input type="hidden" name="paiement[mode][]" value="">
 

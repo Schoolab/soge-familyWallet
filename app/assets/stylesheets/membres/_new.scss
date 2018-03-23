@@ -25,7 +25,9 @@
   }
 
 }
-
+#btn-new-membre {
+  position: relative;
+}
 .pagination-pics {
    position: absolute;
    left: 35px;
@@ -161,6 +163,6 @@
 }
 
 
-.active {
+.isactive {
   box-shadow: 0px 1px 11px 1px $gray;
 }

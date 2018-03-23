@@ -26,3 +26,39 @@
   width: 100%;
   height: 7vh;
 }
+
+.container-paiement {
+    margin: 0;
+    max-width: 1280px;
+    width: max-content;
+    display: flex;
+    position: relative;
+}
+
+label {
+  color: black !important;
+  font-weight: 400;
+  font-size: 14px !important;
+}
+
+#transfert_pocket_id {
+  height: 7vh;
+}
+::placeholder {
+    color: gray;
+  }
+#paiement_roof {
+  font-weight: 500;
+  font-size: 16px;
+  color: gray;
+  opacity: 0.7;
+  ::placeholder {
+    color: gray;
+  }
+}
+#paiement_plafond {
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0px 0px 5px 0px $gray;
+  opacity: 0.7;
+}
