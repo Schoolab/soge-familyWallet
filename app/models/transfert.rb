@@ -3,6 +3,6 @@ class Transfert < ApplicationRecord
   belongs_to :membre
   belongs_to :pocket
 
-  FREQUENCES = ["Mois", "Semaine", "Jours"]
+  FREQUENCES = ["Par mois", "Par semaine", "Par jours"]
   validates :frequence, inclusion: {in: FREQUENCES }
 end

@@ -15,12 +15,14 @@ class TransfertsController < ApplicationController
   end
 
   def create
+    @pockets = Pocket.last(3)
     @transfert = Transfert.new(transfert_params)
     @transfert.user = current_user
     @transfert.membre = Membre.last
     if @transfert.save
       redirect_to page_paiements_path(current_user)
     else
+      raise
       render :new
     end
   end

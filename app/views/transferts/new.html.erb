@@ -1,5 +1,5 @@
 <div class="container-new">
-  <div class="card" id="tranfert-card">
+  <div class="carde" id="tranfert-card">
       <%= image_tag 'arrow.png', height: 20, class: 'card-arrow' %>
       <%= image_tag 'cross.png', height: 15, class: 'cross' %>
     <div class="annonce" id="new-membrer-header" ><h1>Programmer <br> un versement</h1>
@@ -7,38 +7,60 @@
     </div>
   </div>
 
-  <div class="form_container">
+<div class="form_container">
 
-<%= simple_form_for @transfert, url: page_transferts_path(@user) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for @transfert, url: page_transferts_path(@user) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <div class="form-group string required transfert_name">
-      <label class="control-label string required" for="transfert_name">
-        <abbr title="required"></abbr>
-      </label>
-      <input class="form-control string required" autofocus="autofocus" required="required" aria-required="true" placeholder="Nom du versement: ex argent de poche" type="text" name="transfert[name]" id="transfert_name">
+    <div class="form-inputs">
+
+      <!-- Name  -->
+      <div class="form-group string required transfert_name">
+        <label class="control-label string required" for="transfert_name">
+          <abbr title="required"></abbr>
+        </label>
+        <input class="form-control string required" autofocus="autofocus" required="required" aria-required="true" placeholder="Nom du versement: ex argent de poche" type="text" name="transfert[name]" id="transfert_name">
+      </div>
+      <!-- Range Montant -->
+      <label class="control-label string required" for="transfert_value">Montant
+        </label>
+        <p class="range-field">
+          <input aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="2000" />
+        </p>
+
+
+
+      <!-- Fréquence -->
+      <div class="form-group select optional transfert_frequence">
+        <label class="control-label select optional" for="transfert_frequence">Récurrence</label>
+        <select class="browser-default"  name="transfert[frequence]" id="transfert_frequence">
+          <option value="Par mois">Par mois</option>
+          <option value="Par semaine">Par semaine</option>
+          <option value="Par jours">Par jours</option>
+        </select>
+      </div>
+
+      <!-- Poche  -->
+      <div class="form-group select required transfert_pocket">
+        <label class="control-label select required" for="transfert_pocket_id">Vers quelle poche ? </label>
+        <select class="browser-default" name="transfert[pocket_id]" id="transfert_pocket_id">
+          <%=  Pocket.last(4).each do |pocket| %>
+            <option value="<%= pocket.id %>"><%= pocket.name %></option>
+          <% end %>
+        </select>
+      </div>
+
+
+
     </div>
-      <label for="amount">Minimum number of bedrooms:</label>
-      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-    </p>
-    <div id="slider-range-max"></div>
-    <div class="form-group select optional transfert_frequence">
-        <label class="control-label select optional" for="transfert_frequence" style="color:black; font-weight: 500;">Récurrence</label>
-          <select class="select optional" name="transfert[frequence]" id="transfert_frequence">
-            <option value=""></option>
-            <option value="Mois">Mois</option>
-            <option value="Semaine">Semaine</option>
-            <option value="Jours">Jours</option>
-          </select>
-    </div>
-    <%= f.association :pocket, collection: Pocket.last(4) %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Valider", class: 'button-wf' %>
-  </div>
-<% end %>
+    <div class="row">
+      <div class="btn-container">
+        <%= f.submit "VALIDER", class: 'btn-form' %>
+      </div>
+
+    </div>
+  <% end %>
 </div>
 
 
