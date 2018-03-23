@@ -1,4 +1,5 @@
 import "bootstrap";
+import "materialize-css";
 
 import {sexChoice} from '../components/sexechoice'
 if (document.getElementById('membre_sexe_true')){
