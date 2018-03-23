@@ -16,14 +16,28 @@
   <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
     <div class="form-inputs-new">
       <div class="input-div-new">
-        <%= f.input :fisrt_name, label: '.            ', placeholder: "Nom", class: "input-new" %>
+
+        <div class="form-group string optional membre_fisrt_name">
+          <label class="control-label string optional" for="membre_fisrt_name"></label>
+          <input class="form-control string optional" placeholder="Nom" type="text" name="membre[fisrt_name]" id="membre_fisrt_name">
+        </div>
+
       </div>
+
       <div class="input-div-new">
-        <%= f.input :last_name, label: ".         ", placeholder: "Prénom", class: "input-new" %>
+        <div class="form-group string optional membre_last_name">
+          <label class="control-label string optional" for="membre_last_name"></label>
+          <input class="form-control string optional" placeholder="Prénom" type="text" name="membre[last_name]" id="membre_last_name">
+        </div>
       </div>
+
       <div class="input-div-new">
-        <%= f.input :birthday, label: ".          ", placeholder: "Date de naissance JJ/MM/AAAA", class: "input-new" %>
+        <div class="form-group string optional membre_birthday">
+          <label class="control-label string optional" for="membre_birthday"></label>
+          <input class="form-control string optional" placeholder="Date de naissance JJ/MM/AAAA" type="text" name="membre[birthday]" id="membre_birthday">
+        </div>
       </div>
+
     </div>
 
     <div class="form-group check_boxes optional membre_sexe">
