@@ -13,7 +13,7 @@
   <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
     <div class="form-group string optional pocket_name">
       <label class="control-label string optional" for="pocket_name" style="float: right; font-weight: 400; color:black;">PRMIÈRE POCHE</label>
-      <input class="form-control string optional" placeholder="Titre de la poche" type="text" name="pocket[name]" id="pocket_name">
+      <input class="form-control string optional" placeholder="Titre de la poche (général)" type="text" name="pocket[name]" id="pocket_name">
     </div>
     <div class="add-badge" >
       <%= image_tag 'add.png', height: 20 %>

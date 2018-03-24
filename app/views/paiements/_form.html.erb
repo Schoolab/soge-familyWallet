@@ -25,12 +25,12 @@
       <div class="row">
         <div class="form-group check_boxes optional paiement_mode">
 
-          <label class="control-label check_boxes optional col-xs-12" style="padding-left: 32%; font-weight: 400; color:black;" >COMMENT PEUT-IL PAYER?</label>
+          <label class="col-xs-12" style="padding-left: 23%; font-weight: 400; color:black;" >COMMENT PEUT-IL PAYER?</label>
 
           <input type="hidden" name="paiement[mode][]" value="">
 
 
-              <div class="col-xs-3" id="badge-mode">
+              <div class="col-xs-3 mode" id="badge-mode">
                 <span class="checkbox">
                   <label for="paiement_mode_applepay">
                     <input class="check_boxes optional  hidden" type="checkbox" value="ApplePay" name="paiement[mode][]" id="paiement_mode_applepay">
@@ -40,7 +40,7 @@
                 <p>ApplePay</p>
               </div>
 
-              <div class="col-xs-3" id="badge-mode">
+              <div class="col-xs-3 mode" id="badge-mode">
                 <span class="checkbox">
                   <label for="paiement_mode_paylib" >
                     <input class="check_boxes optional  hidden" type="checkbox" value="PayLib" name="paiement[mode][]" id="paiement_mode_paylib"><%= image_tag 'paylib.png', height: 30 %> <h1></h1>
@@ -49,7 +49,7 @@
                 <p>PayLib</p>
               </div>
 
-              <div class="col-xs-3" id="badge-mode-3">
+              <div class="col-xs-3 mode" id="badge-mode-3">
                 <span class="checkbox">
                   <label for="paiement_mode_cb">
                     <input class="check_boxes optional hidden" type="checkbox" value="CB" name="paiement[mode][]" id="paiement_mode_cb">

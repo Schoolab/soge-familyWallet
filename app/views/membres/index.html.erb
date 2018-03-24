@@ -1,4 +1,4 @@
-
+<%= render 'shared/navbar' %>
 <% if @user.membres.empty? %>
   <p>Aucun Membre dans ma famille :-(</p>
   <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-info' %>

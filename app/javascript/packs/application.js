@@ -15,3 +15,9 @@ import {dropDown} from '../components/dropDown'
 if (document.getElementById('paiement_roof')) {
   dropDown();
 };
+
+import {modePaiement} from '../components/modePaiement'
+if (document.getElementById('badge-mode')){
+  console.log("sexyboy")
+  modePaiement();
+};
