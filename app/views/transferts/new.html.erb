@@ -25,9 +25,19 @@
       <label class="control-label string required" for="transfert_value">Montant
         </label>
         <p class="range-field">
-          <input aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="2000" />
+          <input aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="500" />
         </p>
 
+
+      <!-- Poche  -->
+      <div class="form-group select required transfert_pocket">
+        <label class="control-label select required" for="transfert_pocket_id">Vers quelle poche ? </label>
+        <select class="browser-default" name="transfert[pocket_id]" id="transfert_pocket_id">
+          <%=  Pocket.last(4).each do |pocket| %>
+            <option value="<%= pocket.id %>"><%= pocket.name %></option>
+          <% end %>
+        </select>
+      </div>
 
 
       <!-- Fréquence -->
@@ -37,16 +47,6 @@
           <option value="Par mois">Par mois</option>
           <option value="Par semaine">Par semaine</option>
           <option value="Par jours">Par jours</option>
-        </select>
-      </div>
-
-      <!-- Poche  -->
-      <div class="form-group select required transfert_pocket">
-        <label class="control-label select required" for="transfert_pocket_id">Vers quelle poche ? </label>
-        <select class="browser-default" name="transfert[pocket_id]" id="transfert_pocket_id">
-          <%=  Pocket.last(4).each do |pocket| %>
-            <option value="<%= pocket.id %>"><%= pocket.name %></option>
-          <% end %>
         </select>
       </div>
 
