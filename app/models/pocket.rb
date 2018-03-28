@@ -3,4 +3,5 @@ class Pocket < ApplicationRecord
   has_many :user_pockets
   has_many :transferts
 
+
 end

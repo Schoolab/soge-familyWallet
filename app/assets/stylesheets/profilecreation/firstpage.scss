@@ -1,0 +1,55 @@
+// Header de la création profile
+.main-container-profilecreation {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-profilecreation {
+  height: 20vh;
+  background-color: #d8d8d8;
+  text-align: center;
+  padding-top: 10px;
+  color: black;
+  font-weight: 500;
+
+}
+// Vision des choix des modes paiements
+.content-profilecreation {
+  margin: 0px 20px;
+  height: 68vh;
+  background-color: white;
+  h5 {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  h4 {
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  #input-mode {
+    height: 35px;
+    p {
+    color: #d8d8d8;
+    font-weight: 400;
+    }
+  }
+}
+.selected-mode {
+  p {
+    height: 35px;
+    color: black !important;
+    font-weight: 700 !important;
+    font-size: 16px;
+
+
+  }
+}
+// footer des buttons de navigation
+.footer-buttons {
+  height: 12vh;
+  margin: 0 20px;
+  a {
+    color: black;  }
+}

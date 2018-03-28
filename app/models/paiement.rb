@@ -4,5 +4,5 @@ class Paiement < ApplicationRecord
 
   FREQUENCES = ["Mois", "Semaine", "Jour"]
   validates :plafond, inclusion: {in: FREQUENCES }
-  MODE = ["ApplePay", "PayLib", "CB"]
+  MODE = ["Apple Pay", "Paylib", "Carte débit"]
 end

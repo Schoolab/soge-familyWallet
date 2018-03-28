@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322140419) do
+ActiveRecord::Schema.define(version: 20180328144842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,17 +56,18 @@ ActiveRecord::Schema.define(version: 20180322140419) do
     t.boolean "sexe"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "paiements", force: :cascade do |t|
-    t.float "roof"
-    t.string "plafond"
-    t.string "mode"
-    t.string "adress_1"
-    t.string "adress_2"
-    t.string "cp"
-    t.string "city"
-    t.string "country"
+    t.float "roof", default: 2.0
+    t.string "plafond", default: "Mois"
+    t.string "mode", default: "vide"
+    t.string "adress_1", default: "vide"
+    t.string "adress_2", default: "vide"
+    t.string "cp", default: "vide"
+    t.string "city", default: "vide"
+    t.string "country", default: "vide"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -125,6 +126,8 @@ ActiveRecord::Schema.define(version: 20180322140419) do
     t.bigint "pocket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "membre_id"
+    t.index ["membre_id"], name: "index_user_pockets_on_membre_id"
     t.index ["pocket_id"], name: "index_user_pockets_on_pocket_id"
     t.index ["user_id"], name: "index_user_pockets_on_user_id"
   end
@@ -164,6 +167,7 @@ ActiveRecord::Schema.define(version: 20180322140419) do
   add_foreign_key "user_members", "users"
   add_foreign_key "user_membres", "membres"
   add_foreign_key "user_membres", "users"
+  add_foreign_key "user_pockets", "membres"
   add_foreign_key "user_pockets", "pockets"
   add_foreign_key "user_pockets", "users"
 end

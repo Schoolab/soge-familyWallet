@@ -1,6 +1,53 @@
-<h1>Editing Paiement</h1>
+<div class="main-container-profilecreation">
 
-<%= render 'form', paiement: @paiement %>
+  <div class="header-profilecreation">
+      <p>&#x2501; &nbsp;<%=@membre.fisrt_name%>&nbsp;  &#x2501;</p>
+      <div class="chip left">
+      <%= image_tag 'pomme.png' %>
+      Pay
+    </div>
+    <div class="chip left">
+      <%= image_tag 'mastercard.png'%>
+      carte débit
+    </div>
+  </div>
+  <div class="content-profilecreation">
+    <h4>Choisisez ce qu'il peut dépenser</h4>
+    <%= simple_form_for @paiement, url: page_membre_paiement_path(@membre) do |f| %>
+    <%= f.error_notification %>
 
-<%= link_to 'Show', @paiement %> |
-<%= link_to 'Back', paiements_path %>
+    <!-- Range Roof -->
+      <div class="range-container">
+          <p class="range-field col-xs-12 my-range">
+            <input aria-required="true" name="paiement[roof]" type="range" id="test3" min="0" max="250" />
+          </p>
+
+      </div>
+    <!-- Plafond -->
+      <div class="row">
+        <div class="col-xs-12">
+          <select class="my-plafond form-control optional" name="paiement[plafond]" id="paiement_plafond">
+            <option selected="selected" value="Mois">Mois</option>
+            <option value="Semaine">Semaine</option>
+            <option value="Jour">Jour</option>
+          </select>
+        </div>
+      </div>
+
+
+
+  </div>
+
+  <div class="footer-buttons">
+    <div class="btn-floating right btn-large waves-effect waves-light black add" >
+    <input type="submit" name="commit" value="&#x2794">
+
+    </div>
+
+    <a href="javascript:history.back()">
+      <i class="material-icons">arrow_back</i>retour
+    </a>
+  </div>
+
+    <% end %>
+</div>

@@ -1,0 +1,13 @@
+.range-container {
+  height: 30vh;
+  display: flex;
+  position: relative;
+}
+.my-range {
+  position: absolute !important;
+  bottom: 45px;
+}
+
+.my-plafond {
+  border: 1px solid blue;
+}

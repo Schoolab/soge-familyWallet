@@ -16,6 +16,9 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+# Gem added for the project
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 gem 'materialize-sass', '~> 1.0.0.alpha4'
 
 group :development do

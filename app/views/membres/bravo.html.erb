@@ -1,0 +1,39 @@
+<div class="container-congrat">
+  <div class="header-congrat">
+    <div class="congrat-pics">
+      <%= image_tag 'ado.jpg', class: 'congrat-pics' %>
+    </div>
+    <div class="text-congrat">
+      <h1>Bravo ! <br> Le compte de <%= @membre.fisrt_name %> à été crée !</h1>
+    </div>
+  </div>
+    <% @membre.transferts.each do |pocket| %>
+        <div class="chip left blue">
+          <%= pocket.name %> <i class="close material-icons">close</i>
+       </div>
+      <% end %>
+      <% @membre.pockets.each do |pocket| %>
+        <div class="chip left red">
+          <%= pocket.name %> <i class="close material-icons">close</i>
+       </div>
+      <% end %>
+
+  <div class="congrat-phone">
+
+    <div class="form-group string optional membre_fisrt_name">
+      <label class="control-label string optional" for="membre_fisrt_name">Rentrez son numéro de téléphone <br> pour qu'il puisse se connecter à l'application</label>
+      <input class="form-control string optional" placeholder="+33 6 xx xx xx xx" type="text" name="membre[fisrt_name]" id="membre_fisrt_name">
+    </div>
+
+    <div class="row">
+      <div class="btn-container">
+        <div class="btn-form">
+        <%= link_to 'ENVOYER', page_membres_path(current_user), class: 'envoie'%>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

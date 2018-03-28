@@ -3,26 +3,30 @@ class TransfertsController < ApplicationController
   before_action :set_user
 
   def index
-    @transferts = @user.transferts
+    @transferts = Transfert.all
   end
 
   def show
   end
 
   def new
+    @membre = Membre.find(params[:membre_id])
     @membres = @user.membres
     @transfert = Transfert.new
+    @pockets = @membre.pockets
   end
 
   def create
-    @pockets = Pocket.last(3)
     @transfert = Transfert.new(transfert_params)
+    @membre = Membre.find(params[:membre_id])
+    @pocket = Pocket.find(params[:transfert][:pocket])
     @transfert.user = current_user
-    @transfert.membre = Membre.last
+    @transfert.membre = @membre
+    @transfert.pocket = @pocket
+
     if @transfert.save
-      redirect_to page_paiements_path(current_user)
+      render :new
     else
-      raise
       render :new
     end
   end
@@ -42,6 +46,6 @@ class TransfertsController < ApplicationController
   end
 
   def transfert_params
-    params.require(:transfert).permit(:pocket_id, :value, :membre, :user, :frequence, :name)
+    params.require(:transfert).permit(:value, :membre, :user, :frequence, :name)
   end
 end

@@ -1,27 +1,41 @@
-<div class="form_container-new">
+<div class="main-container-profilecreation">
 
+  <div class="header-profilecreation">
+      <p>&#x2501; &nbsp;<%=@membre.fisrt_name%>&nbsp;  &#x2501;</p>
+      <% @membre.pockets.each do |pocket| %>
+        <div class="chip left blue">
+          <%= pocket.name %> <i class="close material-icons">close</i>
+       </div>
+      <% end %>
 
-  <div class="carde">
-    <%= image_tag 'arrow.png', height: 20, class: 'card-arrow' %>
-    <%= image_tag 'cross.png', height: 15, class: 'cross' %>
-    <div class="annonce" id="new-membrer-header">
-      <h1>Ses Première <br>poches</h1>
-      <%= image_tag 'pagination.png', height: 10, class: 'pagination-pics' %>
-    </div>
+  </div>
+  <div class="content-profilecreation">
+    <h4>Créez-lui ses premières poches</h4>
+    <%= simple_form_for @pocket, url: page_membre_pockets_path(@user, @membre) do |f| %>
+      <div class="form-group string optional pocket_name">
+
+        <input class="form-control string optional" placeholder="Titre de la poche (général)" type="text" name="pocket[name]" id="pocket_name">
+      </div>
+      <div class="row">
+        <div class="btn-container">
+          <%= f.submit "Ajouter la poche" %>
+        </div>
+      </div>
+      <% end %>
   </div>
 
-  <%= simple_form_for @pocket, url: page_pockets_path(@user) do |f| %>
-    <div class="form-group string optional pocket_name">
-      <label class="control-label string optional" for="pocket_name" style="float: right; font-weight: 400; color:black;">PRMIÈRE POCHE DE DEPENSE</label>
-      <input class="form-control string optional" placeholder="Titre de la poche (général)" type="text" name="pocket[name]" id="pocket_name">
+  <div class="footer-buttons">
+    <div class="right" >
+      <a href="../transferts/new" class="btn-floating btn-large waves-effect waves-light black">
+        <i class="material-icons">arrow_forward</i>
+      </a>
+
     </div>
-    <div class="add-badge" >
-      <%= image_tag 'add.png', height: 20 %>
-    </div>
-    <div class="row">
-      <div class="btn-container">
-        <%= f.submit "VALIDER", class: 'btn-form' %>
-      </div>
-    </div>
-  <% end %>
+
+    <a href="javascript:history.back()">
+      <i class="material-icons">arrow_back</i>retour
+    </a>
+
+  </div>
+
 </div>

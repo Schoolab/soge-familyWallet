@@ -17,7 +17,25 @@ if (document.getElementById('paiement_roof')) {
 };
 
 import {modePaiement} from '../components/modePaiement'
-if (document.getElementById('badge-mode')){
-  console.log("sexyboy")
+if (document.getElementById('input-mode')){
   modePaiement();
 };
+
+import {datePicker} from '../components/datepicker'
+if (document.getElementById('membre_date_picker')){
+  console.log("Marcelle")
+  datePicker();
+};
+
+import {identBancaire} from '../components/identbancaire'
+if (document.getElementById('identifiants')){
+  console.log("Martial")
+  identBancaire();
+};
+
+import {materSelect} from '../components/materialise'
+if (document.getElementById('paiement_plafond')){
+  console.log("Mars")
+  materSelect();
+};
+

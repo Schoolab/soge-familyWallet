@@ -1,0 +1,34 @@
+<div class="first-name-container">
+  <p><%= Membre.last.fisrt_name%></p>
+  <div class="undername" ></div>
+</div>
+
+<%= simple_form_for @membre, url: page_membre_path(@user, @membre) do |f| %>
+
+  <div class="container-bulle">
+    <%= image_tag 'poche_blanche.png', height:180 %>
+  </div>
+
+  <!-- Uploader -->
+  <div class="container-bulle">
+  <h3>Choisssez la photo de votre enfant</h3>
+      <label for="membre_photo">
+        <%= image_tag 'photo.png' %>
+      </label>
+      <input class="hidden" type="file" name="membre[photo]" id="membre_photo">
+  </div>
+
+
+  <!-- button -->
+
+    <div class="row">
+      <input class="btn-floating btn-large waves-effect waves-light black" type="submit">
+        <a class="btn-floating btn-large waves-effect waves-light black">
+          <i class="material-icons">arrow_forward</i>
+        </a>
+      </input>
+    </div>
+    <%= link_to 'Back', 'javascript:history.back()' %>
+    <a href="new"><i class="material-icons">arrow_back</i>retour</a>
+
+<% end %>

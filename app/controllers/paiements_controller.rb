@@ -8,15 +8,19 @@ class PaiementsController < ApplicationController
   # GET /paiements/1
   # GET /paiements/1.json
   def show
+    @paiement = Paiement.find(params[:id])
   end
 
   # GET /paiements/new
   def new
+
     @paiement = Paiement.new
   end
 
   # GET /paiements/1/edit
   def edit
+    @paiement = Paiement.find(params[:id])
+    @membre = Membre.find(params[:membre_id])
   end
 
   # POST /paiements
@@ -38,11 +42,14 @@ class PaiementsController < ApplicationController
   # PATCH/PUT /paiements/1
   # PATCH/PUT /paiements/1.json
   def update
+    @paiement = Paiement.find(params[:id])
+    @membre = Membre.find(params[:membre_id])
     respond_to do |format|
       if @paiement.update(paiement_params)
-        format.html { redirect_to @paiement, notice: 'Paiement was successfully updated.' }
+        format.html { redirect_to page_membre_path(@membre), notice: 'Paiement was successfully updated.' }
         format.json { render :show, status: :ok, location: @paiement }
       else
+    raise
         format.html { render :edit }
         format.json { render json: @paiement.errors, status: :unprocessable_entity }
       end

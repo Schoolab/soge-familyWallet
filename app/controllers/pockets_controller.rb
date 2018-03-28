@@ -12,17 +12,20 @@ class PocketsController < ApplicationController
   def new
     @userpocket = UserPocket.new
     @pocket = Pocket.new
+    @membre = Membre.find(params[:membre_id])
   end
 
   def create
     # raise
+    @membre = Membre.find(params[:membre_id])
     @pocket = Pocket.new(pocket_params)
     @userpocket = UserPocket.new
     @userpocket.user = @user
     @userpocket.pocket = @pocket
+    @userpocket.membre = @membre
     @userpocket.save
     if @pocket.save
-      redirect_to new_page_transfert_path(current_user)
+      render :new
     else
       render :new
     end

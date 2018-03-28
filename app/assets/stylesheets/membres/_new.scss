@@ -8,6 +8,11 @@
   }
 
 }
+
+.photo-container {
+  text-align: center;
+}
+
 .form_container-new {
   height: 65vh;
   margin: 10px 20px 0px 20px;
@@ -160,9 +165,61 @@
     font-size: 16px;
   }
 
+
+}
+.compte-btn {
+  text-align: left;
+  border: 1px solid #F2F2F2;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 1px 11px -5px $light-gray;
+  p {
+    color: black;
+    font-weight: 500;
+    padding: 7px 28px;
+    font-size: 14px;
+  }
 }
 
+// Pages Testing.html.erb
+.container-bulle {
+  margin: 0 20px;
+  text-align: center;
+  h3 {
+    text-align: left;
+    color: black;
+    letter-spacing: -1px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  img {
+    margin-top: 40px;
+  }
+}
+.first-name-container {
+  margin-top: 10px;
+  text-align: center;
+
+  p {
+    font-weight: 700;
+    color: black;
+  }
+  .undername {
+    border: 1px solid black;
+    width: 5%;
+    margin: -10px auto;
+  }
+}
+
+.form-plus {
+  border-bottom: 1px solid gray !important;
+}
 
 .isactive {
-  box-shadow: 0px 1px 11px 1px $gray;
+  p {
+    color: white !important;
+  }
+  border: none;
+  background: linear-gradient(to right, #015592 , #00406F);
 }

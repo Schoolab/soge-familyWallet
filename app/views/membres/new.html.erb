@@ -3,38 +3,55 @@
   <div class="carde">
     <!-- teste git push -->
     <%= image_tag 'arrow.png', height: 20, class: 'card-arrow' %>
+
     <%= image_tag 'cross.png', height: 15, class: 'cross' %>
-    <div class="annonce" id="new-membrer-header" ><h1>Identité <br> du compte virtuel</h1>
+
+    <div class="annonce" id="new-membrer-header" >
+      <h1>Identité <br> du compte virtuel
+      </h1>
+
       <%= image_tag 'pagination.png', height: 10, class: 'pagination-pics' %>
     </div>
-    <div class="card-user" >
-    <%= image_tag 'photo.png', height: 40 , class: 'camera'%>
-    </div>
+
   </div>
+    <div class="photo-container">
+      <%= image_tag 'poche_blanche.png', height: 150 %>
+    </div>
 
 
   <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
-    <div class="form-inputs-new">
-      <div class="input-div-new">
-        <!-- First Name -->
-        <div class="form-group string optional membre_fisrt_name">
-          <label class="control-label string optional" for="membre_fisrt_name"></label>
-          <input class="form-control string optional" placeholder="Prénom" type="text" name="membre[fisrt_name]" id="membre_fisrt_name">
-        </div>
 
+
+
+
+    <div class="form-inputs-new">
+        <!-- First Name -->
+      <div class="input-div-new">
+        <div class="form-group string optional membre_last_name">
+          <div class="input-field col s12">
+            <input name="membre[fisrt_name]" id="membre_fisrt_name" type="text" class="form-control validate">
+            <label for="fisrt_name">Prénom</label>
+          </div>
+        </div>
       </div>
+
       <!-- Last Name  -->
       <div class="input-div-new">
         <div class="form-group string optional membre_last_name">
-          <label class="control-label string optional" for="membre_last_name"></label>
-          <input class="form-control string optional" placeholder="Nom" type="text" name="membre[last_name]" id="membre_last_name">
+          <div class="input-field col s12">
+            <input name="membre[last_name]" id="membre_last_name" type="text" class="form-control validate">
+            <label for="last_name">Nom</label>
+          </div>
         </div>
       </div>
+
       <!-- Birthday -->
       <div class="input-div-new">
         <div class="form-group string optional membre_birthday">
-          <label class="control-label string optional" for="membre_birthday"></label>
-          <input class="form-control string optional" placeholder="Date de naissance JJ/MM/AAAA" type="text" name="membre[birthday]" id="membre_birthday">
+          <div class="input-field col s12">
+            <input name="membre[birthday]" id="membre_birthday" type="text" class="form-control validate">
+            <label for="membre_birthday">Date d'anniversaire         (JJ/MM/AAAA)</label>
+          </div>
         </div>
       </div>
 
@@ -65,11 +82,16 @@
         </div>
       </div>
     </div>
+
     <br>
     <div class="row">
-      <div class="btn-container" id="btn-new-membre">
-        <%= f.submit "SUIVANT", class: 'btn-form' %>
-      </div>
+      <input type="submit">
+        <a class="btn-floating btn-large waves-effect waves-light black">
+          <i class="material-icons">arrow_forward</i>
+        </a>
+      </input>
+    </div>
+
     </div>
   </div>
 <% end %>

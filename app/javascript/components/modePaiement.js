@@ -1,9 +1,17 @@
 function modePaiement () {
 
 $(document).ready(function(){
-  $(".mode").click(function(){
-    console.log("fanny")
-    $(this).toggleClass("isactive");
+  $(".checkbox").click(function(){
+  if ((this).hasClass('selected-mode')) {
+    console.log("removeClass")
+    $(this).removeClass('selected-mode');
+  } else {
+
+    console.log("addClass")
+    $(this).addClass('selected-mode');
+  }
+
+
   });
 });
 

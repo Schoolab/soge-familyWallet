@@ -1,0 +1,65 @@
+<div class="first-name-container">
+  <p><%= Membre.last.fisrt_name%></p>
+  <div class="undername" ></div>
+</div>
+
+
+  <div class="container-bulle">
+    <%= image_tag 'poche_photo.png', height:180 %>
+  </div>
+
+
+
+  <!-- button -->
+    <div class="container-bulle">
+      <h3> As t'il déja un compte en banque?</h3>
+      <div class="row">
+
+        <div class="col-xs-12">
+            <%= link_to root_path do %>
+              <div class="compte-btn">
+                <p>Non, JE LUI DÉDIE UNE BULLE SUR MON COMPTE</p>
+              </div>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="compte-btn" id="identifiants">
+            <p>OUI, JE RENTRE SES IDENTIFIANTS BANCAIRES</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="container" id="toshow">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="icon_prefix" type="text" class="form-plus validate">
+                <label for="icon_prefix">Identifiant</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="icon_telephone" type="tel" class="form-plus validate">
+                <label for="icon_telephone">Mot de Passe</label>
+              </div>
+
+              <%= link_to page_membres_path do %>
+                <div style="margin-left: 45%" class="waves-effect waves-light btn light-blue darken-4">VALIDER
+                </div>
+              <% end %>
+            </div>
+          </form>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <%= link_to do %>
+      <% 'javascript:history.back()' %>
+      <i class="material-icons" id="blackarrow">arrow_backward</i>
+    <% end %>
