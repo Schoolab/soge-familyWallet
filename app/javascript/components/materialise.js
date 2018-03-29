@@ -5,4 +5,4 @@ function materSelect (){
 
 }
 
-import {materSelect}
+export {materSelect}

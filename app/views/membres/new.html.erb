@@ -1,29 +1,16 @@
-<div class="form_container-new">
+<div class="main-container-profilecreation">
 
-  <div class="carde">
-    <!-- teste git push -->
-    <%= image_tag 'arrow.png', height: 20, class: 'card-arrow' %>
-
-    <%= image_tag 'cross.png', height: 15, class: 'cross' %>
-
-    <div class="annonce" id="new-membrer-header" >
-      <h1>Identité <br> du compte virtuel
-      </h1>
-
-      <%= image_tag 'pagination.png', height: 10, class: 'pagination-pics' %>
-    </div>
-
+  <div class="header-profilecreation">
+      <p>Nouveau Compte</p>
+      <% @membre.transferts.each do |pocket| %>
+        <div class="chip left blue">
+          <%= pocket.name %> <i class="close material-icons">close</i>
+       </div>
+      <% end %>
   </div>
-    <div class="photo-container">
-      <%= image_tag 'poche_blanche.png', height: 150 %>
-    </div>
-
-
-  <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
-
-
-
-
+  <div class="content-profilecreation">
+    <h4>Son compte FamilyWalet</h4>
+    <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
     <div class="form-inputs-new">
         <!-- First Name -->
       <div class="input-div-new">
@@ -57,7 +44,7 @@
 
     </div>
     <!-- CheckBoxes -->
-    <div class="form-group check_boxes optional membre_sexe">
+    <!-- <div class="form-group check_boxes optional membre_sexe">
       <input type="hidden" name="membre[sexe][]" value="">
       <div class="row" >
         <div class="col-xs-4" style="margin-right: 30px;">
@@ -81,20 +68,45 @@
           </span>
         </div>
       </div>
-    </div>
-
-    <br>
+    </div> -->
     <div class="row">
-      <input type="submit">
-        <a class="btn-floating btn-large waves-effect waves-light black">
-          <i class="material-icons">arrow_forward</i>
-        </a>
-      </input>
+      <input type="hidden" name="membre[sexe]" value="">
+      <div class="btn-checkboxe col s4 bb">
+        <span class="radio">
+          <label style="text-align: center;float: left;" for="membre_sexe_true">
+            <input class="radio_buttons optional" type="radio" value="true" name="membre[sexe]" id="membre_sexe_true">
+            <p>Garçon</p>
+          </label>
+        </span>
+      </div>
+      <div class="btn-checkboxe  col S4 xx">
+        <span class="radio">
+          <label for="membre_sexe_false">
+            <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="membre[sexe]" id="membre_sexe_false">
+            <p>Fille</p>
+          </label>
+        </span>
+      </div>
     </div>
 
-    </div>
+    <div class="center">
+      <%= f.submit "Creer compte à mon enfant", class: 'btn blue' %>
+      </div>
+
+      <% end %>
   </div>
-<% end %>
-</div>
-</div>
 
+  <div class="footer-buttons">
+    <div class="right" >
+      <a href="/pages/<%= @user.id %>/membres/<%= @membre.id %>/bravo" class="btn-floating btn-large waves-effect waves-light black">
+        <i class="material-icons">arrow_forward</i>
+      </a>
+
+    </div>
+
+    <a href="javascript:history.back()">
+      <i class="material-icons">arrow_back</i>retour
+    </a>
+  </div>
+
+</div>

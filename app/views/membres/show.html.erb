@@ -1,1 +1,98 @@
-DASHBORD DE L'ENFANT VU PAR LE PARENT
+<div class="main-container-profilecreation">
+
+  <div class="header-profilecreation">
+      <p>&#x2501; &nbsp;<%=@membre.fisrt_name%>&nbsp;  &#x2501;</p>
+
+
+      <div class="container-bulle" id="bulle-header">
+        <%= image_tag 'poche_bleue.png', height:180 %>
+      </div>
+
+  </div>
+    <div class="content-profilecreation" id="content-show">
+      <div class="row">
+        <% @membre.pockets.each do |pocket| %>
+          <div class="chip left blue">
+            <%= pocket.name %>
+            <i class="close material-icons">close</i>
+          </div>
+        <% end %>
+      </div>
+      <h4>Terminer l'inscription de <%= @membre.fisrt_name %></h4>
+      <!-- Ajouter une Photographie -->
+      <% if @membre.photo? %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light green">
+            <i class="material-icons">check</i>
+          </a>
+          <a>Photo profile</a>
+        </div>
+
+      <% else %>
+
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">add</i>
+          </a>
+          <%= link_to 'Définir sa photo profile', page_membre_addphoto_path(@user, @membre)%>
+
+        </div>
+
+      <% end %>
+
+      <!-- Choisir un moyen de paiement -->
+      <% if @membre.paiements.empty?  %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">add</i>
+          </a>
+          <%= link_to 'Mode de paiement', page_membre_paiements_path(@user, @membre)%>
+
+        </div>
+      <% else %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light green">
+            <i class="material-icons">check</i>
+          </a>
+          <a>Mode de paiement</a>
+        </div>
+
+      <% end %>
+      <!-- Transfert d'argent -->
+       <% if @membre.transferts.empty?  %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">add</i>
+          </a>
+          <%= link_to 'Mode de transfert', page_membre_transferts_path(@user, @membre)%>
+
+        </div>
+      <% else %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light green">
+            <i class="material-icons">check</i>
+          </a>
+          <a>Mode de transfert</a>
+        </div>
+
+      <% end %>
+
+
+    </div>
+
+
+  <div class="footer-buttons">
+    <div class="right" >
+      <a href="../transferts/new" class="btn-floating btn-large waves-effect waves-light black">
+        <i class="material-icons">arrow_forward</i>
+      </a>
+
+    </div>
+
+    <a href="javascript:history.back()">
+      <i class="material-icons">arrow_back</i>retour
+    </a>
+
+  </div>
+
+</div>

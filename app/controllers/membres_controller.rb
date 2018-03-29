@@ -1,7 +1,7 @@
 class MembresController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_user
-  before_action :set_membre, only: [:update]
+  before_action :set_membre, only: [:show, :update]
 
   def index
     @family = @user.membres
@@ -35,10 +35,9 @@ class MembresController < ApplicationController
     @usermembre = UserMembre.new
     @usermembre.user = @user
     @usermembre.membre = @membre
-
     @usermembre.save
     if @membre.save
-      redirect_to page_membre_addphoto_path(@user, @membre)
+      redirect_to page_membre_compte_path(@user, @membre)
     else
       render :new
     end
@@ -67,6 +66,6 @@ class MembresController < ApplicationController
   end
 
   def membre_params
-    params.require(:membre).permit(:phone_numbre, :last_name, :fisrt_name, :birthday, :photo)
+    params.require(:membre).permit(:phone_numbre, :sexe, :last_name, :fisrt_name, :birthday, :photo)
   end
 end

@@ -1,21 +1,20 @@
 <%= render 'shared/navbar' %>
 <% if @user.membres.empty? %>
   <p>Aucun Membre dans ma famille :-(</p>
-  <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-info' %>
+  <div class="btn-checkboxe">
+  <p>
+
+  <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path %>
+  </p>
+  </div>
 <% else %>
+<div class="btn-checkboxe">
+  <p>
 
-
-      <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-form' %>
+  <%= link_to "Ajouter un Membre", new_page_membre_path %>
+  </p>
+  </div>
     </div>
 <% end %>
 <hr>
-<% if @user.pockets.empty? %>
-  </div><%= link_to "Ajouter une poche", new_page_pocket_path, class: 'btn-info' %>
-    <p>Aucune poche dans ma famille :-(</p>
-<% else %>
-  <h4>Mes Poches</h4>
-
-  </div>
-  <%= link_to "Ajouter une poche", new_page_pocket_path, class: 'btn-form' %>
-<% end %>
 

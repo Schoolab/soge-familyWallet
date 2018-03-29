@@ -2,6 +2,7 @@ import "bootstrap";
 
 import {sexChoice} from '../components/sexechoice'
 if (document.getElementById('membre_sexe_true')){
+  console.log('hello')
   sexChoice();
 };
 

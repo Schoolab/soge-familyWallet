@@ -1,9 +1,16 @@
 function sexChoice () {
 
 $(document).ready(function(){
-  $(".btn-checkboxe").click(function(){
-    $(this).toggleClass("isactive");
-  });
+  $('.btn-checkboxe').click(function(){
+    if ($(this).hasClass('isactive')) {
+
+    } else  {
+
+      $(this).addClass('isactive');
+    }
+
+
+      });
 });
 
 }

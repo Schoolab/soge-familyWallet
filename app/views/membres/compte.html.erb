@@ -16,9 +16,9 @@
       <div class="row">
 
         <div class="col-xs-12">
-            <%= link_to root_path do %>
+            <%= link_to page_membre_path(@user, @membre) do %>
               <div class="compte-btn">
-                <p>Non, JE LUI DÉDIE UNE BULLE SUR MON COMPTE</p>
+                <p>NON, JE LUI DÉDIE UNE BULLE SUR MON COMPTE</p>
               </div>
             <% end %>
         </div>
@@ -44,7 +44,7 @@
                 <label for="icon_telephone">Mot de Passe</label>
               </div>
 
-              <%= link_to page_membres_path do %>
+              <%= link_to page_membre_path(@user, @membre) do %>
                 <div style="margin-left: 45%" class="waves-effect waves-light btn light-blue darken-4">VALIDER
                 </div>
               <% end %>
