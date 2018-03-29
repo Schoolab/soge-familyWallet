@@ -3,12 +3,21 @@
   <p>Aucun Membre dans ma famille :-(</p>
   <div class="btn-checkboxe">
   <p>
-
   <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path %>
   </p>
   </div>
 <% else %>
-<div class="btn-checkboxe">
+  <div class="membre-container">
+
+      <% @user.membres.each do |membre| %>
+        <span class="btn-checkboxe">
+          <%= link_to membre.fisrt_name.to_s, page_membre_path(@user,membre)  %>
+
+        </span>
+      <% end %>
+
+  </div>
+<div class="btn-checkboxe yellow">
   <p>
 
   <%= link_to "Ajouter un Membre", new_page_membre_path %>

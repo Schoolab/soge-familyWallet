@@ -8,12 +8,13 @@ class PaiementsController < ApplicationController
   # GET /paiements/1
   # GET /paiements/1.json
   def show
+    @membre = Membre.find(params[:membre_id])
     @paiement = Paiement.find(params[:id])
   end
 
   # GET /paiements/new
   def new
-
+    @membre = Membre.find(params[:membre_id])
     @paiement = Paiement.new
   end
 
@@ -27,16 +28,17 @@ class PaiementsController < ApplicationController
   # POST /paiements.json
   def create
     @paiement = Paiement.new(paiement_params)
+    @membre = Membre.find(params[:membre_id])
+    @mp = MembrePaiement.new
+    @mp.membre = @membre
+    @mp.paiement = @paiement
 
-    respond_to do |format|
-      if @paiement.save
-        format.html { redirect_to new_page_pocket_path, notice: 'Paiement was successfully created.' }
-        format.json { render :show, status: :created, location: @paiement }
-      else
-        format.html { render :new }
-        format.json { render json: @paiement.errors, status: :unprocessable_entity }
-      end
+    if @paiement.save && @mp.save
+      redirect_to page_membre_path(current_user, @membre)
+    else
+      render :new
     end
+
   end
 
   # PATCH/PUT /paiements/1

@@ -3,9 +3,7 @@
   <p>Aucun Membre dans ma famille :-(</p>
   <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path(@user), class: 'btn-info' %>
 <% else %>
+  <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path(@user), class: 'btn-form' %>
 
-
-      <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path, class: 'btn-form' %>
-    </div>
 <% end %>
 <hr>

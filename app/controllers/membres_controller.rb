@@ -54,7 +54,7 @@ class MembresController < ApplicationController
 
   def update
     @membre.update(membre_params)
-    redirect_to page_membre_compte_path(@user, @membre)
+    redirect_to page_membre_path(@user, @membre)
   end
 
   private

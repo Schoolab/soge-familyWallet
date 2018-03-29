@@ -39,10 +39,9 @@
             <label class="control-label select required" for="transfert_pocket">
             <abbr title="required">*</abbr>Vers quelle Poche?</label>
             <select class="form-control select required" name="transfert[pocket]" >
-              <option value="1">Première poche</option>
-              <option value="2"></option>
-              <option value="3">Second Poche</option>
-              <option value="4">Second Poche</option>
+              <% @membre.pockets.each do |pocket|  %>
+              <option value="1"><%= pocket.name %></option>
+              <% end %>
             </select>
           </div>
         </div>
@@ -65,7 +64,7 @@
 
   <div class="footer-buttons">
     <div class="right" >
-      <a href="/pages/<%= @user.id %>/membres/<%= @membre.id %>/bravo" class="btn-floating btn-large waves-effect waves-light black">
+      <a href="/pages/<%= @user.id %>/membres/<%= @membre.id %>/" class="btn-floating btn-large waves-effect waves-light black">
         <i class="material-icons">arrow_forward</i>
       </a>
 

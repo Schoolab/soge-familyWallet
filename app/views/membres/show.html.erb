@@ -7,7 +7,7 @@
       <div class="container-bulle" id="bulle-header">
         <%= image_tag 'poche_bleue.png', height:180 %>
       </div>
-
+<%= cl_image_tag @membre.photo, height: 300, width: 400, crop: :fill %>
   </div>
     <div class="content-profilecreation" id="content-show">
       <div class="row">
@@ -46,7 +46,7 @@
           <a class="btn-floating btn-large waves-effect waves-light red">
             <i class="material-icons">add</i>
           </a>
-          <%= link_to 'Mode de paiement', page_membre_paiements_path(@user, @membre)%>
+          <%= link_to 'Mode de paiement', new_page_membre_paiement_path(@user, @membre)%>
 
         </div>
       <% else %>
@@ -58,13 +58,31 @@
         </div>
 
       <% end %>
-      <!-- Transfert d'argent -->
-       <% if @membre.transferts.empty?  %>
+      <!-- Création de Poche -->
+      <% if @membre.pockets.empty?  %>
         <div class="btn-form">
           <a class="btn-floating btn-large waves-effect waves-light red">
             <i class="material-icons">add</i>
           </a>
-          <%= link_to 'Mode de transfert', page_membre_transferts_path(@user, @membre)%>
+          <%= link_to 'Première Poche', new_page_membre_pocket_path(@user, @membre)%>
+
+        </div>
+      <% else %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light green">
+            <i class="material-icons">check</i>
+          </a>
+          <a>Poche crée</a>
+        </div>
+
+      <% end %>
+      <!-- Transfert d'argent -->
+       <% if @membre.transferts.empty?  %>
+        <div class="btn-form">
+          <a class="btn-floating btn-large waves-effect waves-light disable">
+            <i class="material-icons">add</i>
+          </a>
+          <%= link_to 'Mettre en place transfert', new_page_membre_transfert_path(@user, @membre)%>
 
         </div>
       <% else %>
