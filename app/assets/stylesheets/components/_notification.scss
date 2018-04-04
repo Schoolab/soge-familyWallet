@@ -1,0 +1,102 @@
+.container-teste {
+  padding: 10px;
+  height: 75vh;
+  width: 100vw;
+}
+.lachose {
+  border-radius: 409px;
+  position: absolute;
+  height: 808px;
+  width: 808px;
+  background-color: rgba(0, 0, 0, 0.08);
+  left: -160px;
+  top: -110px;
+}
+.date {
+  h2 {
+    margin: 8px 0px;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+.notification {
+  background-color: white;
+  display: flex;
+  position: relative;
+  height: 7vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px 1px #3d3d3d42;
+}
+
+.debiteur {
+  left: 0;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.debiteur-logo {
+  z-index: 0;
+  top: -5px;
+  height: 120%;
+  width: 38%;
+  margin-left: -20px;
+  position: absolute;
+  background-color: #F2F2F2;
+  border-radius: 40px;
+  img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+}
+
+.debiteur-name {
+  position: absolute;
+  top: 25%;
+  right: 0px;
+  height: 50%;
+  p {
+    font-weight: 700;
+    font-size: 85%;
+    color: black;
+  }
+
+}
+
+.swith{
+  margin: 2px;
+  right: 0;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+}
+.to-swith {
+  position: absolute;
+  top: 25%;
+  left: 55%;
+  height: 50%;
+  p {
+    font-weight: 700;
+    font-size: 85%;
+    color: black;
+  }
+  span {
+    font-weight: 700;
+    font-size: 85%;
+    color: black;
+  }
+
+}
+.buble-swith {
+  height: 90%;
+  margin: 5%;
+  right: 0px;
+  position: absolute;
+
+}

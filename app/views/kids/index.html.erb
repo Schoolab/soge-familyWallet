@@ -1,0 +1,45 @@
+<div class="container-kids">
+
+  <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card-panel white lighten-5 z-depth-1">
+      <div class="row valign-wrapper">
+        <div class="col s2">
+
+        <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 50, :gravity=>"face", :radius=>1000)%>
+        </div>
+        <div class="col s10">
+          <p class="black-text right">
+            <%= @membre.fisrt_name %>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <ul class="tabs" id="poches-paiements" >
+      <li class="tab">
+        <a href="#test1">Poches</a>
+      </li>
+      <li class="tab">
+        <a class="active" href="#test2">Test 2</a>
+      </li>
+    </ul>
+    <div class="container-fluid">
+      <div class="row">
+
+        <% @membre.pockets.each do |pocket| %>
+          <div id="test1" class="col s3" style="text-align: center;">
+            <div class="pocket-pics">
+              <p><%= pocket.credit %>€</p>
+            </div>
+            <p><%= pocket.name %></p>
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
+  <div class="background-circle"></div>
+
+</div>

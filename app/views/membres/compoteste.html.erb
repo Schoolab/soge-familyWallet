@@ -1,0 +1,43 @@
+<div class="container-teste">
+  <div class="lachose"></div>
+  <h2>Taiste de composants</h2>
+  <div class="row">
+    <% @membre.pockets.each do |pocket| %>
+
+    <%= pocket.name %>
+    <% end %>
+    <div class="date">
+      <h2>Aujoud'hui, à 12h23</h2>
+    </div>
+
+    <div class="notification">
+      <div class="debiteur">
+
+        <div class="debiteur-logo">
+          <%= image_tag "mcdonalds_logo.png", height: 42 %>
+        </div>
+
+        <div class="debiteur-name">
+          <p>Mcdonald's</p>
+        </div>
+
+      </div>
+      <div class="swith">
+        <div class="to-swith left">
+          <p>-7
+            <span>€</span>
+          </p>
+        </div>
+
+        <div class="buble-swith">
+          <%= render 'button.html.erb' %>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+</div>

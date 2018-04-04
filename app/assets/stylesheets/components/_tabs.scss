@@ -1,0 +1,31 @@
+.container-kids {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+.pocket-pics {
+  height: 80px;
+  width: 80px;
+  border-radius: 60px;
+  background: linear-gradient(0.15turn, #3f87a6, white);
+  padding: 5%;
+  p {
+    color: white;
+    font-weight: 700;
+    margin-top: 30%;
+  }
+}
+
+
+
+
+.background-circle {
+  border-radius: 409px;
+  position: absolute;
+  height: 960px;
+  width: 833px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.08);
+  left: -200px;
+  bottom: -480px;
+}

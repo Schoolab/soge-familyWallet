@@ -8,6 +8,10 @@ class MembresController < ApplicationController
     @pockets = @user.pockets
   end
 
+  def compoteste
+    @membre = Membre.find(params[:membre_id])
+  end
+
   def show
   end
 

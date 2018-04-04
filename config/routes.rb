@@ -11,11 +11,15 @@ Rails.application.routes.draw do
         get 'compte'
         get 'profilecreation'
         get 'bravo'
+        get 'compoteste'
         resources :paiements
         resources :pockets
         resources :transferts
       end
-
+  end
+  resources :kids do
+    get 'askformonney'
+    resources :ask_for_money
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

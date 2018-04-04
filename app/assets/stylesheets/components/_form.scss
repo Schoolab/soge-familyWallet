@@ -97,9 +97,25 @@ abbr {
   height: 25vh;
 }
 
+.description {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+
+  input {
+  margin: 0 auto;
+  width: 90% !important;
+  background-color: white !important;
+  height: 200px !important;
+  border-radius: 10px !important;
 
 
-
+  }
+  ::placeholder {
+    font-size: 1.5em;
+    color: $gray !important;
+  }
+}
 
 
 

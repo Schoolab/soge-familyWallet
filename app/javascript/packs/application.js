@@ -2,7 +2,7 @@ import "bootstrap";
 
 import {sexChoice} from '../components/sexechoice'
 if (document.getElementById('membre_sexe_true')){
-  console.log('hello')
+  console.log('hello');
   sexChoice();
 };
 
@@ -24,19 +24,45 @@ if (document.getElementById('input-mode')){
 
 import {datePicker} from '../components/datepicker'
 if (document.getElementById('membre_date_picker')){
-  console.log("Marcelle")
+  console.log("Marcelle");
   datePicker();
 };
 
 import {identBancaire} from '../components/identbancaire'
 if (document.getElementById('identifiants')){
-  console.log("Martial")
+  console.log("Martial");
   identBancaire();
 };
 
 import {materSelect} from '../components/materialise'
 if (document.getElementById('paiement_plafond')){
-  console.log("Mars")
+  console.log("Mars");
   materSelect();
 };
+
+import {faButton} from '../components/faButton'
+if (document.getElementById('faButton')) {
+  faButton();
+};
+import {tabMotion} from '../components/tabsMotion'
+if (document.getElementById('poches-paiements')) {
+  console.log("Sergio Leon");
+  tabMotion ();
+};
+import {askMoneyHide} from '../components/askMoneyHide'
+if (document.getElementById('show-2')) {
+  console.log("silencio");
+  askMoneyHide ();
+};
+
+
+
+
+
+
+
+
+
+
+
 

@@ -9,6 +9,8 @@ class Membre < ApplicationRecord
   has_many :user_pockets
   has_many :pockets, through: :user_pockets
 
+  has_many :ask_for_money
+
   mount_uploader :photo, PhotoUploader
 
   def name
