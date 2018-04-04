@@ -1,9 +1,9 @@
 class KidsController < ApplicationController
   def index
-    @membre = Membre.last
+    @membres = Membre.all
   end
   def show
-    @membre = Membre.last
+    @membre = Membre.find(params[:id])
 
   end
   def askformonney

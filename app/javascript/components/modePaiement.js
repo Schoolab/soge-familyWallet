@@ -1,20 +1,16 @@
-function modePaiement () {
+function modePaiement() {
 
-$(document).ready(function(){
-  $(".checkbox").click(function(){
-  if ((this).hasClass('selected-mode')) {
-    console.log("removeClass")
-    $(this).removeClass('selected-mode');
-  } else {
+  $(document).ready(function() {
 
-    console.log("addClass")
-    $(this).addClass('selected-mode');
-  }
+    $(".col.s4 .checkbox").click(function() {
 
+      $(".col.s4 .checkbox").removeClass('selected-mode');
+      $(this).addClass('selected-mode');
+
+    });
 
   });
-});
 
 }
 
-export {modePaiement}
+export { modePaiement };

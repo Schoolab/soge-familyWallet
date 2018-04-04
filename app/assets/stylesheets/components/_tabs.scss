@@ -1,6 +1,11 @@
 .container-kids {
+  overflow: scroll;
+  height: 90vh;
+  position: relative;
+}
+.container-ask {
   overflow: hidden;
-  height: 100vh;
+  height: 93vh;
   position: relative;
 }
 .pocket-pics {

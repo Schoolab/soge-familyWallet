@@ -4,6 +4,38 @@
   <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path(@user), class: 'btn-info' %>
 <% else %>
   <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path(@user), class: 'btn-form' %>
-
 <% end %>
+
+
+<div class="row">
+  <div class="container-fluid">
+    <% if current_user.membres.empty?  %>
+      <% else %>
+        <% current_user.membres.each do |membre|  %>
+
+
+          <div class="col s12">
+
+            <%= membre.ask_for_money.all.each do |afm| %>
+              <%= afm.description %>
+            <% end %>
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+        <% end %>
+
+    <% end %>
+  </div>
+
+</div>
 <hr>

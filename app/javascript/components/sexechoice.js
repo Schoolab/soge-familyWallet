@@ -1,18 +1,18 @@
-function sexChoice () {
+function sexChoice() {
 
-$(document).ready(function(){
-  $('.btn-checkboxe').click(function(){
-    if ($(this).hasClass('isactive')) {
+  $(document).ready(function() {
 
-    } else  {
+    $(".btn-checkboxe").click(function(e) {
 
-      $(this).addClass('isactive');
-    }
+      e.preventDefault();
 
+      $(".btn-checkboxe.isactive").removeClass("isactive");
+      $(this).addClass("isactive");
 
-      });
-});
+    });
+
+  });
 
 }
 
-export {sexChoice}
+export { sexChoice };

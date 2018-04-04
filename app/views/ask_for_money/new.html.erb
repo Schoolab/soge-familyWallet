@@ -1,4 +1,4 @@
-<div class="container-kids">
+<div class="container-ask">
   <div class="background-circle"></div>
   <div class="ask-container">
     <div class="row">
@@ -30,23 +30,23 @@
       </div>
 
       <!-- description -->
-      <div class="description" id="show-2">
+      <div class="description hidden" id="show-2">
           <input placeholder="Décrire quelque chose"     type="text" name="ask_for_money[description]" id="ask_for_money_description">
       </div>
       <!-- inputs -->
-      <div class="row">
-        <div id="show-2">
+      <div id="show-2" class="row hidden">
+        <div >
           <input type="submit" name="commit" value="ask" class="btn btn-large btn-floating right btn-floating green accent-3" data-disable-with="Create Ask for money">
         </div>
 
         <div id="show-2" class="back left come-back">
           <i class="material-icons">arrow_left</i>Retour
         </div>
+      </div>
 
         <a id="show-1" class=" btn-floating btn-large waves-effect waves-light right black">
           <i class="material-icons">chevron_right</i>
         </a>
-      </div>
 
     <% end %>
   </div>
