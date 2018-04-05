@@ -13,16 +13,33 @@
       <% else %>
         <% current_user.membres.each do |membre|  %>
 
+          <% if membre.ask_for_money.empty?  %>
+          <% else %>
+            <div class=" col s12">
+              <% membre.ask_for_money.all.each do |afm| %>
+                <div class="card darken-1">
+                  <h2 class="card-title">AskForMoney</h2>
+                  <%= membre.fisrt_name %> <p>Vous demande</p>
+                  <p>Description:</p>
+                  <p class="blue">
+                    <%= afm.description %>
+                  </p>
 
-          <div class="col s12">
+                  <p>Objet de la demande:</p>
+                  <p class="red">
+                   <%= afm.object %>
+                  </p>
 
-            <%= membre.ask_for_money.all.each do |afm| %>
-              <%= afm.description %>
-            <% end %>
+                  <p>Argent demandé:</p>
+                    <p class="green">
+                    <%= afm.credit %>
+                  </p>
 
+                </div>
+              <% end %>
 
-
-          </div>
+            </div>
+          <% end %>
 
 
 

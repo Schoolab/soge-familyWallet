@@ -6,7 +6,5 @@ class KidsController < ApplicationController
     @membre = Membre.find(params[:id])
 
   end
-  def askformonney
 
-  end
 end
