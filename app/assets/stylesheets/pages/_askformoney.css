@@ -1,0 +1,108 @@
+.ask-card {
+  border-radius: 10px;
+  height: 120px;
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ask-picture {
+  border-radius: 76px;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+}
+
+.ask-credit {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  h5 {
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+}
+
+.ask-object {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  text-align: right;
+  h5 {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+.ask-title {
+  h2 {
+    color: black;
+    font-size: 32px;
+  }
+}
+
+.ask-answer {
+  float: left;
+  margin-right: 10px;
+  height: 40px;
+  border-radius: 30px;
+  text-align: center;
+  padding: 0 !important;
+  p {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    font-size: 15px;
+  }
+  i {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

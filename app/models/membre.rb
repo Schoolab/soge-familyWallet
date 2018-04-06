@@ -9,7 +9,7 @@ class Membre < ApplicationRecord
   has_many :user_pockets
   has_many :pockets, through: :user_pockets
 
-  has_many :ask_for_money
+  has_many :ask_for_dollars
 
   mount_uploader :photo, PhotoUploader
 

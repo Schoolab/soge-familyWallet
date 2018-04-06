@@ -4,7 +4,8 @@ class KidsController < ApplicationController
   end
   def show
     @membre = Membre.find(params[:id])
-
+    @ask_for_dollar = AskForDollar.new
   end
+
 
 end

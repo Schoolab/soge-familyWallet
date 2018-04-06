@@ -55,6 +55,11 @@ if (document.getElementById('show-2')) {
   askMoneyHide ();
 };
 
+import {modalAskMoney} from '../components/modalAskMoney'
+if (document.getElementById('modal1')) {
+  modalAskMoney ();
+};
+
 
 
 

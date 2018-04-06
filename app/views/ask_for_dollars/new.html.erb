@@ -1,0 +1,48 @@
+<div class="container-ask">
+  <div class="background-circle">
+
+  </div>
+  <div class="ask-container">
+    <div class="row">
+
+      <p class="left" style="font-size: 30px" >AskMoney</p>
+    </div>
+
+    <%= simple_form_for @ask_for_dollar, url: kid_ask_for_dollars_path(@membre) do |f| %>
+      <div id="show-1">
+        <!-- Crédit -->
+        <div class="input-field form-group string optional ask_for_money_credit">
+          <label class="control-label string optional" for="ask_for_money_credit">De combien as-tu besoin?</label>
+          <input class="form-control string optional" type="text" name="ask_for_money[credit]" id="ask_for_money_credit">
+        </div>
+        <!-- Objet -->
+        <div class="input-field form-group string optional ask_for_money_object">
+          <label class="control-label string optional" for="ask_for_money_object">Pour acheter quoi ? </label>
+          <input class="form-control string optional" type="text" name="ask_for_money[object]" id="ask_for_money_object">
+        </div>
+      </div>
+        <!-- add photo -->
+
+
+      <!-- description -->
+      <div id="show-2" class="form-group text optional ask_for_dollar_description hidden">
+        <textarea class="form-control text optional" placeholder="Décrit ta demande" name="ask_for_dollar[description]" id="ask_for_dollar_description"></textarea>
+      </div>
+
+
+      <!-- inputs -->
+      <div id="show-2" class="row hidden">
+        <input type="submit" name="commit" value="ask" class="btn btn-large btn-floating right btn-floating green accent-3" data-disable-with="Create Ask for money">
+
+        <div class="back left come-back">
+          <i class="material-icons">arrow_left</i>Retour
+        </div>
+      </div>
+
+      <a id="show-1" class=" btn-floating btn-large waves-effect waves-light right black">
+        <i class="material-icons">chevron_right</i>
+      </a>
+
+    <% end %>
+  </div>
+</div>

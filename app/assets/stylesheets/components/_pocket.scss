@@ -1,0 +1,72 @@
+.pocket {
+  height: 130px;
+  width: 80px;
+  position: relative;
+  display: flex;
+  margin: 10px;
+}
+
+.pocket-name {
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  top: -10px;
+  z-index: 2;
+  text-align: left;
+  p {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 16px;
+    color: black;
+  }
+}
+.container-pocket-pics {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  bottom: 15px;
+  right: 5px;
+  background-color: white;
+  border-radius: 25px;
+}
+.pocket-pics {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border-radius: 60px;
+  background: linear-gradient(#3023AE, #C86DD7);
+  padding: 5%;
+  top: 10px;
+  left: 10px;
+  p {
+    color: white;
+    font-weight: 700;
+    margin-top: 30%;
+  }
+}
+// TRANSFERTS
+.user-pics {
+  position: absolute;
+  bottom: 10px;
+  right: -2px;
+  height: 25px;
+  border-radius: 25px;
+
+}
+.transfert-pics {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border-radius: 60px;
+  background: linear-gradient(#B24592, #CA4F88, #F15F79);
+  padding: 5%;
+  top: 10px;
+  left: 10px;
+  p {
+    color: white;
+    font-weight: 700;
+    margin-top: 30%;
+  }
+}

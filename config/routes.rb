@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       end
   end
   resources :kids do
-    resources :ask_for_moneys
+    resources :ask_for_dollars
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

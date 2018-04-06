@@ -3,45 +3,58 @@
   <div class="col s12 m8 offset-m2 l6 offset-l3">
     <div class="card-panel white lighten-5 z-depth-1">
       <div class="row valign-wrapper">
+        <div class="col s10">
+          <div class="black-text left">
+           <h4>Bonjour <%= @membre.fisrt_name %></h4>
+          </div>
+        </div>
         <div class="col s2">
 
         <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 50, :gravity=>"face", :radius=>1000)%>
-        </div>
-        <div class="col s10">
-          <p class="black-text right">
-            <%= @membre.fisrt_name %>
-          </p>
         </div>
       </div>
 
     </div>
   </div>
 
-    <ul class="tabs" id="poches-paiements" >
-      <li class="tab">
-        <a href="#test1">Poches</a>
-      </li>
-      <li class="tab">
-        <a class="active" href="#test2">Test 2</a>
-      </li>
-    </ul>
     <div class="container-fluid">
       <div class="row">
-
         <% @membre.pockets.each do |pocket| %>
-          <div id="test1" class="col s3" style="text-align: center;">
-            <div class="pocket-pics">
-              <p><%= pocket.credit %>€</p>
+          <div id="test1" class="pocket white col s4 ">
+            <div class="pocket-name" >
+              <p><%= pocket.name %></p>
             </div>
-            <p><%= pocket.name %></p>
+            <div class="z-depth-1 container-pocket-pics">
+              <div class="right pocket-pics">
+                <p><%= pocket.credit %>€</p>
+              </div>
+            </div>
           </div>
         <% end %>
-
       </div>
-      <a href="<%= @membre.id %>/ask_for_money/new" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
 
+      <div class="row">
+        <% @membre.transferts.each do |transfert| %>
+          <div id="test1" class="pocket white col s4 ">
+            <div class="pocket-name" >
+              <p><%= transfert.name %></p>
+            </div>
+
+            <div class="z-depth-1 container-pocket-pics">
+              <div class="right transfert-pics">
+                <p><%= transfert.value %>€</p>
+              </div>
+            </div>
+
+            <%= image_tag 'mama.jpg', class: 'user-pics'  %>
+
+          </div>
+        <% end %>
+      </div>
 
     </div>
-  <div class="background-circle"></div>
+      <a href="../<%= @membre.id %>/ask_for_dollars/new" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+  <!-- <div class="background-circle"></div> -->
+
 
 </div>

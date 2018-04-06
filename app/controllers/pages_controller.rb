@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    @membres = current_user.membres
 
   end
 
