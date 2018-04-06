@@ -11,6 +11,9 @@ class Membre < ApplicationRecord
 
   has_many :ask_for_dollars
 
+  has_many :ask_services
+  has_many :services, through: :ask_services
+
   mount_uploader :photo, PhotoUploader
 
   def name

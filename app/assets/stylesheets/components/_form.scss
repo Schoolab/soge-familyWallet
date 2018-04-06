@@ -24,19 +24,9 @@
   display: inline;
 }
 
-.require {
-  display: none;
-}
-abbr {
-  display:none;
-}
-
 #paiement_plafond {
   box-shadow: 0px 0px 9px -4px black;
-  /* margin-bottom: 5px; */
   border: none;
-  /* border-bottom: 1px solid gray !important; */
-  /* border-top: none; */
   background-color: white;
   opacity: 0.5;
   position: inherit;
@@ -100,16 +90,6 @@ abbr {
   text-align: center;
   height: 100%;
   width: 100%;
-
-  input {
-  margin: 0 auto;
-  width: 90% !important;
-  background-color: white !important;
-  height: 200px !important;
-  border-radius: 10px !important;
-
-
-  }
 }
 
 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :pages do
+    resources :services
       resources :membres do
         get 'addphoto'
         get 'compte'
