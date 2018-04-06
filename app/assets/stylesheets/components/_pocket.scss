@@ -10,8 +10,8 @@
   width: 80px;
   height: 20px;
   position: absolute;
-  left: 20px;
-  top: -10px;
+  left: 23px;
+  top: -5px;
   z-index: 2;
   text-align: left;
   p {
@@ -30,7 +30,9 @@
   right: 5px;
   background-color: white;
   border-radius: 25px;
+  box-shadow: 6px 6px 20px -3px lightgrey;
 }
+
 .pocket-pics {
   position: absolute;
   height: 70px;
