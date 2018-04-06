@@ -9,3 +9,11 @@
     font-weight: 600;
   }
 }
+#ask_for_dollar_description {
+  background-color: white;
+  opacity: 1;
+  height: 220px;
+}
+::placeholder {
+  opacity: 0.6;
+}

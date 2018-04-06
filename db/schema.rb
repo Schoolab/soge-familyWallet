@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403161047) do
+ActiveRecord::Schema.define(version: 20180405104641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ask_for_dollars", force: :cascade do |t|
+    t.integer "credit"
+    t.text "description"
+    t.string "object"
+    t.boolean "accepted"
+    t.boolean "has_been_reed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "membre_id"
+    t.index ["membre_id"], name: "index_ask_for_dollars_on_membre_id"
+  end
 
   create_table "ask_for_moneys", force: :cascade do |t|
     t.integer "credit"
@@ -168,6 +180,7 @@ ActiveRecord::Schema.define(version: 20180403161047) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ask_for_dollars", "membres"
   add_foreign_key "ask_for_moneys", "membres"
   add_foreign_key "family_pockets", "families"
   add_foreign_key "family_pockets", "pockets"

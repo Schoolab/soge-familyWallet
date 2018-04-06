@@ -8,6 +8,7 @@ $(document).ready(function(){
     $('#show-1').addClass('hidden');
   });
   $('.come-back').click(function() {
+    $(this).hide();
     $('.hidden').removeClass('hidden');
     $('#show-2').addClass('hidden');
   });

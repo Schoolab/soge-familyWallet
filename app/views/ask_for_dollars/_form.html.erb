@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@ask_for_dollar) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :credit %>
+    <%= f.input :description %>
+    <%= f.input :object %>
+    <%= f.input :accepted %>
+    <%= f.input :has_been_reed %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

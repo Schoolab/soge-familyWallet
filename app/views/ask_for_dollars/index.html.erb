@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ask For Dollars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Credit</th>
+      <th>Description</th>
+      <th>Object</th>
+      <th>Accepted</th>
+      <th>Has been reed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ask_for_dollars.each do |ask_for_dollar| %>
+      <tr>
+        <td><%= ask_for_dollar.credit %></td>
+        <td><%= ask_for_dollar.description %></td>
+        <td><%= ask_for_dollar.object %></td>
+        <td><%= ask_for_dollar.accepted %></td>
+        <td><%= ask_for_dollar.has_been_reed %></td>
+        <td><%= link_to 'Show', ask_for_dollar %></td>
+        <td><%= link_to 'Edit', edit_ask_for_dollar_path(ask_for_dollar) %></td>
+        <td><%= link_to 'Destroy', ask_for_dollar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ask For Dollar', new_ask_for_dollar_path %>
