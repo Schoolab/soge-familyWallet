@@ -8,3 +8,65 @@
   margin-top: 26px;
   height: 505px;
 }
+
+.vos-poches {
+  text-align: left;
+  height: 75vh;
+  margin-top: 20px;
+  h6 {
+    color: #3d3d3dc7;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+#AskMoney-title {
+  font-size: 14px;
+  float: left;
+  font-weight: 600;
+}
+.sa-carte {
+  height: 90vh;
+  .carte-debit-container {
+    margin-bottom: 30px;
+  }
+  .sa-carte-range {
+    margin-bottom: 40px;
+    h2 {
+      font-size: 18px;
+      text-align: left;
+      font-weight: 600;
+    }
+    p {
+      font-size: 20px;
+      margin: inherit;
+    }
+  }
+  .range-container {
+    height: 70px;
+  }
+  .sa-carte-paiement_roof {
+    margin-top: -35px
+  }
+
+}
+
+.sa-carte-checkboxes {
+  margin-top: 40px;
+  height: 5vh;
+  position: relative;
+  display: flex;
+  p {
+    color: black;
+    font-weight: 600;
+
+    position: absolute;
+    left: 0;
+  }
+  label {
+    position: absolute;
+    right: 0;
+  }
+}
+.sa-carte-paiement_roof {
+
+}

@@ -1,48 +1,250 @@
 <div class="main-container-profilecreation">
   <div class="header-profilecreation">
-
+    <div class="col s10">
+      <div class="header-profilecreation-name">
+       <h4><%= @membre.fisrt_name %></h4>
+      </div>
+    </div>
+    <div class="header-profilecreation-photo col s2">
+      <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 40, :gravity=>"face", :radius=>1000)%>
+    </div>
   </div>
 
   <div class="content-profilecreation" id="content-show">
     <ul id="tabs-swipe-demo" class="tabs">
-    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-    <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
-    <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
-  </ul>
-  <div id="test-swipe-1" class="col s12">
-    <p>Ses poches :</p>
-    <% @membre.pockets.each do |pocket| %>
-      <div id="test1" class="pocket">
-        <div class="pocket-name" >
-          <p><%= pocket.name %></p>
+      <li class="tab col s3">
+        <a href="#test-swipe-1">Ses Poches</a></li>
+      <li class="tab col s3">
+        <a class="active" href="#test-swipe-2">Ses Opérations</a>
+      </li>
+      <li class="tab col s3">
+        <a href="#test-swipe-3">Sa carte</a>
+      </li>
+    </ul>
+
+    <div id="test-swipe-1" class="vos-poches col s12">
+    <div class="card-son-argent">
+      <div class="card-son-argent-titre">
+        <p style="
+    color:  black;
+    font-weight: 600;
+">Son Argent de Poche</p>
+      </div>
+      <div class="card-son-argent-mois">
+        <p>40€/mois</p>
+      </div>
+      <div class="card-son-argent-gain">
+        <p>+155 €</p>
+      </div>
+      <div class="card-son-argent-arrow">
+        <i class="material-icons">arrow_forward</i>
+      </div>
+    </div>
+
+      <h6>Vos poches versements</h6>
+      <%= image_tag 'Virement_1.png' %>
+      <%= image_tag 'Virement 2.png' %>
+      <%= image_tag 'Virement_1_Argentdepoche.png' %>
+
+    <div class="card-son-askmonay">
+      <div class="card-son-askmonay-not">
+        <p>AskMoney</p>
+      </div>
+      <div class="card-son-askmonay-titre">
+        <p style="
+    color:  black;
+    font-weight: 600;
+">Total des demandes</p>
+      </div>
+      <div class="card-son-askmonay-mois">
+        <p>Dernière demande le 19/03/18</p>
+      </div>
+      <div class="card-son-askmonay-gain">
+        <p>55€</p>
+      </div>
+      <div class="card-son-askmonay-arrow">
+        <i class="material-icons">arrow_forward</i>
+      </div>
+    </div>
+  </div>
+
+  <div id="test-swipe-2" class="opérations-container col s12">
+    <div class="row">
+
+      <div class="date">
+        <h2>Aujoud'hui, à 12h23</h2>
+      </div>
+
+      <div class="notification">
+        <div class="debiteur">
+
+          <div class="debiteur-logo">
+            <%= image_tag "mcdonalds_logo.png", height: 42 %>
+          </div>
+
+          <div class="debiteur-name">
+            <p>Mcdonald's</p>
+          </div>
+
         </div>
-        <div class="container-pocket-pics">
-          <div class="right pocket-pics">
-            <p><%= pocket.credit %>€</p>
+
+        <div class="swith">
+          <div class="to-swith left">
+            <p>-7
+              <span>€</span>
+            </p>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
+    <div class="row">
+
+      <div class="date">
+        <h2>Aujoud'hui, à 12h23</h2>
+      </div>
+
+      <div class="notification">
+        <div class="debiteur">
+
+          <div class="debiteur-logo">
+            <%= image_tag "mcdonalds_logo.png", height: 42 %>
+          </div>
+
+          <div class="debiteur-name">
+            <p>Mcdonald's</p>
+          </div>
+
+        </div>
+
+        <div class="swith">
+          <div class="to-swith left">
+            <p>-7
+              <span>€</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="date">
+        <h2>Aujoud'hui, à 12h23</h2>
+      </div>
+
+      <div class="notification">
+        <div class="debiteur">
+
+          <div class="debiteur-logo">
+            <%= image_tag "mcdonalds_logo.png", height: 42 %>
+          </div>
+
+          <div class="debiteur-name">
+            <p>Mcdonald's</p>
+          </div>
+
+        </div>
+
+        <div class="swith">
+          <div class="to-swith left">
+            <p>-7
+              <span>€</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="date">
+        <h2>Aujoud'hui, à 12h23</h2>
+      </div>
+
+      <div class="notification">
+        <div class="debiteur">
+
+          <div class="debiteur-logo">
+            <%= image_tag "mcdonalds_logo.png", height: 42 %>
+          </div>
+
+          <div class="debiteur-name">
+            <p>Mcdonald's</p>
+          </div>
+
+        </div>
+
+        <div class="swith">
+          <div class="to-swith left">
+            <p>-7
+              <span>€</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="date">
+        <h2>Aujoud'hui, à 12h23</h2>
+      </div>
+
+      <div class="notification">
+        <div class="debiteur">
+
+          <div class="debiteur-logo">
+            <%= image_tag "mcdonalds_logo.png", height: 42 %>
+          </div>
+
+          <div class="debiteur-name">
+            <p>Mcdonald's</p>
+          </div>
+
+        </div>
+
+        <div class="swith">
+          <div class="to-swith left">
+            <p>-7
+              <span>€</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div id="test-swipe-2" class="col s12 red">Test 2</div>
-  <div id="test-swipe-3" class="col s12 green">Test 3</div>
+  <div id="test-swipe-3" class="col s12 sa-carte">
+    <div class="carte-debit-container">
+      <%= image_tag 'carte_debit.png', height: 100 %>
+    </div>
+    <div class="sa-carte-range" id="value-range" >
+      <h2>Plafond de la carte</h2>
+      <p>40€</p>
+    </div>
+
+    <div class="range-container">
+      <p class="range-field col-xs-12 my-range">
+        <input aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="250" />
+      </p>
+    </div>
+
+    <div class="sa-carte-paiement_roof">
+      <label class="control-label select optional" for="paiement_roof"></label>
+      <select class="browser-default" name="paiement[plafond]" id="paiement_plafond">
+        <option value="Semaine">Par semaine</option>
+        <option value="Mois">Par mois</option>
+        <option value="Jour">Par jour</option>
+      </select>
+    </div>
+
+    <div class="switch sa-carte-checkboxes">
+      <p>Bloquer la carte</p>
+      <label>
+        <input type="checkbox">
+          <span class="lever"></span>
+      </label>
+    </div>
+
+
   </div>
-
-
-  <div class="footer-buttons">
-    <div class="right" >
-      <a class=" btn-floating btn-large waves-effect waves-light black">
-        <i class="material-icons">arrow_forward</i>
-      </a>
-
-    </div>
-    <div class="left">
-      <a href="javascript:history.back()">
-        <i class="material-icons">arrow_back</i>retour
-      </a>
-
-    </div>
   </div>
 
 </div>

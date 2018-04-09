@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   resources :pages do
     get 'compte'
+    get 'compoteste'
     resources :services
       resources :membres do
         get 'addphoto'
         get 'bravo'
         get 'profilecreation'
-        get 'compoteste'
         resources :paiements
         resources :pockets
         resources :transferts

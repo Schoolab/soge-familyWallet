@@ -2,10 +2,7 @@
   <div class="lachose"></div>
   <h2>Taiste de composants</h2>
   <div class="row">
-    <% @membre.pockets.each do |pocket| %>
 
-    <%= pocket.name %>
-    <% end %>
     <div class="date">
       <h2>Aujoud'hui, à 12h23</h2>
     </div>
@@ -22,22 +19,15 @@
         </div>
 
       </div>
+
       <div class="swith">
         <div class="to-swith left">
           <p>-7
             <span>€</span>
           </p>
         </div>
-
-        <div class="buble-swith">
-          <%= render 'button.html.erb' %>
-        </div>
       </div>
 
-
     </div>
-
-
-
   </div>
 </div>
