@@ -1,0 +1,67 @@
+.pay4me-amout {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 25%;
+  h4 {
+    color: black;
+
+  }
+}
+.pay4me-cardts {
+  height: 40vh;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  margin: 10px;
+  padding: 10px !important;
+}
+.pay4me-tamission {
+  position: absolute;
+  top: 50px;
+  p {
+    color: #999999a6;
+    font-size: 14px;
+  }
+}
+.pay4me-details {
+  position: absolute;
+  top: 130px;
+  p {
+    color: #999999a6;
+    font-size: 14px;
+  }
+}
+.pay4me-objectif {
+  position: absolute;
+  top: 75px;
+  p {
+    color: black;
+    font-size: 20px;
+  }
+
+}
+
+.pay4me-description {
+  text-align: left;
+  bottom: 30px;
+  position: absolute;
+  p {
+    color: black;
+    font-size: 14px;
+  }
+
+}
+
+.pay4me-hour {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  p {
+    color: black;
+  }
+}
+#button-row {
+  margin: 20px 7%;
+  width: 100%;
+}

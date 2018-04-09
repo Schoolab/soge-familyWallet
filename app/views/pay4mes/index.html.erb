@@ -1,0 +1,71 @@
+<h1>Tes Pay4mes</h1>
+<p>Retrouve tes dernièrs Pay4mes : </p>
+
+<div class="container-fluid">
+  <% @pay4mes.each do |p4m|  %>
+    <div class=" z-depth-3 pay4me-cardts">
+      <div class="pay4me-amout">
+        <h4>
+          <%= p4m.amout %>€
+        </h4>
+      </div>
+
+      <div class="pay4me-tamission" >
+        <p>Ta mission : </p>
+      </div>
+
+      <div class="pay4me-objectif" >
+        <p><%= p4m.objectif %></p>
+      </div>
+
+      <div class="pay4me-details" >
+        <p>Détails : </p>
+      </div>
+
+      <div class="pay4me-description">
+        <p><%= p4m.description %></p>
+      </div>
+
+      <div class="pay4me-hour">
+        <p>Tu as jusqu'à
+          <%= p4m.hour %> :
+          <%= p4m.minute %>
+        </p>
+      </div>
+    </div>
+
+    <% if p4m.accepted? %>
+
+
+    <% else %>
+      <%= simple_form_for p4m, url: page_service_path(@user.id, p4m.id) do |f| %>
+        <input type="hidden" id="accepted" name="service[accepted]" value="">
+        <div class="row" id="button-row">
+          <div class="z-depth-3 ask-answer col s5">
+            <span class="radio">
+              <label for="service_accepted_true">
+                <input class="radio_buttons optional" type="radio" value="true" name="service[accepted]" id="service_accepted_true"><i class="material-icons">check</i>
+                <p>J'accepte</p>
+              </label>
+            </span>
+          </div>
+          <div class="z-depth-3 ask-answer col s5">
+            <span class="radio">
+              <label for="service_accepted_false">
+                <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" checked="checked" name="service[accepted]" id="service_accepted_false">
+                <p>Je refuse</p>
+                <i class="material-icons">clear</i>
+              </label>
+            </span>
+          </div>
+        </div>
+      <!-- Version  -->
+        <div class="row">
+          <div class="col s12">
+            <%= f.submit "Valider", class: 'ask-answer col s12' %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

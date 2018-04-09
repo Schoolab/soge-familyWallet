@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'transferts/new'
 
   devise_for :users
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
       end
   end
   resources :kids do
+    resources :pay4mes
     resources :ask_for_dollars
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

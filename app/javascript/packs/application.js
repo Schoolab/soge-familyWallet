@@ -47,20 +47,23 @@ if (document.getElementById('faButton')) {
 import {tabMotion} from '../components/tabsMotion'
 if (document.getElementById('poches-paiements')) {
   console.log("Sergio Leon");
-  tabMotion ();
+  tabMotion();
 };
 import {askMoneyHide} from '../components/askMoneyHide'
 if (document.getElementById('show-2')) {
   console.log("silencio");
-  askMoneyHide ();
+  askMoneyHide();
 };
 
 import {modalAskMoney} from '../components/modalAskMoney'
 if (document.getElementById('modal1')) {
-  modalAskMoney ();
+  modalAskMoney();
 };
 
-
+import {accepted} from '../components/accepted'
+if (document.getElementById('accepted')) {
+  accepted();
+};
 
 
 
