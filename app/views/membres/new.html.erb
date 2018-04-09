@@ -1,16 +1,16 @@
-<div class="main-container-profilecreation">
+<%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
+<div class="main-container-profilecreation" id="membre-new" >
 
-  <div class="header-profilecreation">
-      <p>Nouveau Compte</p>
-      <% @membre.transferts.each do |pocket| %>
-        <div class="chip left blue">
-          <%= pocket.name %> <i class="close material-icons">close</i>
-       </div>
-      <% end %>
+  <div class="container-bulle">
+    <label class="center" for="ask_for_money_photo">
+      <%= image_tag 'photo.png', height: 60 %>
+    </label>
+    <input class="hidden file optional" type="file" name="ask_for_money[photo]" id="ask_for_money_photo">
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
-  <div class="content-profilecreation">
-    <h4>Son compte FamilyWalet</h4>
-    <%= simple_form_for @membre, url: page_membres_path(@user) do |f| %>
+
+
+  <div class="content-profilecreation" id="membre-new" >
     <div class="form-inputs-new">
         <!-- First Name -->
       <div class="input-div-new">
@@ -33,80 +33,53 @@
       </div>
 
       <!-- Birthday -->
-      <div class="input-div-new">
-        <div class="form-group string optional membre_birthday">
-          <div class="input-field col s12">
-            <input name="membre[birthday]" id="membre_birthday" type="text" class="form-control validate">
-            <label for="membre_birthday">Date d'anniversaire         (JJ/MM/AAAA)</label>
-          </div>
+      <div class="birthday-date">
+        <div class="label-birthday">
+          <p>Date de Naissance  </p>
         </div>
-      </div>
+        <div class="membre_day">
+          <select class="form-control select optional" name="membre[day]" id="membre_day">
+            <option value=""><p>Jour</p></option>
+            <% (1..31).to_a.each do |op| %>
+              <option value="<%= op %>"><%= op %></option>
+            <% end %>
+          </select>
+        </div>
 
-    </div>
-    <!-- CheckBoxes -->
-    <!-- <div class="form-group check_boxes optional membre_sexe">
-      <input type="hidden" name="membre[sexe][]" value="">
-      <div class="row" >
-        <div class="col-xs-4" style="margin-right: 30px;">
-          <span class="checkbox">
-            <label for="membre_sexe_true">
-              <input class="check_boxes hidden" type="checkbox" value="true" name="membre[sexe][]" id="membre_sexe_true">
-              <div class="btn-checkboxe">
-                <p>Garçon</p>
-              </div>
-            </label>
-          </span>
+
+        <div class="membre_month">
+          <select class="form-control select optional" name="membre[month]" id="membre_month">
+            <option value="">Mois</option>
+            <% Membre::MOIS.each do |op| %>
+            <option value="<%= op %>"><%= op %></option>
+            <% end %>
+          </select>
         </div>
-        <div class="col-xs-4">
-          <span class="checkbox">
-            <label for="membre_sexe_false">
-              <input class="check_boxes optional hidden" readonly="readonly" type="checkbox" value="false" name="membre[sexe][]" id="membre_sexe_false">
-              <div class="btn-checkboxe" >
-                <p>Fille</p>
-              </div>
-            </label>
-          </span>
+
+        <div class="membre_year">
+          <select class="form-control select optional" name="membre[year]" id="membre_year">
+          <option value="">Année</option>
+            <% (2000..2010).to_a.each do |op| %>
+              <option value="<%= op %>"><%= op %></option>
+            <% end %>
+          </select>
         </div>
-      </div>
-    </div> -->
-    <div class="row">
-      <input type="hidden" name="membre[sexe]" value="">
-      <div class="btn-checkboxe col s4 bb">
-        <span class="radio">
-          <label style="text-align: center;float: left;" for="membre_sexe_true">
-            <input class="radio_buttons optional" type="radio" value="true" name="membre[sexe]" id="membre_sexe_true">
-            <p>Garçon</p>
-          </label>
-        </span>
-      </div>
-      <div class="btn-checkboxe  col S4 xx">
-        <span class="radio">
-          <label for="membre_sexe_false">
-            <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="membre[sexe]" id="membre_sexe_false">
-            <p>Fille</p>
-          </label>
-        </span>
       </div>
     </div>
-
-    <div class="center">
-      <%= f.submit "Creer compte à mon enfant", class: 'btn blue' %>
-      </div>
-
-      <% end %>
   </div>
+  <!-- Footer -->
 
   <div class="footer-buttons">
-    <div class="right" >
-      <a href="/pages/<%= @user.id %>/membres/<%= @membre.id %>/bravo" class="btn-floating btn-large waves-effect waves-light black">
+    <div class="forward" >
+      <a class=" btn-floating btn-large waves-effect waves-light black">
         <i class="material-icons">arrow_forward</i>
       </a>
-
-    </div>
-
-    <a href="javascript:history.back()">
-      <i class="material-icons">arrow_back</i>retour
-    </a>
+    </div><!--
+    <div class="backward">
+      <a href="javascript:history.back()">
+        <i class="material-icons">arrow_back</i>
+      </a>
+    </div> -->
   </div>
-
 </div>
+<% end %>

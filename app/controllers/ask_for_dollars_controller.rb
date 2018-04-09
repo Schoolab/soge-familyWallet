@@ -4,13 +4,13 @@ class AskForDollarsController < ApplicationController
   # GET /ask_for_dollars
   # GET /ask_for_dollars.json
   def index
+    @kid = Membre.find(params[:kid_id])
     @ask_for_dollars = AskForDollar.all
   end
 
   # GET /ask_for_dollars/1
   # GET /ask_for_dollars/1.json
   def show
-
     @membre = Membre.find(params[:kid_id])
 
   end
@@ -30,7 +30,7 @@ class AskForDollarsController < ApplicationController
   def create
     @ask_for_dollar = AskForDollar.new(ask_for_dollar_params)
     @membre = Membre.find(params[:kid_id])
-
+    @ask_for_dollar.membre = @membre
     if @ask_for_dollar.save
       redirect_to kid_path(@membre)
     else

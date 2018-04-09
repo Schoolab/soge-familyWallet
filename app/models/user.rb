@@ -14,4 +14,7 @@ class User < ApplicationRecord
 
   has_many :transferts
 
+  has_many :ask_services
+  has_many :services, through: :ask_services
+
 end

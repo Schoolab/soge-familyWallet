@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405104641) do
+ActiveRecord::Schema.define(version: 20180409164429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20180405104641) do
     t.integer "credit"
     t.text "description"
     t.string "object"
-    t.boolean "accepted"
-    t.boolean "has_been_reed"
+    t.boolean "accepted", default: false
+    t.boolean "has_been_reed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "membre_id"
@@ -33,11 +33,22 @@ ActiveRecord::Schema.define(version: 20180405104641) do
     t.string "pictur"
     t.string "description"
     t.bigint "membre_id"
-    t.boolean "finish"
+    t.boolean "finish", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
     t.index ["membre_id"], name: "index_ask_for_moneys_on_membre_id"
+  end
+
+  create_table "ask_services", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "service_id"
+    t.bigint "membre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["membre_id"], name: "index_ask_services_on_membre_id"
+    t.index ["service_id"], name: "index_ask_services_on_service_id"
+    t.index ["user_id"], name: "index_ask_services_on_user_id"
   end
 
   create_table "families", force: :cascade do |t|
@@ -82,6 +93,9 @@ ActiveRecord::Schema.define(version: 20180405104641) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "day"
+    t.string "month"
+    t.string "year"
   end
 
   create_table "paiements", force: :cascade do |t|
@@ -103,6 +117,18 @@ ActiveRecord::Schema.define(version: 20180405104641) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "accessible"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.text "description"
+    t.integer "amout"
+    t.integer "hour"
+    t.integer "minute"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "has_been_done", default: false
+    t.boolean "accepted", default: false
+    t.string "objectif"
   end
 
   create_table "transferts", force: :cascade do |t|
@@ -182,6 +208,9 @@ ActiveRecord::Schema.define(version: 20180405104641) do
 
   add_foreign_key "ask_for_dollars", "membres"
   add_foreign_key "ask_for_moneys", "membres"
+  add_foreign_key "ask_services", "membres"
+  add_foreign_key "ask_services", "services"
+  add_foreign_key "ask_services", "users"
   add_foreign_key "family_pockets", "families"
   add_foreign_key "family_pockets", "pockets"
   add_foreign_key "membre_paiements", "membres"

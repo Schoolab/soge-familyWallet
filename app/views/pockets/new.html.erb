@@ -1,42 +1,65 @@
 <div class="main-container-profilecreation">
 
   <div class="header-profilecreation">
-      <p>&#x2501; &nbsp;<%=@membre.fisrt_name%>&nbsp;  &#x2501;</p>
-      <% @membre.pockets.each do |pocket| %>
-        <div class="chip left blue">
-          <%= pocket.name %> <i class="close material-icons">close</i>
-       </div>
-      <% end %>
-
+    <div class="col s10">
+      <div class="header-profilecreation-name">
+       <h4><%= @membre.fisrt_name %></h4>
+      </div>
+    </div>
+    <div class="header-profilecreation-photo col s2">
+      <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 40, :gravity=>"face", :radius=>1000)%>
+    </div>
+    <% @membre.pockets.each do |pocket| %>
+      <div class="chip left blue">
+        <%= pocket.name %> <i class="close material-icons">close</i>
+     </div>
+    <% end %>
   </div>
+
+  <div class="container-poche-creation">
+    <div id="test1" class="col s2 pocket">
+      <div class="pocket-name" >
+        <p></p>
+      </div>
+      <div class="container-pocket-pics">
+        <div class="right pocket-pics">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="content-profilecreation">
-    <h4>Créez-lui ses premières poches</h4>
+    <h4>Créez sa première poche</h4>
+    <h5>Créez la 1er enveloppe d'argent de poche<br> de <%= @membre.fisrt_name %></h5>
     <%= simple_form_for @pocket, url: page_membre_pockets_path(@user, @membre) do |f| %>
       <div class="form-group string optional pocket_name">
 
-        <input class="form-control string optional" placeholder="Titre de la poche (général)" type="text" name="pocket[name]" id="pocket_name">
+        <input class="form-control string optional" placeholder="Donnez un nom à cette poche" type="text" name="pocket[name]" id="pocket_name">
       </div>
       <div class="row">
         <div class="btn-container">
           <%= f.submit "Ajouter la poche" %>
         </div>
       </div>
+
       <% end %>
   </div>
 
   <div class="footer-buttons">
-
     <div class="right" >
-      <a href="/pages/<%= @user.id %>/membres/<%= @membre.id %>" class="btn-floating btn-large waves-effect waves-light black">
+      <a class=" btn-floating btn-large waves-effect waves-light black">
         <i class="material-icons">arrow_forward</i>
       </a>
 
     </div>
+    <div class="left">
+      <a href="javascript:history.back()">
+        <i class="material-icons">arrow_back</i>retour
+      </a>
 
-    <a href="javascript:history.back()">
-      <i class="material-icons">arrow_back</i>retour
-    </a>
-
+    </div>
   </div>
 
 </div>

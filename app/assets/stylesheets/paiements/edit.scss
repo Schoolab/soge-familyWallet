@@ -1,5 +1,5 @@
 .range-container {
-  height: 30vh;
+  height: 100px;
   display: flex;
   position: relative;
 }
@@ -10,4 +10,21 @@
 
 .my-plafond {
   border: 1px solid blue;
+}
+
+#transferts-new-content {
+  padding-top: 45px !important;
+  height: 70vh;
+
+}
+#membre-new {
+  margin: 0px 20px;
+  height: 310px;
+  background-color: white;
+}
+
+#membre-day {
+  p {
+    font-size: 10px;
+  }
 }

@@ -22,9 +22,9 @@
         <td><%= ask_for_dollar.object %></td>
         <td><%= ask_for_dollar.accepted %></td>
         <td><%= ask_for_dollar.has_been_reed %></td>
-        <td><%= link_to 'Show', ask_for_dollar %></td>
-        <td><%= link_to 'Edit', edit_ask_for_dollar_path(ask_for_dollar) %></td>
-        <td><%= link_to 'Destroy', ask_for_dollar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', kid_ask_for_dollar_path(@kid, ask_for_dollar) %></td>
+        <td><%= link_to 'Edit', edit_kid_ask_for_dollar_path(@kid, ask_for_dollar) %></td>
+        <td><%= link_to 'Destroy',  kid_ask_for_dollar_path(@kid, ask_for_dollar), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Ask For Dollar', new_ask_for_dollar_path %>
+<%= link_to 'New Ask For Dollar', new_kid_ask_for_dollar_path(@kid) %>

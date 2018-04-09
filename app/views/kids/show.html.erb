@@ -17,10 +17,10 @@
     </div>
   </div>
 
-    <div class="container-fluid">
-      <div class="row">
+    <p>Mes poches :</p>
+      <div class="container">
         <% @membre.pockets.each do |pocket| %>
-          <div id="test1" class="pocket white col s4 ">
+          <div id="test1" class="pocket">
             <div class="pocket-name" >
               <p><%= pocket.name %></p>
             </div>
@@ -33,9 +33,10 @@
         <% end %>
       </div>
 
-      <div class="row">
+        <p>Mes Virements:</p>
+        <div class="container">
         <% @membre.transferts.each do |transfert| %>
-          <div id="test1" class="pocket white col s4 ">
+          <div id="test1" class="pocket">
             <div class="pocket-name" >
               <p><%= transfert.name %></p>
             </div>
@@ -45,16 +46,18 @@
                 <p><%= transfert.value %>€</p>
               </div>
             </div>
-
             <%= image_tag 'mama.jpg', class: 'user-pics'  %>
+            </div>
+          <% end %>
+        </div>
 
-          </div>
-        <% end %>
-      </div>
 
+      <a href="../kids/<%= @membre.id %>/ask_for_dollars/new" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+    <%= link_to 'here', kid_pay4mes_path(@membre)  %>
+    |
+    <%= link_to 'index Ask', kid_ask_for_dollars_path(@membre)  %>
     </div>
-      <a href="../<%= @membre.id %>/ask_for_dollars/new" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
   <!-- <div class="background-circle"></div> -->
-
-
 </div>
+
+

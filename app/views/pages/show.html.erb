@@ -12,10 +12,10 @@
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
               </div>
               <div class="card-action">
-                <a href="<%= current_user.id %>/membres/<%= membre.id %>"><%= membre.fisrt_name %> <%= membre.last_name %></a>
+                <a href="../<%= current_user.id %>/membres/<%= membre.id %>"><%= membre.fisrt_name %> <%= membre.last_name %></a>
               </div>
             </div>
           </div>
@@ -23,7 +23,7 @@
       <% end %>
 
     </div>
-  <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path(@user), class: 'btn-form' %>
+  <%= link_to "Ajouter Membre à ma famille", new_page_membre_path(@user), class: 'btn-form' %>
 <% end %>
 
 
