@@ -31,7 +31,6 @@ class AskForDollarsController < ApplicationController
     @ask_for_dollar = AskForDollar.new(ask_for_dollar_params)
     @membre = Membre.find(params[:kid_id])
     @ask_for_dollar.membre = @membre
-    raise
     if @ask_for_dollar.save
       redirect_to kid_path(@membre)
     else

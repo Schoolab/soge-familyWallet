@@ -1,116 +1,48 @@
 <div class="main-container-profilecreation">
-
   <div class="header-profilecreation">
-      <p>&#x2501; &nbsp;<%=@membre.fisrt_name%>&nbsp;  &#x2501;</p>
 
-
-      <div class="container-bulle" id="bulle-header">
-        <%= image_tag 'poche_bleue.png', height:180 %>
-      </div>
-<%= cl_image_tag @membre.photo, height: 300, width: 400, crop: :fill %>
   </div>
-    <div class="content-profilecreation" id="content-show">
-      <div class="row">
-        <% @membre.pockets.each do |pocket| %>
-          <div class="chip left blue">
-            <%= pocket.name %>
-            <i class="close material-icons">close</i>
+
+  <div class="content-profilecreation" id="content-show">
+    <ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
+    <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+    <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+  </ul>
+  <div id="test-swipe-1" class="col s12">
+    <p>Ses poches :</p>
+    <% @membre.pockets.each do |pocket| %>
+      <div id="test1" class="pocket">
+        <div class="pocket-name" >
+          <p><%= pocket.name %></p>
+        </div>
+        <div class="container-pocket-pics">
+          <div class="right pocket-pics">
+            <p><%= pocket.credit %>€</p>
           </div>
-        <% end %>
+        </div>
       </div>
-      <h4>Terminer l'inscription de <%= @membre.fisrt_name %></h4>
-      <!-- Ajouter une Photographie -->
-      <% if @membre.photo? %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light green">
-            <i class="material-icons">check</i>
-          </a>
-          <a>Photo profile</a>
-        </div>
+    <% end %>
+  </div>
 
-      <% else %>
-
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light red">
-            <i class="material-icons">add</i>
-          </a>
-          <%= link_to 'Définir sa photo profile', page_membre_addphoto_path(@user, @membre)%>
-
-        </div>
-
-      <% end %>
-
-      <!-- Choisir un moyen de paiement -->
-      <% if @membre.paiements.empty?  %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light red">
-            <i class="material-icons">add</i>
-          </a>
-          <%= link_to 'Mode de paiement', new_page_membre_paiement_path(@user, @membre)%>
-
-        </div>
-      <% else %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light green">
-            <i class="material-icons">check</i>
-          </a>
-          <a>Mode de paiement</a>
-        </div>
-
-      <% end %>
-      <!-- Création de Poche -->
-      <% if @membre.pockets.empty?  %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light red">
-            <i class="material-icons">add</i>
-          </a>
-          <%= link_to 'Première Poche', new_page_membre_pocket_path(@user, @membre)%>
-
-        </div>
-      <% else %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light green">
-            <i class="material-icons">check</i>
-          </a>
-          <a>Poche crée</a>
-        </div>
-
-      <% end %>
-      <!-- Transfert d'argent -->
-       <% if @membre.transferts.empty?  %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light disable">
-            <i class="material-icons">add</i>
-          </a>
-          <%= link_to 'Mettre en place transfert', new_page_membre_transfert_path(@user, @membre)%>
-
-        </div>
-      <% else %>
-        <div class="btn-form">
-          <a class="btn-floating btn-large waves-effect waves-light green">
-            <i class="material-icons">check</i>
-          </a>
-          <a>Mode de transfert</a>
-        </div>
-
-      <% end %>
-
-
-    </div>
+  <div id="test-swipe-2" class="col s12 red">Test 2</div>
+  <div id="test-swipe-3" class="col s12 green">Test 3</div>
+  </div>
 
 
   <div class="footer-buttons">
     <div class="right" >
-      <a href="../transferts/new" class="btn-floating btn-large waves-effect waves-light black">
+      <a class=" btn-floating btn-large waves-effect waves-light black">
         <i class="material-icons">arrow_forward</i>
       </a>
 
     </div>
+    <div class="left">
+      <a href="javascript:history.back()">
+        <i class="material-icons">arrow_back</i>retour
+      </a>
 
-    <a href="javascript:history.back()">
-      <i class="material-icons">arrow_back</i>retour
-    </a>
-
+    </div>
   </div>
 
 </div>

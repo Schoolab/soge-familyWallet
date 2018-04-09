@@ -41,7 +41,7 @@ class MembresController < ApplicationController
     @usermembre.membre = @membre
     @usermembre.save
     if @membre.save
-      redirect_to page_membre_compte_path(@user, @membre)
+      redirect_to new_page_membre_pocket_path(@user, @membre.id)
     else
       render :new
     end

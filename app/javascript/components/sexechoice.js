@@ -2,11 +2,11 @@ function sexChoice() {
 
   $(document).ready(function() {
 
-    $(".btn-checkboxe").click(function(e) {
+    $(".ask-answer").click(function(e) {
 
       e.preventDefault();
 
-      $(".btn-checkboxe.isactive").removeClass("isactive");
+      $(".ask-answer.isactive").removeClass("isactive");
       $(this).addClass("isactive");
 
     });

@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :pages do
+    get 'compte'
     resources :services
       resources :membres do
         get 'addphoto'
-        get 'compte'
-        get 'profilecreation'
         get 'bravo'
+        get 'profilecreation'
         get 'compoteste'
         resources :paiements
         resources :pockets

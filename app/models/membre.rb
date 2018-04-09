@@ -16,6 +16,8 @@ class Membre < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  MOIS = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+
   def name
     fisrt_name
   end
