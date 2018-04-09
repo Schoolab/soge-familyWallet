@@ -10,7 +10,7 @@
 
   </div>
   <div class="content-profilecreation">
-    <h4>Créez-lui ses premières poches</h4>
+    <h4>Créez la première poches de <%= @membre.fisrt_name %></h4>
     <%= simple_form_for @pocket, url: page_membre_pockets_path(@user, @membre) do |f| %>
       <div class="form-group string optional pocket_name">
 

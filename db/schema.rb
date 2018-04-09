@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20180406133955) do
     t.integer "credit"
     t.text "description"
     t.string "object"
-    t.boolean "accepted"
-    t.boolean "has_been_reed"
+    t.boolean "accepted", default: false
+    t.boolean "has_been_reed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "membre_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180406133955) do
     t.string "pictur"
     t.string "description"
     t.bigint "membre_id"
-    t.boolean "finish"
+    t.boolean "finish", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

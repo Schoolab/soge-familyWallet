@@ -11,14 +11,14 @@
     <%= simple_form_for @ask_for_dollar, url: kid_ask_for_dollars_path(@membre) do |f| %>
       <div id="show-1">
         <!-- Crédit -->
-        <div class="input-field form-group string optional ask_for_money_credit">
+        <div class="input-field form-group string optional ask_for_dollar_credit">
           <label class="control-label string optional" for="ask_for_money_credit">De combien as-tu besoin?</label>
-          <input class="form-control string optional" type="text" name="ask_for_money[credit]" id="ask_for_money_credit">
+          <input class="form-control string optional" type="text" name="ask_for_dollar[credit]" id="ask_for_dollar_credit">
         </div>
         <!-- Objet -->
-        <div class="input-field form-group string optional ask_for_money_object">
-          <label class="control-label string optional" for="ask_for_money_object">Pour acheter quoi ? </label>
-          <input class="form-control string optional" type="text" name="ask_for_money[object]" id="ask_for_money_object">
+        <div class="input-field form-group string optional ask_for_dollar_object">
+          <label class="control-label string optional" for="ask_for_dollar_object">Pour acheter quoi ? </label>
+          <input class="form-control string optional" type="text" name="ask_for_dollar[object]" id="ask_for_dollar_object">
         </div>
       </div>
       <!-- add photo -->
