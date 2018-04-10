@@ -22,11 +22,6 @@ if (document.getElementById('input-mode')){
   modePaiement();
 };
 
-import {datePicker} from '../components/datepicker'
-if (document.getElementById('membre_date_picker')){
-  console.log("Marcelle");
-  datePicker();
-};
 
 import {identBancaire} from '../components/identbancaire'
 if (document.getElementById('identifiants')){
@@ -34,10 +29,6 @@ if (document.getElementById('identifiants')){
   identBancaire();
 };
 
-import {faButton} from '../components/faButton'
-if (document.getElementById('faButton')) {
-  faButton();
-};
 import {tabMotion} from '../components/tabsMotion'
 if (document.getElementById('tabs-swipe-demo')) {
   console.log("Sergio Leon");
