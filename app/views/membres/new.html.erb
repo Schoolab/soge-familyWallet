@@ -3,7 +3,8 @@
 
   <div class="container-bulle">
     <label class="center" for="ask_for_money_photo">
-      <%= image_tag 'photo.png', height: 60 %>
+      <%= image_tag 'teen.jpg', height: 120, width: 120, class: "img-circle"%>
+    <p style="margin: 20px; border-bottom: 2px solid black; font-weight: 600;">Raphaël</p>
     </label>
     <input class="hidden file optional" type="file" name="ask_for_money[photo]" id="ask_for_money_photo">
     <%= f.input :photo_cache, as: :hidden %>
@@ -13,7 +14,7 @@
   <div class="content-profilecreation" id="membre-new" >
     <div class="form-inputs-new">
         <!-- First Name -->
-      <div class="input-div-new">
+      <!-- <div class="input-div-new">
         <div class="form-group string optional membre_last_name">
           <div class="input-field col s12">
             <input name="membre[fisrt_name]" id="membre_fisrt_name" type="text" class="form-control validate">
@@ -21,19 +22,18 @@
           </div>
         </div>
       </div>
-
       <!-- Last Name  -->
-      <div class="input-div-new">
+      <!-- <div class="input-div-new">
         <div class="form-group string optional membre_last_name">
           <div class="input-field col s12">
             <input name="membre[last_name]" id="membre_last_name" type="text" class="form-control validate">
             <label for="last_name">Nom</label>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Birthday -->
-      <div class="birthday-date">
+      <div style="margin-top: 100px" class="birthday-date">
         <div class="label-birthday">
           <p>Date de Naissance  </p>
         </div>
@@ -63,6 +63,15 @@
               <option value="<%= op %>"><%= op %></option>
             <% end %>
           </select>
+        </div>
+      </div>
+
+      <div class="input-div-new">
+        <div class="form-group string optional membre_birthday">
+          <div class="input-field col s12">
+            <input placeholder="+33 7 24 XX XX XX" name="membre[birthday]" id="membre_birthday" type="text" class="form-control validate">
+            <label for="birthday">Numéro de téléphone</label>
+          </div>
         </div>
       </div>
     </div>

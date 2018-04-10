@@ -8,7 +8,40 @@
   margin-top: 26px;
   height: 505px;
 }
+.bulle-alloue {
+  right: 20px;
+  position: absolute;
+  width: 100px;
+  display: inline-flex;
+  justify-content: space-between;
+  text-align: right;
+  p {
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    left: -22px;
+  }
+  img {
+    position: absolute;
+    top: 7px;
+    right: 5px;
 
+  }
+}
+.vos-poches-versements {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 200px;
+  width: 109%;
+  background-color: #fff;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+.tapoche {
+  display: inline;
+}
 .vos-poches {
   text-align: left;
   height: 75vh;

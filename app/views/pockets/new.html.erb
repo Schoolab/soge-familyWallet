@@ -1,4 +1,4 @@
-<div class="main-container-profilecreation">
+<div class="grey-b">
 
   <div class="header-profilecreation">
     <div class="col s10">
@@ -7,13 +7,9 @@
       </div>
     </div>
     <div class="header-profilecreation-photo col s2">
-      <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 40, :gravity=>"face", :radius=>1000)%>
+      <%= image_tag 'teen.jpg', height: 40, width: 40, class: "img-circle"%>
     </div>
-    <% @membre.pockets.each do |pocket| %>
-      <div class="chip left blue">
-        <%= pocket.name %> <i class="close material-icons">close</i>
-     </div>
-    <% end %>
+
   </div>
 
   <div class="container-poche-creation">
@@ -28,18 +24,19 @@
       </div>
     </div>
   </div>
+</div>
 
 
+<div class="main-container-profilecreation">
   <div class="content-profilecreation">
-    <h4>Créez sa première poche</h4>
-    <h5>Créez la 1er enveloppe d'argent de poche<br> de <%= @membre.fisrt_name %></h5>
+    <h5>Vous donnez de l'argent régulièrement à <%= @membre.fisrt_name %>, permettez lui de gérer son argent en toutes autonomie</h5>
     <%= simple_form_for @pocket, url: page_membre_pockets_path(@user, @membre) do |f| %>
       <div class="form-group string optional pocket_name">
 
-        <input class="form-control string optional" placeholder="Donnez un nom à cette poche" type="text" name="pocket[name]" id="pocket_name">
+        <input class="form-control string optional" placeholder="D'abord, donnez un nom à cette poche" type="text" name="pocket[name]" id="pocket_name">
       </div>
       <div class="row">
-        <div class="btn-container">
+        <div class="hidden btn-container">
           <%= f.submit "Ajouter la poche" %>
         </div>
       </div>

@@ -10,10 +10,11 @@
     font-weight: 700;
   }
 }
-
+.grey-b {
+  background: linear-gradient(#e0e0e052, #d3d3d3);
+}
 .container-poche-creation {
-  border: 2px solid red;
-  margin: 0 auto !important;
+  margin: 0 auto;
 }
 
 #sexe-choice {
