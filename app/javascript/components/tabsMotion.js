@@ -6,7 +6,7 @@ function tabMotion () {
   // Or with jQuery
 
   $(document).ready(function(){
-    $('.tabs').tabs();
+    // $('.tabs').tabs();
     console.log('this');
 
 
