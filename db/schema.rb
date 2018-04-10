@@ -27,19 +27,6 @@ ActiveRecord::Schema.define(version: 20180409164429) do
     t.index ["membre_id"], name: "index_ask_for_dollars_on_membre_id"
   end
 
-  create_table "ask_for_moneys", force: :cascade do |t|
-    t.integer "credit"
-    t.string "object"
-    t.string "pictur"
-    t.string "description"
-    t.bigint "membre_id"
-    t.boolean "finish", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "photo"
-    t.index ["membre_id"], name: "index_ask_for_moneys_on_membre_id"
-  end
-
   create_table "ask_services", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "service_id"
@@ -67,15 +54,6 @@ ActiveRecord::Schema.define(version: 20180409164429) do
     t.index ["pocket_id"], name: "index_family_pockets_on_pocket_id"
   end
 
-  create_table "members", force: :cascade do |t|
-    t.string "fisrt_name"
-    t.string "last_name"
-    t.string "birthday"
-    t.boolean "sexe"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "membre_paiements", force: :cascade do |t|
     t.bigint "membre_id"
     t.bigint "paiement_id"
@@ -99,14 +77,14 @@ ActiveRecord::Schema.define(version: 20180409164429) do
   end
 
   create_table "paiements", force: :cascade do |t|
-    t.float "roof", default: 2.0
-    t.string "plafond", default: "Mois"
-    t.string "mode", default: "vide"
-    t.string "adress_1", default: "vide"
-    t.string "adress_2", default: "vide"
-    t.string "cp", default: "vide"
-    t.string "city", default: "vide"
-    t.string "country", default: "vide"
+    t.float "roof"
+    t.string "plafond"
+    t.string "mode"
+    t.string "adress_1"
+    t.string "adress_2"
+    t.string "cp"
+    t.string "city"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -154,15 +132,6 @@ ActiveRecord::Schema.define(version: 20180409164429) do
     t.index ["user_id"], name: "index_user_families_on_user_id"
   end
 
-  create_table "user_members", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "members_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["members_id"], name: "index_user_members_on_members_id"
-    t.index ["user_id"], name: "index_user_members_on_user_id"
-  end
-
   create_table "user_membres", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "membre_id"
@@ -207,7 +176,6 @@ ActiveRecord::Schema.define(version: 20180409164429) do
   end
 
   add_foreign_key "ask_for_dollars", "membres"
-  add_foreign_key "ask_for_moneys", "membres"
   add_foreign_key "ask_services", "membres"
   add_foreign_key "ask_services", "services"
   add_foreign_key "ask_services", "users"
@@ -219,8 +187,6 @@ ActiveRecord::Schema.define(version: 20180409164429) do
   add_foreign_key "transferts", "pockets"
   add_foreign_key "transferts", "users"
   add_foreign_key "user_families", "users"
-  add_foreign_key "user_members", "members", column: "members_id"
-  add_foreign_key "user_members", "users"
   add_foreign_key "user_membres", "membres"
   add_foreign_key "user_membres", "users"
   add_foreign_key "user_pockets", "membres"

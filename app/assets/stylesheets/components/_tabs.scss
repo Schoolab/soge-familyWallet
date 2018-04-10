@@ -6,7 +6,15 @@
 .container-ask {
   overflow: hidden;
   height: 93vh;
-  position: relative;
+  width: 100%;
+  top: 100vh;
+  position: fixed;
+  z-index: 3000;
+  transition: top .3s ease-out;
+  -webkit-transition: top .3s ease-out;
+  &.visible {
+    top: 0;
+  }
 }
 
 .background-circle {
@@ -15,7 +23,7 @@
   height: 960px;
   width: 833px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: #EBEBEB;
   left: -200px;
   bottom: -480px;
 }

@@ -1,4 +1,8 @@
 import "bootstrap";
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
+require('materialize-css');
 
 import {sexChoice} from '../components/sexechoice'
 if (document.getElementById('membre_sexe_true')){

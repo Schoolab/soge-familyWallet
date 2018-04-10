@@ -12,13 +12,16 @@ class AskForDollarsController < ApplicationController
   # GET /ask_for_dollars/1.json
   def show
     @membre = Membre.find(params[:kid_id])
-
   end
 
   # GET /ask_for_dollars/new
   def new
     @ask_for_dollar = AskForDollar.new
     @membre = Membre.find(params[:kid_id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /ask_for_dollars/1/edit

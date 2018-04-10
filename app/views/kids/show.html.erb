@@ -10,7 +10,7 @@
         </div>
         <div class="col s2">
 
-        <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 50, :gravity=>"face", :radius=>1000)%>
+        <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 50, :gravity=>"face", :radius=>1000) %>
         </div>
       </div>
 
@@ -52,7 +52,9 @@
         </div>
 
 
-      <a href="../kids/<%= @membre.id %>/ask_for_dollars/new" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+      <%= link_to new_kid_ask_for_dollar_path(@membre), class: "waves-effect waves-light btn", remote: true do %>
+        <i class="material-icons right">cloud</i>button
+      <% end %>
     <%= link_to 'here', kid_pay4mes_path(@membre)  %>
     |
     <%= link_to 'index Ask', kid_ask_for_dollars_path(@membre)  %>
