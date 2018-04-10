@@ -34,12 +34,6 @@ if (document.getElementById('identifiants')){
   identBancaire();
 };
 
-import {materSelect} from '../components/materialise'
-if (document.getElementById('paiement_plafond')){
-  console.log("Mars");
-  materSelect();
-};
-
 import {faButton} from '../components/faButton'
 if (document.getElementById('faButton')) {
   faButton();
