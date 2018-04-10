@@ -6,60 +6,59 @@
         <div class="col s10">
           <div class="black-text left">
            <h4>Bonjour <%= @membre.fisrt_name %></h4>
-          </div>
-        </div>
-        <div class="col s2">
-
-        <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 50, :gravity=>"face", :radius=>1000) %>
-        </div>
+         </div>
+       </div>
+       <div class="col s2">
+        <%= image_tag"teen.jpg", width: 40, height: 40, class: 'img-circle'%>
       </div>
+    </div>
 
+  </div>
+</div>
+
+<p>Mes poches :</p>
+<div class="container">
+  <% @membre.pockets.each do |pocket| %>
+  <div id="test1" class="pocket">
+    <div class="pocket-name" >
+      <p><%= pocket.name %></p>
+    </div>
+    <div class="container-pocket-pics">
+      <div class="right pocket-pics">
+        <p><%= pocket.credit %>€</p>
+      </div>
     </div>
   </div>
+  <% end %>
+</div>
 
-    <p>Mes poches :</p>
-      <div class="container">
-        <% @membre.pockets.each do |pocket| %>
-          <div id="test1" class="pocket">
-            <div class="pocket-name" >
-              <p><%= pocket.name %></p>
-            </div>
-            <div class="container-pocket-pics">
-              <div class="right pocket-pics">
-                <p><%= pocket.credit %>€</p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-
-        <p>Mes Virements:</p>
-        <div class="container">
-        <% @membre.transferts.each do |transfert| %>
-          <div id="test1" class="pocket">
-            <div class="pocket-name" >
-              <p><%= transfert.name %></p>
-            </div>
-
-            <div class="container-pocket-pics">
-              <div class="right transfert-pics">
-                <p><%= transfert.value %>€</p>
-              </div>
-            </div>
-            <%= image_tag 'mama.jpg', class: 'user-pics'  %>
-            </div>
-          <% end %>
-        </div>
-
-
-      <%= link_to new_kid_ask_for_dollar_path(@membre), class: "waves-effect waves-light btn", remote: true do %>
-        <i class="material-icons right">cloud</i>button
-      <% end %>
-    <%= link_to 'here', kid_pay4mes_path(@membre)  %>
-    |
-    <%= link_to 'index Ask', kid_ask_for_dollars_path(@membre)  %>
+<p>Mes Virements:</p>
+<div class="container">
+  <% @membre.transferts.each do |transfert| %>
+  <div id="test1" class="pocket">
+    <div class="pocket-name" >
+      <p><%= transfert.name %></p>
     </div>
-  <!-- <div class="background-circle"></div> -->
+
+    <div class="container-pocket-pics">
+      <div class="right transfert-pics">
+        <p><%= transfert.value %>€</p>
+      </div>
+    </div>
+    <%= image_tag 'mama.jpg', class: 'user-pics'  %>
+  </div>
+  <% end %>
+</div>
+
+
+<%= link_to new_kid_ask_for_dollar_path(@membre), class: "waves-effect waves-light btn", remote: true do %>
+<i class="material-icons right">cloud</i>button
+<% end %>
+<%= link_to 'here', kid_pay4mes_path(@membre)  %>
+|
+<%= link_to 'index Ask', kid_ask_for_dollars_path(@membre)  %>
+</div>
+<!-- <div class="background-circle"></div> -->
 </div>
 
 

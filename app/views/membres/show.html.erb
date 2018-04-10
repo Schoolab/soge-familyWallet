@@ -3,17 +3,17 @@
     <div class="col s10">
       <div class="header-profilecreation-name">
        <h4><%= @membre.fisrt_name %></h4>
-      </div>
-    </div>
-    <div class="header-profilecreation-photo col s2">
-      <% # cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 40, :gravity=>"face", :radius=>1000)%>
-    </div>
+     </div>
+   </div>
+   <div class="header-profilecreation-photo col s2">
+    <%= image_tag"teen.jpg", width: 40, height: 40, class: 'img-circle'%>
   </div>
+</div>
 
-  <div class="content-profilecreation" id="content-show">
-    <ul id="tabs-swipe-demo" class="tabs">
-      <li class="tab col s3">
-        <a href="#test-swipe-1">Ses Poches</a></li>
+<div class="content-profilecreation" id="content-show">
+  <ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s3">
+      <a href="#test-swipe-1">Ses Poches</a></li>
       <li class="tab col s3">
         <a class="active" href="#test-swipe-2">Ses Opérations</a>
       </li>
@@ -64,198 +64,198 @@
         </div>
       </div></div>
 
-    <div id="test-swipe-2" class="opérations-container col s12">
-      <div class="row">
+      <div id="test-swipe-2" class="opérations-container col s12">
+        <div class="row">
 
-        <div class="date">
-          <h2>Aujoud'hui, à 12h23</h2>
-        </div>
-        <div class="bulle-alloue right">
-          <p>Argent de Poche</p>
-          <%= image_tag 'mini-poche-1.png', height: 15 %>
-        </div>
-
-        <div class="notification">
-          <div class="debiteur">
-
-            <div class="debiteur-logo">
-              <%= image_tag "mcdonalds_logo.png", height: 42 %>
-            </div>
-
-            <div class="debiteur-name">
-              <p>UGC</p>
-            </div>
-
+          <div class="date">
+            <h2>Aujoud'hui, à 12h23</h2>
+          </div>
+          <div class="bulle-alloue right">
+            <p>Argent de Poche</p>
+            <%= image_tag 'mini-poche-1.png', height: 15 %>
           </div>
 
-          <div class="swith">
-            <div class="to-swith left">
-              <p>-7
-                <span>€</span>
-              </p>
+          <div class="notification">
+            <div class="debiteur">
+
+              <div class="debiteur-logo">
+                <%= image_tag "mcdonalds_logo.png", height: 42 %>
+              </div>
+
+              <div class="debiteur-name">
+                <p>UGC</p>
+              </div>
+
+            </div>
+
+            <div class="swith">
+              <div class="to-swith left">
+                <p>-7
+                  <span>€</span>
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="row">
+
+          <div class="date">
+            <h2>Hier, à 12h23</h2>
+          </div>
+          <div class="bulle-alloue right">
+            <p>Piano</p>
+            <%= image_tag 'poche_mini_4.png', height: 15 %>
+          </div>
+
+          <div class="notification">
+            <div class="debiteur">
+
+              <div class="debiteur-logo">
+                <%= image_tag "mcdonalds_logo.png", height: 42 %>
+              </div>
+
+              <div class="debiteur-name">
+                <p>Cours Piano</p>
+              </div>
+
+            </div>
+
+            <div class="swith">
+              <div class="to-swith left">
+                <p>-20
+                  <span>€</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="date">
+            <h2>Hier, à 9h23</h2>
+          </div>
+          <div class="bulle-alloue right">
+            <p>Arg de Poche</p>
+            <%= image_tag 'mini-poche-1.png', height: 15 %>
+          </div>
+
+          <div class="notification">
+            <div class="debiteur">
+
+              <div class="debiteur-logo">
+                <%= image_tag "mcdonalds_logo.png", height: 42 %>
+              </div>
+
+              <div class="debiteur-name">
+                <p>Le Badaboum</p>
+              </div>
+
+            </div>
+
+            <div class="swith">
+              <div class="to-swith left">
+                <p>-8,55
+                  <span>€</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="date">
+            <h2>Lundi, à 20h23</h2>
+          </div>
+          <div class="bulle-alloue right">
+            <p>AskMoney</p>
+            <%= image_tag 'poche_mini_3.png', height: 15 %>
+          </div>
+
+          <div class="notification">
+            <div class="debiteur">
+
+              <div class="debiteur-logo">
+                <%= image_tag "mcdonalds_logo.png", height: 42 %>
+              </div>
+
+              <div class="debiteur-name">
+                <p>Franprix</p>
+              </div>
+
+            </div>
+
+            <div class="swith">
+              <div class="to-swith left">
+                <p>-57
+                  <span>€</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="date">
+            <h2>Vendredi, à 12h23</h2>
+          </div>
+          <div class="bulle-alloue right">
+            <p>Déjeuner</p>
+            <%= image_tag 'mini-poche-2.png', height: 15 %>
+          </div>
+
+          <div class="notification">
+            <div class="debiteur">
+
+              <div class="debiteur-logo">
+                <%= image_tag "mcdonalds_logo.png", height: 42 %>
+              </div>
+
+              <div class="debiteur-name">
+                <p>Mcdonald's</p>
+              </div>
+
+            </div>
+
+            <div class="swith">
+              <div class="to-swith left">
+                <p>-12
+                  <span>€</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div></div>
+
+        <div id="test-swipe-3" class="col s12 sa-carte">
+          <div class="carte-debit-container">
+            <%= image_tag 'carte_debit.png', height: 100 %>
+          </div>
+          <div class="sa-carte-range" id="value-range" >
+            <h2>Plafond de la carte</h2>
+            <p>40€</p>
+          </div>
+
+          <div class="range-container">
+            <p class="range-field col-xs-12 my-range">
+              <input value="150" aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="300" />
+            </p>
+          </div>
+
+          <div class="sa-carte-paiement_roof">
+            <label class="control-label select optional" for="paiement_roof"></label>
+            <select class="browser-default" name="paiement[plafond]" id="paiement_plafond">
+              <option value="Semaine">Par semaine</option>
+              <option value="Mois">Par mois</option>
+              <option value="Jour">Par jour</option>
+            </select>
+          </div>
+
+          <div class="switch sa-carte-checkboxes">
+            <p>Bloquer la carte</p>
+            <label>
+              <input type="checkbox">
+              <span class="lever"></span>
+            </label>
+          </div></div>
         </div>
       </div>
-      <div class="row">
-
-        <div class="date">
-          <h2>Hier, à 12h23</h2>
-        </div>
-        <div class="bulle-alloue right">
-          <p>Piano</p>
-          <%= image_tag 'poche_mini_4.png', height: 15 %>
-        </div>
-
-        <div class="notification">
-          <div class="debiteur">
-
-            <div class="debiteur-logo">
-              <%= image_tag "mcdonalds_logo.png", height: 42 %>
-            </div>
-
-            <div class="debiteur-name">
-              <p>Cours Piano</p>
-            </div>
-
-          </div>
-
-          <div class="swith">
-            <div class="to-swith left">
-              <p>-20
-                <span>€</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="date">
-          <h2>Hier, à 9h23</h2>
-        </div>
-        <div class="bulle-alloue right">
-          <p>Arg de Poche</p>
-          <%= image_tag 'mini-poche-1.png', height: 15 %>
-        </div>
-
-        <div class="notification">
-          <div class="debiteur">
-
-            <div class="debiteur-logo">
-              <%= image_tag "mcdonalds_logo.png", height: 42 %>
-            </div>
-
-            <div class="debiteur-name">
-              <p>Le Badaboum</p>
-            </div>
-
-          </div>
-
-          <div class="swith">
-            <div class="to-swith left">
-              <p>-8,55
-                <span>€</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="date">
-          <h2>Lundi, à 20h23</h2>
-        </div>
-        <div class="bulle-alloue right">
-          <p>AskMoney</p>
-          <%= image_tag 'poche_mini_3.png', height: 15 %>
-        </div>
-
-        <div class="notification">
-          <div class="debiteur">
-
-            <div class="debiteur-logo">
-              <%= image_tag "mcdonalds_logo.png", height: 42 %>
-            </div>
-
-            <div class="debiteur-name">
-              <p>Franprix</p>
-            </div>
-
-          </div>
-
-          <div class="swith">
-            <div class="to-swith left">
-              <p>-57
-                <span>€</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="date">
-          <h2>Vendredi, à 12h23</h2>
-        </div>
-        <div class="bulle-alloue right">
-          <p>Déjeuner</p>
-          <%= image_tag 'mini-poche-2.png', height: 15 %>
-        </div>
-
-        <div class="notification">
-          <div class="debiteur">
-
-            <div class="debiteur-logo">
-              <%= image_tag "mcdonalds_logo.png", height: 42 %>
-            </div>
-
-            <div class="debiteur-name">
-              <p>Mcdonald's</p>
-            </div>
-
-          </div>
-
-          <div class="swith">
-            <div class="to-swith left">
-              <p>-12
-                <span>€</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div></div>
-
-    <div id="test-swipe-3" class="col s12 sa-carte">
-      <div class="carte-debit-container">
-        <%= image_tag 'carte_debit.png', height: 100 %>
-      </div>
-      <div class="sa-carte-range" id="value-range" >
-        <h2>Plafond de la carte</h2>
-        <p>40€</p>
-      </div>
-
-      <div class="range-container">
-        <p class="range-field col-xs-12 my-range">
-          <input value="150" aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="300" />
-        </p>
-      </div>
-
-      <div class="sa-carte-paiement_roof">
-        <label class="control-label select optional" for="paiement_roof"></label>
-        <select class="browser-default" name="paiement[plafond]" id="paiement_plafond">
-          <option value="Semaine">Par semaine</option>
-          <option value="Mois">Par mois</option>
-          <option value="Jour">Par jour</option>
-        </select>
-      </div>
-
-      <div class="switch sa-carte-checkboxes">
-        <p>Bloquer la carte</p>
-        <label>
-          <input type="checkbox">
-            <span class="lever"></span>
-        </label>
-      </div></div>
-  </div>
-</div>
