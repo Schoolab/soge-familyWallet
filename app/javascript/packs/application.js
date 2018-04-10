@@ -45,7 +45,7 @@ if (document.getElementById('faButton')) {
   faButton();
 };
 import {tabMotion} from '../components/tabsMotion'
-if (document.getElementById('poches-paiements')) {
+if (document.getElementById('tabs-swipe-demo')) {
   console.log("Sergio Leon");
   tabMotion();
 };
