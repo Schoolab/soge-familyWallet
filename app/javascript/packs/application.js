@@ -54,6 +54,11 @@ if (document.getElementById('accepted')) {
   accepted();
 };
 
+import {sliderRange} from '../components/range'
+if (document.getElementById('plafond-carte-slider')) {
+  sliderRange();
+};
+
 
 
 
