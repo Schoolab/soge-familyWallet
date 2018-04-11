@@ -12982,9 +12982,9 @@ button.close {
   height: 960px;
   width: 833px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.08);
-  left: -200px;
-  bottom: -480px;
+  background-color: #EBEBEB;
+  left: -204px;
+  bottom: -400px
 }
 
 /* line 1, /Users/mac/code/FamilyWallet/app/assets/stylesheets/components/_pocket.scss */
@@ -13888,7 +13888,7 @@ label {
 /* line 1, /Users/mac/code/FamilyWallet/app/assets/stylesheets/kids/_home.scss */
 .ask-container {
   height: 280px;
-  top: 44%;
+  top: 30%;
   position: absolute;
   width: 100%;
   padding: 5px 10px;
@@ -13902,7 +13902,7 @@ label {
 /* line 1, /Users/mac/code/FamilyWallet/app/assets/stylesheets/ask_for_money/_new.scss */
 .ask-container {
   height: 280px;
-  top: 44%;
+  top: 30%;
   position: absolute;
   width: 100%;
   padding: 5px 10px;
@@ -13917,7 +13917,7 @@ label {
 #ask_for_dollar_description {
   background-color: white;
   opacity: 1;
-  height: 220px;
+  height: 150px;
 }
 
 /* line 17, /Users/mac/code/FamilyWallet/app/assets/stylesheets/ask_for_money/_new.scss */

@@ -2,7 +2,7 @@
   textarea {
     border-radius: 5px;
     border: 1px solid #0000003d;
-    height: 130px;
+    height: 230px;
     color: #00000096;
   }
 }
@@ -12,4 +12,33 @@
   text-align: left;
   margin-bottom: 20px;
   color: #7B7B7B !important;
+}
+
+.until {
+  display: flex;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 120px;
+}
+
+#service_hour {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  width: 15%;
+
+}
+.service-range-container {
+  height: 37vh;
+  display: flex;
+  position: relative;
+
+}
+
+#service_minute {
+  position: absolute;
+  bottom: 0;
+  right: 30%;
+  width: 15%;
 }
