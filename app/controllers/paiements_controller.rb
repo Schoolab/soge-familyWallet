@@ -32,7 +32,6 @@ class PaiementsController < ApplicationController
     @mp = MembrePaiement.new
     @mp.membre = @membre
     @mp.paiement = @paiement
-      raise
 
     if @paiement.save && @mp.save
       redirect_to page_membre_profilecreation_path(current_user, @membre)

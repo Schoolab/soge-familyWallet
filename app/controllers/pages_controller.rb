@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
   before_action :set_user
+  before_action :set_ask
 
   def home
     if user_signed_in?
@@ -10,7 +11,6 @@ class PagesController < ApplicationController
 
   def show
     @membres = current_user.membres
-    @ask = AskForDollar.last
 
   end
 
@@ -24,6 +24,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def set_ask
+    @ask = AskForDollar.last
+  end
 
   def set_user
     @user = current_user
