@@ -40,11 +40,11 @@
 
   <%= simple_form_for @ask_for_dollar, url: edit_kid_ask_for_dollar_path(@membre) do |f| %>
 
-      <div class="row">
+      <div id="accepted" class="row">
 
         <input type="hidden" name="ask_for_dollar[accepted]" value="">
 
-        <div class="offset-s1 z-depth-3 ask-answer col s4">
+        <div class="offset-s1 z-depth-2 ask-answer col s4">
           <span class="radio">
             <label for="ask_for_dollar_accepted_true">
               <input class="radio_buttons optional" type="radio" value="true" name="ask_for_dollar[accepted]" id="ask_for_dollar_accepted_true">
@@ -55,7 +55,7 @@
         </div>
         <div class="col s1"></div>
 
-        <div class="z-depth-3 ask-answer col s4">
+        <div class="z-depth-2 ask-answer col s4">
           <span class="radio">
             <label for="ask_for_dollar_accepted_false">
               <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="ask_for_dollar[accepted]" id="ask_for_dollar_accepted_false">
@@ -64,8 +64,12 @@
             </label>
           </span>
         </div>
-
+        <div class="right" style="margin-top: 50px; margin-right: 40px;" id="show-3" >
+          <button class="btn waves-effect waves-light" type="submit" name="commit">Envoyer
+            <i class="material-icons right" data-disable-with="Create Ask for money">send</i>
+          </button>
+        </div>
       </div>
   <% end %>
 <% end %>
-
+<%= render 'shared/navbar-kids' %>

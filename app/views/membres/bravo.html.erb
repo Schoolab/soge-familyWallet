@@ -1,39 +1,62 @@
-<div class="container-congrat">
-  <div class="header-congrat">
-    <div class="congrat-pics">
-      <%= image_tag 'ado.jpg', class: 'congrat-pics' %>
+
+<div class="main-container-profilecreation">
+
+  <div class="header-profilecreation">
+    <div class="col s10">
+      <div class="header-profilecreation-name">
+       <h4><%= @membre.fisrt_name %>Raphael</h4>
+      </div>
     </div>
-    <div class="text-congrat">
-      <h1>Bravo ! <br> Le compte de <%= @membre.fisrt_name %> à été crée !</h1>
+    <div class="header-profilecreation-photo col s2">
+      <%= image_tag 'teen.jpg', height: 40, width: 40, class: "img-circle"%>
     </div>
+
   </div>
-    <% @membre.transferts.each do |pocket| %>
-        <div class="chip left blue">
-          <%= pocket.name %> <i class="close material-icons">close</i>
-       </div>
-      <% end %>
-      <% @membre.pockets.each do |pocket| %>
-        <div class="chip left red">
-          <%= pocket.name %> <i class="close material-icons">close</i>
-       </div>
-      <% end %>
 
-  <div class="congrat-phone">
-
-    <div class="form-group string optional membre_fisrt_name">
-      <label class="control-label string optional" for="membre_fisrt_name">Rentrez son numéro de téléphone <br> pour qu'il puisse se connecter à l'application</label>
-      <input class="form-control string optional" placeholder="+33 6 xx xx xx xx" type="text" name="membre[fisrt_name]" id="membre_fisrt_name">
-    </div>
-
-    <div class="row">
-      <div class="btn-container">
-        <div class="btn-form">
-        <%= link_to 'ENVOYER', page_membres_path(current_user), class: 'envoie'%>
+  <div class="container-poche-creation">
+    <div style="margin: 0 auto" id="test1" class="pocket">
+      <div class="pocket-name" >
+        <p></p>
+      </div>
+      <div class="container-pocket-pics">
+        <div class="right pocket-pics">
+          <p></p>
         </div>
       </div>
     </div>
-
   </div>
 
+  <div class="content-profilecreation" id="transferts-new-content">
+    <h4>Félicitation,<br>vous avez crée <br>la poche<p class="pinky"><%= Pocket.last.name %></p></h4>
 
+    <div style="margin-top: 60px"  class="row">
+      <p>Souhaitez-vous lui en crer une autre ? </p>
+
+
+      <div class="offset-s3 z-depth-2 ask-answer col s3">
+        <span class="radio">
+          <label for="ask_for_dollar_accepted_true">
+            <input class="radio_buttons optional" type="radio" value="true" name="ask_for_dollar[accepted]" id="ask_for_dollar_accepted_true">
+            <%= link_to new_page_membre_paiement_path(current_user, @membre) do  %>
+            <p>Oui</p>
+            <% end %>
+          </label>
+        </span>
+      </div>
+      <div class="col s1"></div>
+
+      <div class="z-depth-2 ask-answer col s3">
+        <span class="radio">
+          <label for="ask_for_dollar_accepted_false">
+            <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="ask_for_dollar[accepted]" id="ask_for_dollar_accepted_false">
+            <%= link_to new_page_membre_paiement_path(current_user, @membre) do  %>
+            <p>Non</p>
+            <i class="material-icons"></i>
+            <% end %>
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
+

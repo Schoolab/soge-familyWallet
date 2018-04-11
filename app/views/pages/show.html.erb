@@ -19,12 +19,13 @@
 <% else %>
   <div class="row">
     <% @membres.each do |membre|  %>
-      <div class="col s4">
-        <%= image_tag 'marius.png',width: 130, height: 160 %>
-
-      </div>
+      <%= link_to page_membre_path(current_user, membre) do%>
+        <div class="col s4">
+          <%= image_tag 'marius.png',width: 130, height: 160 %>
+        </div>
+      <% end %>
     <% end %>
-    <%= link_to new_page_membre_path(current_user) do%>
+    <%= link_to page_compte_path(current_user) do%>
     <div class="col s3 nouveau-membre">
       <%= image_tag 'add-m.png', height: 170 %>
     </div>

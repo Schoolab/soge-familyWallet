@@ -13,6 +13,7 @@ class PocketsController < ApplicationController
     @userpocket = UserPocket.new
     @pocket = Pocket.new
     @membre = Membre.find(params[:membre_id])
+    @transfert = Transfert.new
   end
 
   def create

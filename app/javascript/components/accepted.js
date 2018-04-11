@@ -1,6 +1,7 @@
 function accepted() {
 
   $(document).ready(function() {
+    $('#show-3').hide();
 
     $(".ask-answer").click(function(e) {
 
@@ -8,6 +9,7 @@ function accepted() {
 
       $(".ask-answer.isactive").removeClass("isactive");
       $(this).addClass("isactive");
+      $('#show-3').fadeIn("slow");
 
     });
 

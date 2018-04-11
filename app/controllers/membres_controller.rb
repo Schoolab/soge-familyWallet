@@ -15,6 +15,10 @@ class MembresController < ApplicationController
   def show
   end
 
+  def adressedelivraison
+    @membre = Membre.find(params[:membre_id])
+  end
+
   def bravo
     @membre = Membre.find(params[:membre_id])
 
