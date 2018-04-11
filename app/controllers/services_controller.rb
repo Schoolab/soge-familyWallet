@@ -18,6 +18,10 @@ class ServicesController < ApplicationController
   def new
     @as = AskService.new
     @service = Service.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /services/1/edit

@@ -1,41 +1,41 @@
-<div class="navbar-wagon">
+<div class="navbar-kids">
 
   <!-- 1 Left Navbar -->
-  <%= link_to page_path(@user), class: "navbar-wagon-brand" do %>
+  <%= link_to kid_path(@membre), class: "navbar-kids-brand" do %>
     <%= image_tag "_icon_home_slct.png", height: 40 %>
   <% end %>
   <!-- 2 Left Navab -->
-  <%= link_to page_path(@user), class: "navbar-wagon-brand" do %>
+  <%= link_to root_path, class: "navbar-kids-brand" do %>
     <%= image_tag 'icon_ticket.png' %>
   <% end %>
 
   <!-- Center navbar -->
-  <%= link_to new_page_service_path(@user), class: "", :remote => true do %>
+  <%= link_to new_kid_ask_for_dollar_path(@membre), class: "", :remote => true do %>
   <%= image_tag "_icon_askmoney.png", height: 30 %>
   <% end %>
 
-  <%= link_to kid_ask_for_dollar_path(@ask.membre, @ask) do %>
+  <%= link_to kid_path(@membre) do %>
   <%= image_tag "_icon_ring.png", height: 30 %>
   <% end %>
 
   <!-- Right Navbar -->
-  <%= link_to page_path(@user), class: "navbar-wagon-brand" do %>
+  <%= link_to kid_path(@membre), class: "navbar-kids-brand" do %>
     <%= image_tag '_icon_more.png' %>
   <% end %>
 
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-kids-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
 
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+      <div class="navbar-kids-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <%= image_tag "http://kitt.lekids.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-kids-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-kids-dropdown-menu">
             <li>
               <%= link_to "membres#home" do %>
                 <i class="fa fa-user"></i> <%= t(".membres", default: "Profile") %>
@@ -56,7 +56,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-kids-item navbar-kids-link" %>
     <% end %>
   </div>
 

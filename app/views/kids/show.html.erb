@@ -51,9 +51,7 @@
 </div>
 
 
-<%= link_to new_kid_ask_for_dollar_path(@membre), class: "waves-effect waves-light btn", remote: true do %>
-<i class="material-icons right">cloud</i>button
-<% end %>
+
 <%= link_to 'here', kid_pay4mes_path(@membre)  %>
 |
 <%= link_to 'index Ask', kid_ask_for_dollars_path(@membre)  %>
@@ -61,4 +59,4 @@
 <!-- <div class="background-circle"></div> -->
 </div>
 
-
+<%= render 'shared/navbar-kids' %>

@@ -26,23 +26,24 @@
         <%= f.input :minute, collection: (0..60), prompt: Service::MINUTE %>
       </div>
     </div>
-    <%= simple_form_for @as, url: page_services_path(@user) do |f| %>
-      <div class="row">
-        <label class="left col s12">Pour qui sera la mission ?</label>
-        <input type="hidden" name="ask_service[membre_id][]" value="">
+    <div class="hidden">
+      <%= simple_form_for @as, url: page_services_path(@user) do |f| %>
+        <div class="row">
+          <label class="left col s12">Pour qui sera la mission ?</label>
+          <input type="hidden" name="ask_service[membre_id][]" value="">
+        </div>
+        <div class="row">
+          <% @user.membres.each do |membre| %>
+            <div class="col s6">
+              <input type="checkbox" class="hidden" value="<%= membre.id %>" name="ask_service[membre_ids][]" id="  ask_service_ids_<%= membre.id %>">
+              <label for="ask_service_ids_<%= membre.id %>">
+                <%= image_tag 'teen.jpg',width: 100, height: 100, class: 'z-depth-5 circle' %>
+              </label>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class="row">
-        <% @user.membres.each do |membre| %>
-          <div class="col s6">
-            <input type="checkbox" class="hidden" value="<%= membre.id %>" name="ask_service[membre_ids][]" id="  ask_service_ids_<%= membre.id %>">
-            <label for="ask_service_ids_<%= membre.id %>">
-              <%= image_tag 'teen.jpg',width: 100, height: 100, class: 'z-depth-5 circle' %>
-            </label>
-          </div>
-        <% end %>
-      </div>
-
-      </div>
+    </div>
   </div>
 
 
@@ -53,11 +54,11 @@
     <div class="back left come-back">
       <i class="material-icons">arrow_left</i>Retour
     </div>
-  </div>
 
-  <a id="show-1" class=" btn-floating btn-large waves-effect waves-light right black">
-    <i class="material-icons">chevron_right</i>
-  </a>
+    <a id="show-1" class=" btn-floating btn-large waves-effect waves-light right black">
+      <i class="material-icons">chevron_right</i>
+    </a>
+  </div>
 <% end %>
 <% end %>
 <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa natus perferendis neque eaque architecto corporis iusto totam? Exercitationem illo iusto similique accusamus praesentium veniam error, voluptas, dolore nulla quas magni?

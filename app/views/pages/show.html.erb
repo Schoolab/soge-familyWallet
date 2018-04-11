@@ -1,128 +1,39 @@
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card-panel white ">
+      <div class="row valign-wrapper">
+        <div class="col s10">
+          <div class="black-text left">
+           <h4>Hello <%= current_user.first_name %></h4>
+         </div>
+       </div>
+       <div class="col s2">
+        <%= image_tag "mama.jpg", width: 40, height: 40, class: 'img-circle'%>
+      </div>
+    </div>
+
+  </div>
+</div>
 <% if @user.membres.empty? %>
   <p>Aucun Membre dans ma famille :-(</p>
   <%= link_to "Ajouter un Membre à ma famille", new_page_membre_path(@user), class: 'btn-info' %>
 <% else %>
   <div class="row">
-      <h2 class="header">Horizontal Card</h2>
-      <% @membres.each do |membre|  %>
-        <div class="col s12 m7">
-          <div class="card horizontal">
-            <div class="card-image">
-              <img src="https://lorempixel.com/100/190/nature/">
-            </div>
-            <div class="card-stacked">
-              <div class="card-content">
-
-              </div>
-              <div class="card-action">
-                <a href="../<%= current_user.id %>/membres/<%= membre.id %>"><%= membre.fisrt_name %> <%= membre.last_name %></a>
-              </div>
-            </div>
-          </div>
+    <% @membres.each do |membre|  %>
+      <%= link_to page_membre_path(current_user, membre) do%>
+        <div class="col s4">
+          <%= image_tag 'marius.png',width: 130, height: 160 %>
         </div>
       <% end %>
-
+    <% end %>
+    <%= link_to page_compte_path(current_user) do%>
+    <div class="col s3 nouveau-membre">
+      <%= image_tag 'add-m.png', height: 170 %>
     </div>
-    <div class="btn-large yellow">
-      <p>
-        <a href="/pages/1/compte">Créer un compte enfant</a>
-      </p>
-    </div>
-<% end %>
-
-
-<div class="row">
-  <div class="container-fluid">
-    <% if current_user.membres.empty?  %>
-      <% else %>
-        <% current_user.membres.each do |membre|  %>
-
-          <% if membre.ask_for_dollars.empty?  %>
-          <% else %>
-              <div class="row">
-                <p class="left">Notification :</p>
-              </div>
-
-              <% membre.ask_for_dollars.all.each do |afm| %>
-
-                <div class="row">
-                  <div class="ask-title">
-                    <h2>
-                    La demande de <%= membre.fisrt_name %>
-
-                    </h2>
-                  </div>
-                </div>
-                <div class="ask-card z-depth-3">
-
-                    <%= image_tag 'livres.jpg', class: "ask-picture"%>
-
-                  <!-- OBJET  -->
-                    <div class="ask-object">
-                      <h5><%= afm.object.capitalize %></h5>
-                    </div>
-
-                    <div class="ask-credit">
-                     <h5><%= afm.credit %>€</h5>
-                    </div>
-
-
-                </div>
-
-                  <!-- DESCRIPTION -->
-                  <div class="row">
-                    <div class="col s2">
-                      <h6>Description:</h6>
-                    </div>
-                    <div class="offset-s1 card-panel grey lighten-5 z-depth-1 col s10 ">
-                      <h6>
-                        <%= afm.description %>
-                      </h6>
-                    </div>
-                  </div>
-
-
-                  <%= simple_form_for afm, url: edit_kid_ask_for_dollar_path(membre) do |f| %>
-
-                      <div class="row">
-
-                        <input type="hidden" name="ask_for_dollar[accepted]" value="">
-
-                        <div class="offset-s1 z-depth-3 ask-answer col s4">
-                          <span class="radio">
-                            <label for="ask_for_dollar_accepted_true">
-                              <input class="radio_buttons optional" type="radio" value="true" name="ask_for_dollar[accepted]" id="ask_for_dollar_accepted_true">
-                              <i class="material-icons">check</i>
-                              <p>J'accepte</p>
-                            </label>
-                          </span>
-                        </div>
-                        <div class="col s1"></div>
-
-                        <div class="z-depth-3 ask-answer col s4">
-                          <span class="radio">
-                            <label for="ask_for_dollar_accepted_false">
-                              <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="ask_for_dollar[accepted]" id="ask_for_dollar_accepted_false">
-                              <p>Je refuse</p>
-                              <i class="material-icons">clear</i>
-                            </label>
-                          </span>
-                        </div>
-
-                      </div>
-
-                  <% end %>
-
-
-              <% end %>
-
-
-              <% end %>
-
-        <% end %>
-
     <% end %>
   </div>
+  <%= image_tag 'activ.png', class: 'img-activ' %>
+<% end %>
+<%= render 'shared/navbar' %>
 
-</div>
-<hr>
+
+

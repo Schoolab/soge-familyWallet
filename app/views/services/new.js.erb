@@ -1,0 +1,29 @@
+jQuery(document).ready(function($) {
+  var modal = $("<%= escape_javascript(render 'services/new') %>");
+
+  modal.appendTo("body").animate(
+    {
+      top: 0
+    },
+    200
+  );
+  $("#show-2").hide();
+  $("#show-3").hide();
+  $("#aqui").hide();
+  $(".service-range-container").hide();
+
+  $("#show-1").click(function() {
+    $("#show-1").hide();
+    $("#show-2").fadeIn();
+
+    $(".service_description").fadeOut();
+    $(".service-range-container").fadeIn();
+  });
+
+  $("#show-2").click(function() {
+    $("#show-2").fadeOut();
+    $(".service-range-container").fadeOut();
+    $("#aqui").fadeIn();
+    $("#show-3").fadeIn();
+  });
+});

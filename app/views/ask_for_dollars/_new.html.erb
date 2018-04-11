@@ -22,26 +22,26 @@
         </div>
       </div>
       <!-- add photo -->
+      <div class="row">
+        <div class="form-group file optional ask_for_money_photo">
+          <label class=" left control-label file optional" for="ask_for_money_photo">
+            <%= image_tag 'photo.png', height: 40 %></label>
+          <p class="left">Envoyer une image (opt)</p>
+          <input class="hidden file optional" type="file" name="ask_for_money[photo]" id="ask_for_money_photo">
+        </div>
+        </div>
 
 
       <!-- description -->
-      <div id="show-2" class="form-group text optional ask_for_dollar_description hidden">
+      <div id="show-2" class="form-group text optional ask_for_dollar_description ">
         <textarea class="form-control text optional" placeholder="Décrit ta demande" name="ask_for_dollar[description]" id="ask_for_dollar_description"></textarea>
       </div>
 
 
       <!-- inputs -->
-      <div id="show-2" class="row hidden">
+      <div id="show-2" class="row ">
         <input type="submit" name="commit" value="ask" class="btn btn-large btn-floating right btn-floating green accent-3" data-disable-with="Create Ask for money">
-
-        <div class="back left come-back">
-          <i class="material-icons">arrow_left</i>Retour
-        </div>
       </div>
-
-      <a id="show-1" class=" btn-floating btn-large waves-effect waves-light right black">
-        <i class="material-icons">chevron_right</i>
-      </a>
 
     <% end %>
   </div>

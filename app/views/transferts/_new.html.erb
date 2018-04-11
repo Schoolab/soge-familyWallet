@@ -1,6 +1,6 @@
 <div class="main-container-profilecreation">
 
-  <div class="header-profilecreation">
+<!--   <div class="header-profilecreation">
     <div class="col s10">
       <div class="header-profilecreation-name">
        <h4><%= @membre.fisrt_name %></h4>
@@ -9,10 +9,10 @@
     <div class="header-profilecreation-photo col s2">
       <%= cl_image_tag("c1ebkvku00vcgo8fw7qv.png", height: 40, :gravity=>"face", :radius=>1000)%>
     </div>
-  </div>
+  </div> -->
 
   <div class="content-profilecreation" id="transferts-new-content">
-    <h4>Programmez un versement sur cette poche</h4>
+    <!-- <h4>Programmez un versement sur cette poche</h4> -->
     <%= simple_form_for @transfert, url: page_membre_transferts_path(@user, @membre) do |f| %>
       <div class="center" id="value-range" >
         <p>40€</p>
@@ -36,7 +36,8 @@
           </div>
         </div>
       </div>
-      <div class="center">
+
+      <!-- <div class="center">
         <%= f.submit "Creer un versement", class: 'btn blue' %>
 
       </div>
@@ -60,3 +61,4 @@
   </div>
 
 </div>
+ -->

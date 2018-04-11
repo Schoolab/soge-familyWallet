@@ -1,103 +1,69 @@
-<div class="main-container-profilecreation">
+<div class="grey-b">
 
   <div class="header-profilecreation">
-      <p>&#x2501; &nbsp;<%=@membre.fisrt_name%>&nbsp;  &#x2501;</p>
-      <div class="chip left">
-      <%= image_tag 'pomme.png' %>
-      Pay
+    <div class="col s10">
+      <div class="header-profilecreation-name">
+       <h4><%= @membre.fisrt_name %>Raphael</h4>
+      </div>
     </div>
-    <div class="chip left">
-      <%= image_tag 'mastercard.png'%>
-      carte débit
+    <div class="header-profilecreation-photo col s2">
+      <%= image_tag 'teen.jpg', height: 40, width: 40, class: "img-circle"%>
+    </div>
+
+  </div>
+
+  <div class="container-poche-creation">
+    <div style="margin: 0 auto" id="test1" class="pocket">
+      <%= image_tag 'visa-card.png', class: 'vise-pics' %>
     </div>
   </div>
+</div>
+
+
+<div class="main-container-profilecreation">
   <div class="content-profilecreation">
-    <h4>Choisisez ses modes de paiements</h4>
-    <%= simple_form_for @paiement, url: page_membre_paiements_path do |f| %>
-    <%= f.error_notification %>
+    <h3 style="margin: 20px;
+    font-size: 20px;" >Paramétrez son moyen de paiement</h3>
+    <h5>Ceci est la carte de paiement avec la quelle Raphael pourra payer. <br> Rassurez vous, vous avez les controlle sur l'utilisation de la carte!</h5>
+    <%= simple_form_for @paiement, url: page_membre_paiements_path  do |f| %>
 
+
+
+
+      <div class="center" id="value-range" >
+        <p>40€</p>
+      </div>
+      <div class="range-container">
+        <p class="range-field col-xs-12 my-range">
+          <input aria-required="true" name="transfert[value]" type="range" id="test3" min="0" max="250" />
+        </p>
+      </div>
       <div class="row">
-        <div class="col s4">
-          <span class="checkbox selected-mode" id="input-mode">
-            <label for="paiement_mode_apple_pay">
-              <input class="input-mode" type="checkbox" value="Apple Pay" name="paiement[mode][]" id="paiement_mode_apple_pay">
-              <p>Apple Pay</p>
-            </label>
-          </span>
-        </div>
-
-        <div class="col s4">
-          <span class="checkbox" id="input-mode">
-            <label for="paiement_mode_paylib">
-              <input class="input-mode" type="checkbox" value="Paylib" name="paiement[mode][]" id="paiement_mode_paylib">
-              <p>Paylib</p>
-            </label>
-          </span>
-        </div>
-
-        <div class="col s4">
-          <span class="checkbox" id="input-mode">
-            <label for="paiement_mode_carte_débit">
-              <input class="input-mode" type="checkbox" value="Carte débit" name="paiement[mode][]" id="paiement_mode_carte_débit">
-              <p>Carte débit</p>
-            </label>
-          </span>
+        <div class="col s12">
+          <div class="form-group select optional transfert_frequence">
+            <select class="form-control select optional" name="transfert[frequence]">
+              <option value="Par mois">Tous les 1er du mois</option>
+              <option value="Par semaine">Tous les débuts de semaines</option>
+              <option value="Par jours">Tous les jours</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div class="container-fluid ">
-        <%= image_tag "carte_debit.png", height: 200 %>
-        <h5>CHOISIR</h5>
-      </div>
 
-      <div class="container-fluid hide" id="carte-adresse">
-
-        <div class="row">
-          <div class="input-field col s12 form-plus">
-            <input id="password" type="password" class="validate">
-            <label for="password">Adresse 1</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 form-plus">
-            <input id="password" type="password" class="validate">
-            <label for="password">Adresse 2</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s1"></div>
-
-          <div class="input-field col s4 form-plus">
-            <input id="password" type="password" class="validate">
-            <label for="password">Code Postal</label>
-          </div>
-
-          <div class="col s2"></div>
-
-          <div class="input-field col s4 form-plus">
-            <input id="password" type="password" class="validate">
-            <label for="password">Ville</label>
-          </div>
-
-        </div>
+      <% end %>
 
 
-      </div>
-
-
-  </div>
-
-  <div class="footer-buttons">
-    <div class="btn-floating right btn-large waves-effect waves-light black add" >
-    <input type="submit" name="commit" value="&#x2794">
+  <div style="bottom: -40px;" class="footer-buttons">
+    <div class="right" >
+      <a href="../profilecreation" class=" btn-floating btn-large waves-effect waves-light black">
+        <i class="material-icons">arrow_forward</i>
+      </a>
 
     </div>
+    <div class="left">
+      <a href="javascript:history.back()">
+        <i class="material-icons">arrow_back</i>retour
+      </a>
+    </div>
 
-    <a href="javascript:history.back()">
-      <i class="material-icons">arrow_back</i>retour
-    </a>
-  </div>
-
-    <% end %>
 </div>

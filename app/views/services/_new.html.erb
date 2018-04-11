@@ -1,0 +1,99 @@
+<div class="container-ask">
+  <div class="background-circle">
+
+  </div>
+  <div class="ask-container">
+    <div class="row">
+
+      <p class="right" style="font-size: 30px" >Pay4me</p>
+    </div>
+
+      <%= simple_form_for @service, url: page_services_path(@user) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+
+        <div class="service_description">
+          <label class="left border-bottom" for="service_description">Objectif de la mission</label>
+          <textarea placeholder="Une liste de course? Un lieu? Donnez à votre enfant un maximum d'information sur la mission." class="form-control text optional" name="service[description]" id="service_description"></textarea>
+        </div>
+
+        <div class="service-range-container">
+          <div class="row">
+            <div  class="center">
+              <h5>Il aura 30€ pour sa mission</h5>
+            </div>
+          </div>
+          <p style="top: 50px" class="range-field col-xs-12 my-range">
+            <input aria-required="true" name="service[amount]" type="range" id="test3" min="0" max="150" />
+          </p>
+          <br>
+          <div class="until row">
+            <h6>Validation et réalisation de la mission jusqu'à :</h6>
+            <div class="col s5">
+              <select class="form-control select optional" name="service[hour]" id="service_hour">
+                <%= (0...24).to_a.each do |min|%>
+                <option value="<%= min %>"><%= min %></option>
+                <% end %>
+              </select>
+            </div>
+            <div class="col s5">
+              <select class="form-control select optional" name="service[minute]" id="service_minute">
+                <%= (0...60).to_a.each do |min|%>
+                <option value="<%= min %>"><%= min %></option>
+                <% end %>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="aqui">
+          <%= simple_form_for @as, url: page_services_path(@user) do |f| %>
+            <div class="row">
+              <label class="left col s12">Pour qui sera la mission ?</label>
+              <input type="hidden" name="ask_service[membre_id][]" value="">
+            </div>
+            <div class="row">
+              <% @user.membres.each do |membre| %>
+                <div class="col s6">
+                  <input type="checkbox" class="hidden" value="<%= membre.id %>" name="ask_service[membre_ids][]" id="  ask_service_ids_<%= membre.id %>">
+                  <label for="ask_service_ids_<%= membre.id %>">
+                    <%= image_tag 'teen.jpg',width: 100, height: 100, class: 'z-depth-5 circle' %>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+
+
+    <!-- inputs -->
+      <div class="row">
+        <div class="back left come-back">
+          <i class="material-icons">arrow_left</i>Retour
+        </div>
+
+        <div id="show-1" >
+          <a class=" btn-floating btn-large waves-effect waves-light right black">
+            <i class="material-icons">chevron_right</i>
+          </a>
+        </div>
+
+        <a id="show-2" class=" btn-floating btn-large waves-effect waves-light right black">
+            <i class="material-icons">chevron_right</i>
+          </a>
+        </div>
+
+        <div id="show-3" >
+          <input type="submit" name="commit" value="OK" class="btn btn-large btn-floating right btn-floating green accent-3" data-disable-with="Create Ask for money">
+        </div>
+
+
+      </div>
+    </div>
+
+    <% end %>
+    <% end %>
+  </div>
+</div>

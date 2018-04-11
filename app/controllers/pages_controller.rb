@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 
   def show
     @membres = current_user.membres
+    @ask = AskForDollar.last
 
   end
 

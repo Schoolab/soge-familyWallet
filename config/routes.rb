@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         get 'addphoto'
         get 'bravo'
         get 'profilecreation'
+        get 'adressedelivraison'
         resources :paiements
         resources :pockets
         resources :transferts
